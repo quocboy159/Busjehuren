@@ -1,0 +1,92 @@
+﻿@model ContactVM
+
+<section class="page-hero">
+    <div class="container relative">
+        <div class="align-center">
+            <h3 class="small-title">
+                Heeft u vragen over onze diensten?
+            </h3>
+            <h5>Wij staan u graag te woord.</h5>
+            <div class="call-action">
+                <a href="tel:073 890 1180" class="btn btn-warning"><i class="fa fa-phone" aria-hidden="true"></i> 073 890 1180</a>
+                <a href="mailto:service@busjehuren.nl" class="btn btn-warning"><i class="fa fa-envelope-o" aria-hidden="true"></i> service@busjehuren.nl</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gray-bg">
+    <div class="container">
+        <!-- CONTACT -->
+        <div class="contact-form">
+            <div class="row">
+
+                <div class="col-md-7 pull-right id-contact-form col-sm-12">
+
+                    <h4 class="h4">Contactformulier</h4>
+                    @if (ViewData.Keys.Contains("message_send"))
+                    {
+                        <span>@ViewData["message_send"].ToString()</span>
+                    }
+                    @using (Html.BeginForm("Index", "Contact", FormMethod.Post, new { @class = "form-horizontal", id = "formContact" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Name, new { @class = "col-md-3 col-sm-4 col-xs-12 control-label" })
+                            <div class="col-md-9 col-sm-8 col-xs-12">
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "fa fa-times-circle" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-3 col-sm-4 col-xs-12 control-label" })
+                            <div class="col-md-9 col-sm-8 col-xs-12">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "fa fa-times-circle" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Telephone, new { @class = "col-md-3 col-sm-4 col-xs-12 control-label" })
+                            <div class="col-md-9 col-sm-8 col-xs-12">
+                                @Html.TextBoxFor(m => m.Telephone, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Telephone, "", new { @class = "fa fa-times-circle" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Message, new { @class = "col-md-3 col-sm-4 col-xs-12 control-label" })
+                            <div class="col-md-9 col-sm-8 col-xs-12">
+                                @Html.TextAreaFor(m => m.Message, new { @class = "form-control", rows = 10 })
+                                @Html.ValidationMessageFor(m => m.Message, "", new { @class = "fa fa-times-circle" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="align-right">
+                                    <button type="submit" class="btn btn-success">Verstuur uw bericht</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                <!-- col -->
+                <div class="col-md-5 col-sm-12">
+                    @Html.Raw(Model.Content.Text)
+                </div>
+                <!-- col -->
+            </div>
+            <!-- row -->
+        </div>
+        <!-- contact-form -->
+        <!-- END CONTACT -->
+    </div>
+</section>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            ShowActivedNavigate($("#nav-contact"));
+        })
+    </script>
+}

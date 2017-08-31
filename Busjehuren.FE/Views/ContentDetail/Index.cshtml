@@ -1,0 +1,79 @@
+﻿@model ContentModel
+
+<div class="page-container">
+    <div class="container">
+        <article class="single-post" itemtype="http://schema.org/NewsArticle">
+            <div class="row">
+                <div class="col-md-5 col-sm-4 col-xs-12 col-post-feature-image">
+                    <div class="feature-thumbnail-holder">
+                        <div class="border-image">
+                            <img src="@GlobalStatic.GetImageFromNews(Model.Text)" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- col -->
+                <div class="col-md-7 col-sm-8 col-xs-12 col-post-content">
+                    <header class="single-post-heading" itemprop="headline">@Model.DisplayName</header>
+                    <aside class="post-meta">
+                        <div class="post-date">
+                            <time class="dateline" datetime="@Model.LastEdited.Value.ToString(GlobalStatic.DateFormatString)" itemprop="dateModified" content="@Model.LastEdited.Value.ToString(GlobalStatic.DateFormatString)">@Model.LastEdited.Value.ToString("Dinsdag d MM yyyy")</time>
+                        </div>
+                        <!-- post-date -->
+                    </aside>
+                    <!-- post-meta -->
+                    <section class="single-post-content">
+                        @Html.Raw(Model.Text)
+                    </section>
+                    <!-- single-post-content -->
+
+                    <footer class="clearfix post-info-bottom">
+                        <div class="blog-share">
+                            <div class="social-share-holder">
+                                <div class="share-social-component">
+                                    <div class="ssc-label">
+                                        Deel dit bericht op
+                                    </div>
+                                    <div class="ssc-buttons">
+                                        <div class="social-link-container">
+                                            <a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>&ptitle=<?php echo urlencode(get_the_title()) ; ?>" class="s-link s-facebook"><i class="fa fa-facebook-square"></i></a>
+                                            <a target="_blank" href="http://twitter.com/share?text=<?php echo urlencode(get_the_title()) ; ?>&url=<?php the_permalink(); ?>" class="s-link s-twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                            <a target="_blank" href="mailto:?subject=<?php echo urlencode(get_the_title()) ; ?>&amp;body=Check out this site <?php the_permalink(); ?>" class="s-link s-linkedin"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                        </div>
+                                        <!-- social-link-container -->
+                                    </div>
+                                    <!-- ssc-buttons -->
+                                </div>
+                                <!-- share-social-component -->
+                                <!-- Schema.org markup for Google+ -->
+                                <meta itemprop="name" content="<?php the_title(); ?>">
+                                <meta itemprop="description" content="<?php echo esc_html(get_the_excerpt()); ?>">
+                                <meta itemprop="image" content="<?php the_post_thumbnail('thumbnail'); ?>">
+
+                                <!-- Twitter Card data -->
+                                <meta name="twitter:title" content="<?php the_title(); ?>">
+                                <meta name="twitter:description" content="<?php echo esc_html(get_the_excerpt()); ?>">
+                                <!-- Twitter summary card with large image must be at least 280x150px -->
+                                <meta name="twitter:image:src" content="<?php the_post_thumbnail('thumbnail'); ?>">
+
+                                <!-- Open Graph data -->
+                                <meta property="og:title" content="<?php the_title(); ?>" />
+                                <meta property="og:type" content="article" />
+                                <meta property="og:url" content="<?php the_permalink(); ?>" />
+                                <meta property="og:image" content="<?php the_post_thumbnail('thumbnail'); ?>" />
+                                <meta property="og:description" content="<?php echo esc_html(get_the_excerpt()); ?>" />
+                            </div>
+                            <!-- social-share-holder -->
+                        </div>
+                        <!-- blog-share -->
+                    </footer>
+                </div>
+                <!-- col -->
+            </div>
+            <!-- row -->
+        </article>
+        <!-- single-post-->
+    </div>
+    <!-- container -->
+</div>
+<!-- page-container -->
+@Html.Action("_NewsRelated", "Archive")

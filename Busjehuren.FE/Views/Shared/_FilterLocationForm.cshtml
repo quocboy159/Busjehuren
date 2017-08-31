@@ -1,0 +1,197 @@
+﻿@using Busjehuren.FE.Models
+@model FilterFormVM
+@{
+    string destinationsJsonString = Newtonsoft.Json.JsonConvert.SerializeObject(Model.Destinations);
+}
+
+@using (Html.BeginForm("Checkout1", "CheckOut", FormMethod.Post, new { id = "frmCamperSearch" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-search-zone clearfix">
+        <div class="form-col col-car-type">
+            <div>
+                <label for="" class="form-label">voertuigtype</label>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="custom-radio ">
+                        @Html.RadioButtonFor(m => m.CarType, 10, new { @id = "typePersonal" })
+                        <label class="type-personal" for="typePersonal">
+                            <div class="label-opacity match-height" style="height: 74px;">
+                                <div class="icon-car"></div> Personenbus
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="custom-radio typeOfCar">
+                        @Html.RadioButtonFor(m => m.CarType, 30, new { @id = "typeBus" })
+                        <label class="type-bus" for="typeBus">
+                            <div class="label-opacity match-height" style="height: 74px;">
+                                <div class="icon-car"></div>
+                                Bestelbus / Verhuiswagen
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- form-group -->
+        </div>
+        <!-- form-col -->
+        <!-- PICKUP LOCATION -->
+        <div class="form-col col-pickup">
+            <div class="block-pickup">
+                <label for="" class="form-label hidden-xs">ophalen</label>
+                <label for="" class="form-label visible-xs-block">ophaallocatie</label>
+                <div class="form-group">
+                    <div class="input-group">
+                        @Html.DropDownListFor(m => m.PickUpCity.Id, Model.DestinationSelectItem, " -- Stad -- ", new { @class = "form-control", @id = "PickUpCity_DisplayName" })
+                        @*@Html.TextBoxFor(m => m.PickUpCity.DisplayName, new { @class = "form-control", placeholder = "Stad" })*@
+                        @Html.ValidationMessageFor(m => m.PickUpCity.Id)
+                        @Html.HiddenFor(m => m.PickUpCity.Id)
+                        @Html.HiddenFor(m => m.PickUpCity.ParentId)
+                        @Html.HiddenFor(m => m.PickUpCity.DisplayName, new { @id = "PickUpCity_DisplayName_Text" })
+                    </div>
+                    <!-- input-group -->
+                </div>
+                <!-- form-group -->
+            </div>
+            <div class="visible-xs-block">
+                <div class="form-label">
+                    <input type="checkbox" name="" id="checkbox_same_location" checked="" class="css-checkbox"><label for="checkbox_same_location" class="css-label"> VOERTUIG INLEVEREN OP DEZELFDE LOCATIE</label>
+                </div>
+            </div>
+            <div class="block-return">
+                <label for="" class="form-label">Terugbrengen</label>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        @Html.DropDownListFor(m => m.DropOffCity.Id, Model.DestinationSelectItem, " -- Stad -- ", new { @class = "form-control", @id = "DropOffCity_DisplayName" })
+                        @*@Html.TextBoxFor(m => m.DropOffCity.DisplayName, new { @class = "form-control", placeholder = "Stad" })*@
+                        @Html.ValidationMessageFor(m => m.DropOffCity.Id)
+                        @Html.HiddenFor(m => m.DropOffCity.Id)
+                        @Html.HiddenFor(m => m.DropOffCity.ParentId)
+                        @Html.HiddenFor(m => m.DropOffCity.DisplayName, new { @id = "DropOffCity_DisplayName_Text" })
+                    </div>
+                    <!-- input-group -->
+                </div>
+                <!-- form-group -->
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="group-date-time-pickup">
+
+                <div class="form-group">
+                    <label for="" class="form-label visible-xs-block">ophalen</label>
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8 col-xs-12 id-col-depart-date">
+                            <div class="input-group">
+                                @Html.TextBoxFor(m => m.StartDateString, new { @id = "depart_date", @class = "form-control datepicker" })
+                                @Html.ValidationMessageFor(m => m.StartDateString)
+                                @Html.HiddenFor(m => m.StartDate)
+                            </div>
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-4 col-sm-4 col-xs-12 id-col-depart-time">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <div class="icon icon-clock"></div>
+                                </div>
+                                @Html.DropDownListFor(m => m.PickUpTime, Model.PickupOpeningHour, new { @id = "depart_time", @class = "form-control depart-picker-time" })
+                                @*@Html.TextBoxFor(m => m.PickUpTimeString, new { @id = "depart_time", @class = "form-control" })*@
+                                @Html.ValidationMessageFor(m => m.PickUpTimeString)
+                                @Html.HiddenFor(m => m.PickUpTime)
+                            </div>
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- form-group -->
+            </div>
+            <!-- group-date-time -->
+
+            <div class="group-date-time-return">
+                <label for="" class="form-label visible-xs-block">Terugbrengen</label>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8 col-xs-12 id-col-arrival-date">
+                            <div class="input-group">
+                                @Html.TextBoxFor(m => m.EndDateString, new { @id = "arrival_date", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.EndDateString)
+                                @Html.HiddenFor(m => m.EndDate)
+                            </div>
+                        </div>
+                        <!-- col-md-6 -->
+                        <div class="col-md-4 col-sm-4 col-xs-12 id-col-arrival-time">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <div class="icon icon-clock"></div>
+                                </div>
+                                @Html.DropDownListFor(m => m.DropOffTime, Model.DropOffOpeningHour, new { @id = "arrival_time", @class = "form-control arrival-picker-time" })
+                                @*@Html.TextBoxFor(m => m.DropOffTimeString, new { @id = "arrival_time", @class = "form-control" })*@
+                                @Html.ValidationMessageFor(m => m.DropOffTimeString)
+                                @Html.HiddenFor(m => m.DropOffTime)
+                            </div>
+                        </div>
+                        <!-- col-md-6 -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- form-group -->
+            </div>
+            <!-- group-date-time -->
+
+        </div>
+        <!-- form-col -->
+        <!-- / PICKUP LOCATION -->
+
+        <div class="form-col col-submit">
+            <button id="search-submit" type="submit" class="btn btn-block btn-success btn-search">
+                <span>zoeken</span>
+            </button>
+
+        </div>
+        <!-- form-col -->
+    </div>
+    <!-- form-search-zone -->
+}
+
+
+
+
+
+<input type="hidden" id="destinationsJsonString" value="@destinationsJsonString" />
+
+@Scripts.Render("~/Scripts/js/validate-customize.js")
+@Scripts.Render("~/Scripts/js/utility.js")
+@Scripts.Render("~/Scripts/js/Components/FilterLocationForm.js")
+@Scripts.Render("~/Scripts/js/Components/Checkout-3-datepicker-nl.js")
+<script type="text/javascript">
+    $(function () {
+
+        FilterLocationForm().init({
+            btnSearch: $("#search-submit"),
+            frmCamperSearch: $("#frmCamperSearch"),
+            destinationsJsonString: $("#destinationsJsonString"),
+            departField: $("#PickUpCity_DisplayName"),
+            displayDepartNameField: $("#PickUpCity_DisplayName_Text"),
+            departValueField: $("#PickUpCity_Id"),
+            departCountryValueField: $("#PickUpCity_ParentId"),
+            arrivalCountryValueField: $("#DropOffCity_ParentId"),
+            arrivalField: $("#DropOffCity_DisplayName"),
+            displayArrivalNameField: $("#DropOffCity_DisplayName_Text"),
+            arrivalValueField: $("#DropOffCity_Id"),
+            pickUpDateField: $("#depart_date"),
+            pickUpDateValueField: $("#StartDate"),
+            dropOffDateField: $("#arrival_date"),
+            dropOffDateValueField: $("#EndDate"),
+            pickUpTimeField: $("#depart_time"),
+            pickUpTimeValueField: $("#PickUpTime"),
+            dropOffTimeField: $("#arrival_time"),
+            dropOffTimeValueField: $("#DropOffTime"),
+            urlGetLocationById: '@Url.Action("GetVestigingOpeningHourByLocationId", "Location")',
+        });
+    });
+</script>

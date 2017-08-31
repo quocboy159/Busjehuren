@@ -1,0 +1,131 @@
+﻿@model HomeVM
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- =========== HOME HERO =========== -->
+<section class="home-section" data-background="/Assets/images/weg.jpg" id="home">
+    <!-- Home Page Content -->
+    <div class="home-content">
+        <div class="home-text">
+            <div class="container hs-cont">
+                <!-- Headings -->
+                <div class="hs-wrap-1">
+                    <div class="hs-line-4 animate-init" data-anim-type="fade-in-down-big" data-anim-delay="400">
+                        BUSJE huren.
+                    </div>
+                    <div class="hs-line-5 animate-init" data-anim-type="flip-in-top-front" data-anim-delay="800">
+                        goedkoop, kilometervrij en <br> altijd bij jou in de buurt!
+                    </div>
+                </div>
+                <!-- hs-wrap-1 -->
+                <!-- End Headings -->
+            </div>
+            <!-- container -->
+
+        </div>
+        <!-- home-text -->
+    </div>
+    <section class="section-form">
+        <div class="container">
+            <div class="form-zone clearfix">
+                <div class="p-20">
+                    <div class="hidden-xs hidden-sm">
+                        <div class="search-name">
+                            ZOEK EEN PERSONENBUS, BESTELBUS OF VERHUISWAGEN
+                        </div>
+                    </div>
+                    @{ Html.RenderAction("_FilterLocationForm", "Location");
+
+                    }
+                </div>
+            </div>
+            <!-- zone -->
+        </div>
+    </section>
+    <!-- End Home Page Content -->
+    <div class="checked-zone">
+        <div class="container">
+            <div class="checked-item">
+                <div class="icon-check"></div>
+                <div class="checked-name">
+                    Volledig kilometervrij
+                </div>
+                <!-- checked-name -->
+            </div>
+            <!-- checked-item -->
+            <div class="checked-item">
+                <div class="icon-check"></div>
+                <div class="checked-name">
+                    Altijd all-risk verzekerd
+                </div>
+                <!-- checked-name -->
+            </div>
+            <!-- checked-item -->
+            <div class="checked-item">
+                <div class="icon-check"></div>
+                <div class="checked-name">
+                    Kosteloos annuleren
+                </div>
+                <!-- checked-name -->
+            </div>
+            <!-- checked-item -->
+            <div class="checked-item">
+                <div class="icon-check"></div>
+                <div class="checked-name">
+                    Snelle service
+                </div>
+                <!-- checked-name -->
+            </div>
+            <!-- checked-item -->
+        </div>
+        <!-- container -->
+    </div>
+    <!-- checked-zone -->
+</section>
+
+<!-- =========== /HOME HERO =========== -->
+<section class="section-col gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12 pull-overview">
+
+                @Html.Partial("_TrustPilotWidgets", false)
+
+                @Html.Raw(Model.PromoModel.Text)
+            </div>
+            <!-- col -->
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <!-- SECTION FAQ -->
+                <section class="section section-answers">
+                    <div class="mb-30 hidden-xs">
+                        <i class="icon icon-ideal"></i>
+                    </div>
+                    @Html.Raw(Model.ContentModel.Text)
+                </section>
+                <!-- /SECTION FAQ -->
+            </div>
+            <!-- col -->
+
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</section>
+
+<!-- =========== USER REVIEW =========== -->
+@Html.Partial("_UserReview")
+
+<!-- =========== LOCATIONS =========== -->
+@Html.Partial("_Locations", Model.Destinations)
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            ShowActivedNavigate($("#nav-home"));
+        })
+    </script>
+}
+

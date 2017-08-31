@@ -1,0 +1,97 @@
+﻿@model bool
+
+@if (Model)
+{
+    <div class="col-md-4 col-sm-4 col-xs-12 id-trustpilot-zone">
+        <div class="trustpilot-zone ">
+            <div class="trust-star clearfix">
+                <div class="trust-star-container">
+                    <img src="~/Content/css/images/trust-star.png" alt="">
+                </div>
+                <div class="mystyle-star">
+                    <div class="star-ratings-css" id="star-rating">
+                        <div class="star-ratings-css-top">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="star-ratings-css-bottom">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <!-- star-ratings-css -->
+                </div>
+            </div>
+            <div class="point-star">
+                GEMIDDELDE KLANTWAARDERING <strong id="point-trust-star"></strong>
+            </div>
+            <div class="footer-visa">
+                <img src="~/Content/css/images/footer-visa.png" alt="">
+            </div>
+        </div>
+        <!-- trustpilot-zone -->
+    </div>
+
+    <script src="~/Scripts/js/Components/TrustPilotWidgets.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            TrustPilotWidgets().init({
+                pointId: 'point-trust-star',
+                starId: 'star-rating'
+            });
+        })
+    </script>
+}
+else
+{
+    <div class="mb-30 hidden-xs">
+        <div class="align-right">
+            <div class="trust-star clearfix">
+                <div class="trust-star-container">
+                    <img src="~/Content/css/images/trust-pilot2.png" alt="">
+                </div>
+                <div class="mystyle-star">
+                    <div class="star-ratings-css" id="star-rating-2">
+                        <div class="star-ratings-css-top">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="star-ratings-css-bottom">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <!-- star-ratings-css -->
+                </div>
+            </div>
+            <div class="point-star">
+                GEMIDDELDE KLANTWAARDERING <strong id="point-trust-star-2"></strong>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/js/Components/TrustPilotWidgets.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            TrustPilotWidgets().init({
+                pointId: 'point-trust-star-2',
+                starId: 'star-rating-2'
+            });
+        })
+    </script>
+}
+

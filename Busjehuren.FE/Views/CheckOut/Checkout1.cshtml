@@ -1,0 +1,210 @@
+﻿@model SearchResultVM
+
+@if (!Model.IsSearch)
+{
+
+    <div class="search-header-zone">
+        @Html.Partial("_FilterLocationCheckOut1", new Tuple<string, string, string, string>(Model.FromMobile, Model.ToMobile, Model.PickupLocationMobile, Model.ReturnLocationMobile))
+    </div>
+    <section>
+        <div class="container">
+            <div class="mt-10">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h1 class="single-post-heading f-w-500">
+                            @Model.Title
+                        </h1>
+                        @Html.Raw(Model.HeadText)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+
+            @Html.Action("CheckOutSteps", new { currentStep = 1 })
+
+            <header class="single-post-heading">
+                <span class="color-sp">
+                    <span>Stap 1</span><span class="visible-md-inline visible-sm-inline">.</span>
+                </span>
+                MAAK EEN KEUZE
+            </header>
+
+            <div class="mb-50">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="primary-sidebar">
+                            <div class="sp-title-block">
+                                <div class="sidebar-title">
+                                    filteropties
+                                    <span class="visible-xs-inline call-filter-handler">
+                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                    </span>
+
+                                </div>
+                                <div class="clear-filter">
+                                    <a id="btn-restore">filters herstellen</a>
+                                </div>
+                                <div class="filter-active hidden-lg hidden-md hidden-sm">
+                                    2 filters actief
+                                </div>
+                            </div>
+
+                            <div class="all-filter">
+
+                                <div class="row row-filter-group" id="propertyContainer">
+
+                                    @foreach (var property in Model.Properties)
+                                    {
+                                        @Html.Partial("_PropertyItem", new Tuple<PropertyModel, List<PropertyDetailModel>>(property, Model.SelectedPropertyDetails))
+                                    }
+
+                                </div>
+
+                                <div class="visible-xs">
+                                    <div class="btn-filter-sp">
+                                        PAS FILTERING TOE
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-sm-9 col-xs-12" id="resultcontainer">
+                        @Html.Partial("_SearchResult", Model)
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @Html.Partial("_LocationDetail", new Tuple<SearchResultVM, bool>(Model, false))
+
+    <section>
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        @Html.Partial("_FooterResult", Model.PickUpCityName)
+                    </div>
+            </div>
+        </div>
+    </section>
+}
+else
+{
+    <div class="search-header-zone">
+       @Html.Partial("_FilterLocationCheckOut1", new Tuple<string, string, string, string>(Model.FromMobile, Model.ToMobile, Model.PickupLocationMobile, Model.ReturnLocationMobile))
+    </div>
+    <section>
+        <div class="container">
+            <div class="mt-10">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h1 class="single-post-heading f-w-500">
+                            @Model.Title
+                        </h1>
+                        @Html.Raw(Model.HeadText)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+
+            @Html.Action("CheckOutSteps", new { currentStep = 1 })
+
+            <header class="single-post-heading">
+                <span class="color-sp">
+                    <span>Stap 1</span><span class="visible-md-inline visible-sm-inline">.</span>
+                </span>
+                MAAK EEN KEUZE
+            </header>
+
+            <div class="mb-50">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="primary-sidebar">
+                            <div class="sp-title-block">
+                                <div class="sidebar-title">
+                                    filteropties
+                                    <span class="visible-xs-inline call-filter-handler">
+                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                    </span>
+
+                                </div>
+                                <div class="clear-filter">
+                                    <a id="btn-restore">filters herstellen</a>
+                                </div>
+                                <div class="filter-active hidden-lg hidden-md hidden-sm">
+                                    2 filters actief
+                                </div>
+                            </div>
+
+                            <div class="all-filter">
+
+                                <div class="row row-filter-group" id="propertyContainer">
+
+                                    @foreach (var property in Model.Properties)
+                                    {
+                                        @Html.Partial("_PropertyItem", new Tuple<PropertyModel, List<PropertyDetailModel>>(property, Model.SelectedPropertyDetails))
+                                    }
+
+                                </div>
+
+                                <div class="visible-xs">
+                                    <div class="btn-filter-sp">
+                                        PAS FILTERING TOE
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-sm-9 col-xs-12" id="resultcontainer">
+                        @Html.Partial("_SearchResult", Model)
+
+                        @Html.Partial("_FooterResult", Model.PickUpCityName)
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @Html.Partial("_LocationDetail", new Tuple<SearchResultVM, bool>(Model, true))
+}
+
+<div class="bg_load"></div>
+<div class="wrapper">
+    <div class="inner">
+        <span>L</span>
+        <span>o</span>
+        <span>a</span>
+        <span>d</span>
+        <span>i</span>
+        <span>n</span>
+        <span>g</span>
+    </div>
+</div>
+
+@section Scripts{
+
+    <script src="~/Scripts/js/Components/Checkout-1.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            Checkout1().init({
+                urlCondition: '@Url.Action("Condition", "CheckOut")',
+                urlSpecific: '@Url.Action("Specific", "CheckOut")',
+                url: '@Url.Action("SearchByProperties", "CheckOut")',
+                pageId: "pagenumber",
+                urlLoadMore: '@Url.Action("_LoadMore", "CheckOut")'
+            });
+        })
+    </script>
+}
+

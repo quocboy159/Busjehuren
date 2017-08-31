@@ -1,0 +1,20 @@
+﻿@model ContentModel
+
+@{
+    Html.RenderPartial("_FilterLocationFormStatic");
+}
+
+<section>
+    <div class="container">
+        @Html.Raw(Model.Text)
+    </div>
+    <!-- container -->
+</section>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            ShowActivedNavigate($("#nav-offers"));
+        })
+    </script>
+}

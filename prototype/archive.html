@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>BUSJEHUREN.NL</title>
+
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Favicon 32x32 and 180x180 -->
+    <link rel="icon" sizes="32x32" href="images/fav32.png" type="image/png" />
+    <link rel="icon" sizes="180x180" href="images/fav180.png" type="image/png" />
+
+    <!-- CDN -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+
+
+    <!-- AUTO CONCAT -->
+    <link rel="stylesheet" type="text/css" href="css/sprites.css">
+
+    <!-- MANUAL UPDATE -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style-responsive.css">
+
+    <!-- CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.7.0/parsley.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhktXAG6guKrLzHSMjAqPO9ki-SKP556Y" async defer></script>
+
+
+    <script src="js/plugin.js"></script>
+    <script src="js/main.js"></script>
+    <script type='text/javascript'>
+        (function(d, t) {
+            var bh = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            bh.type = 'text/javascript';
+            bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=wysk0v9jveddau66fxncfq';
+            s.parentNode.insertBefore(bh, s);
+        })(document, 'script');
+    </script>
+</head>
+
+<body class="mystyle">
+    <!-- TOOLBAR -->
+    <div id="toolbar">
+        <nav class="toolbar">
+            <div class="toolbar-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-xs-5 col-sm-3">
+                            <a class="brand" href="index.html">
+                                <img src="images/logo.gif" alt="">
+                            </a>
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-5 col-xs-7 col-sm-6">
+                            <div class="phone-block">
+                                <table class="normal">
+                                    <tr>
+                                        <td class="big-phone-image">
+                                            <img src="demo-images/phone.png" alt="">
+                                        </td>
+                                        <td>
+                                            <div class="big-phone-desc">
+                                                Heeft u vragen? Judith staat u graag te woord.
+                                            </div>
+                                            <div class="big-phone">
+                                                <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:073 890 1180">073 890 1180</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-2 col-xs-hidden col-sm-3">
+                            <div class="lang-block">
+                                <a href="" class="change-lang-link">
+                                    <img src="demo-images/phap.gif" alt=""> Change language
+                                </a>
+                            </div>
+
+                            <div class="nav-container">
+                                <a href="" class="login-link">
+                                    <i class="fa fa-sign-in"></i> Beheer boeking
+                                </a>
+                            </div>
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+
+            </div>
+            <!-- toolbar-inner -->
+        </nav>
+        <!-- toolbar -->
+    </div>
+    <!-- / TOOLBAR -->
+	<!-- TOOLBAR -->
+    <div id="toolbar" class="fixed">
+        <nav class="toolbar">
+            <div class="toolbar-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-xs-5 col-sm-3">
+                            <a class="brand" href="index.html">
+                                <img src="images/logo.gif" alt="">
+                            </a>
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-5 col-xs-7 col-sm-6">
+                            <div class="phone-block">
+                                <table class="normal">
+                                    <tr>
+                                        <td class="big-phone-image">
+                                            <img src="demo-images/phone.png" alt="">
+                                        </td>
+                                        <td>
+                                            <div class="big-phone-desc">
+                                                Heeft u vragen? Judith staat u graag te woord.
+                                            </div>
+                                            <div class="big-phone">
+                                                <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:073 890 1180">073 890 1180</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-2 col-xs-hidden col-sm-3">
+                            <div class="lang-block">
+                                <a href="" class="change-lang-link">
+                                    <img src="demo-images/phap.gif" alt=""> Change language
+                                </a>
+                            </div>
+
+                            <div class="nav-container">
+                                <a href="" class="login-link">
+                                    <i class="fa fa-sign-in"></i> Beheer boeking
+                                </a>
+                            </div>
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+
+            </div>
+            <!-- toolbar-inner -->
+        </nav>
+        <!-- toolbar -->
+    </div>
+    <!-- / TOOLBAR -->
+    <!-- HEADER -->
+    <div id="header">
+        <header class="header">
+            <div class="header-inner">
+                <nav class="navbar navbar-default main-nav-wrap navbar-static-top">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				  </button>
+
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav primary-menu">
+                                <li class="home active"><a href="index.html">Home</a></li>
+                                <li><a href="offers.html">Aanbiedingen</a></li>
+                                <li><a href="">Hoe werkt het?</a></li>
+                                <li><a href="3-page-about-us.html">Over ons</a></li>
+                                <li><a href="4-page-location.html">locaties</a></li>
+                                <li><a href="">Veelgestelde vragen</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </div>
+            <!-- / header-inner -->
+        </header>
+        <!-- / header -->
+    </div>
+    <!-- / HEADER -->
+
+    <main id="master" class="master">
+        <div class="master-inner">
+
+
+            <!-- Page Hero -->
+            <section class="news-hero page-section">
+                <div class="container relative">
+                    <h2 class="title-section-left">nieuwsartikelen</h2>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="title-section-details">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lacinia nisi at venenatis. Donec at nisi a sapien consectetur fermentum non a urna. Phasellus mattis tristique sollicitudin.
+                            </div>
+                            <!-- title -->
+                        </div>
+                        <!-- col -->
+                    </div>
+                </div>
+            </section>
+            <!-- End Page Hero -->
+            <section class="gray-bg section-news-related">
+                <div class="container">
+                    <div id="main" role="main">
+                        <div class="row row-news-posts">
+                            <!-- ITEM POST -->
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="news-container">
+                                    <div class="border-image">
+                                        <a href="single-news.html" class="figure2">
+                                            <img src="http://placehold.it/371x174" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="news-caption">
+                                        <a href="single-news.html">De titel van dit nieuwsbericht over twee regels</a>
+                                    </div>
+                                </div>
+                                <!-- news-container -->
+                            </div>
+                            <!-- col -->
+                            <!-- / ITEM POST -->
+                            <!-- ITEM POST -->
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="news-container">
+                                    <div class="border-image">
+                                        <a href="single-news.html" class="figure2">
+                                            <img src="http://placehold.it/371x174" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="news-caption">
+                                        <a href="single-news.html">De titel van dit nieuwsbericht over twee regels</a>
+                                    </div>
+                                </div>
+                                <!-- news-container -->
+                            </div>
+                            <!-- col -->
+                            <!-- / ITEM POST -->
+                            <!-- ITEM POST -->
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="news-container">
+                                    <div class="border-image">
+                                        <a href="single-news.html" class="figure2">
+                                            <img src="http://placehold.it/371x174" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="news-caption">
+                                        <a href="single-news.html">De titel van dit nieuwsbericht over twee regels</a>
+                                    </div>
+                                </div>
+                                <!-- news-container -->
+                            </div>
+                            <!-- col -->
+                            <!-- / ITEM POST -->
+                            <!-- ITEM POST -->
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="news-container">
+                                    <div class="border-image">
+                                        <a href="single-news.html" class="figure2">
+                                            <img src="http://placehold.it/371x174" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="news-caption">
+                                        <a href="single-news.html">De titel van dit nieuwsbericht over twee regels</a>
+                                    </div>
+                                </div>
+                                <!-- news-container -->
+                            </div>
+                            <!-- col -->
+                            <!-- / ITEM POST -->
+                            <!-- ITEM POST -->
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="news-container">
+                                    <div class="border-image">
+                                        <a href="single-news.html" class="figure2">
+                                            <img src="http://placehold.it/371x174" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="news-caption">
+                                        <a href="single-news.html">De titel van dit nieuwsbericht over twee regels</a>
+                                    </div>
+                                </div>
+                                <!-- news-container -->
+                            </div>
+                            <!-- col -->
+                            <!-- / ITEM POST -->
+                            <!-- ITEM POST -->
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="news-container">
+                                    <div class="border-image">
+                                        <a href="single-news.html" class="figure2">
+                                            <img src="http://placehold.it/371x174" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="news-caption">
+                                        <a href="single-news.html">De titel van dit nieuwsbericht over twee regels</a>
+                                    </div>
+                                </div>
+                                <!-- news-container -->
+                            </div>
+                            <!-- col -->
+                            <!-- / ITEM POST -->
+                        </div>
+                        <!-- row-posts -->
+                        <div class="align-center">
+                            <a class="btn btn-white">TOON meer nieuwsberichten</a>
+                        </div>
+                    </div>
+                    <!-- main -->
+                </div>
+                <!-- container -->
+            </section>
+
+        </div>
+        <!-- master-inner -->
+    </main>
+    <!-- master -->
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <footer class="footer">
+            <section class="footer-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 id-trustpilot-zone">
+                            <div class="trustpilot-zone ">
+                                <div class="trust-star clearfix">
+                                    <div class="trust-star-container">
+                                        <img src="demo-images/trust-star.png" alt="">
+                                    </div>
+                                    <div class="mystyle-star">
+                                        <div class="star-ratings-css active-4">
+                                            <div class="star-ratings-css-top">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <div class="star-ratings-css-bottom">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <!-- star-ratings-css -->
+                                    </div>
+                                </div>
+                                <div class="point-star">
+                                    GEMIDDELDE KLANTWAARDERING <strong>8.7</strong>
+                                </div>
+                                <div class="footer-visa">
+                                    <img src="demo-images/footer-visa.png" alt="">
+                                </div>
+                            </div>
+                            <!-- trustpilot-zone -->
+                        </div>
+                        <!-- col -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="help-zone">
+                                <div class="help-title">
+                                    Heeft u vragen?
+                                </div>
+                                <div class="help-desc">
+                                    Wij staan u graag te woord.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- col -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="phone-zone">
+                                <div class="phone-title">
+                                    <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:073 890 1180">073 890 1180</a>
+                                </div>
+                                <!-- title -->
+                                <div class="phone-desc">
+                                    Of bekijk onze <a href="contact.html">contactpagina</a>.
+                                </div>
+                            </div>
+                            <!-- zone -->
+                        </div>
+                        <!-- col -->
+
+
+
+                    </div>
+                    <!-- row -->
+                    <div class="copyright">
+                        <div class="inner">
+                            © 2017 Busjehuren.nl
+                            <br> Busjehuren is een geregistreerd handelsmerk van Crrntl B.V., geregistreerd bij de Kamer van Koophandel Brabant, Nederland, nummer 054652804
+                        </div>
+                    </div>
+                    <!-- copyright -->
+                </div>
+                <!-- container -->
+            </section>
+            <!-- / footer-inner -->
+        </footer>
+        <!-- / footer -->
+    </div>
+    <!-- / FOOTER -->
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+﻿@model BookingData.MyGegevens
+
+<section class="page-container">
+    <div class="container">
+
+        @Html.Action("CheckOutSteps", new { currentStep = 3 })
+
+        @using (Html.BeginForm("Checkout3", "CheckOut", FormMethod.Post, new { id = "formCheckout3", @class = "form" }))
+        {
+            <article class="single-post">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                        <header class="single-post-heading">
+                            <span class="color-sp">
+                                <span>Stap 3</span><span class="visible-md-inline visible-sm-inline">.</span> <small class=" visible-xs-inline">(VAN 5)</small>
+                            </span>
+                            Uw gegevens
+                        </header>
+
+                        <div class="mb-50 sp-reset-margin">
+
+                            @Html.AntiForgeryToken()
+                            @Html.CheckBoxFor(m => m.AfwijkendFactuuradres, new { @class = "hidden" })
+                            @Html.HiddenFor(m => m.LandBestemming)
+
+                            <fieldset class="mb-50 ">
+                                <legend>
+                                    <h4 class="heading-4">Gegevens bestuurder</h4>
+                                </legend>
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                        @Html.LabelFor(m => m.Hoofdboeker.Geslacht)
+                                    </div>
+                                    <!-- col -->
+                                    <div class="col-md-9 col-sm-8 col-xs-12">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(m => m.Hoofdboeker.Geslacht, DropDownList.GetGenders(), GlobalStatic.optionLabelGender, new { @class = "selectpicker" })
+                                            @Html.ValidationMessageFor(m => m.Hoofdboeker.Geslacht, string.Empty, new { @class = "fa fa-times-circle" })
+                                        </div>
+                                    </div>
+                                    <!-- col -->
+                                </div>
+                                <!-- row -->
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                        @Html.LabelFor(m => m.Hoofdboeker.Voornaam)
+                                    </div>
+                                    <!-- col -->
+                                    <div class="col-md-9 col-sm-8 col-xs-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(m => m.Hoofdboeker.Voornaam, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Hoofdboeker.Voornaam, "", new { @class = "fa fa-times-circle" })
+                                        </div>
+                                    </div>
+                                    <!-- col -->
+                                </div>
+                                <!-- row -->
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                        @Html.LabelFor(m => m.Hoofdboeker.Familienaam)
+                                    </div>
+                                    <!-- col -->
+                                    <div class="col-md-9 col-sm-8 col-xs-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(m => m.Hoofdboeker.Familienaam, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Hoofdboeker.Familienaam, "", new { @class = "fa fa-times-circle" })
+                                        </div>
+                                    </div>
+                                    <!-- col -->
+                                </div>
+                                <!-- row -->
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                        @Html.LabelFor(m => m.Hoofdboeker.BirthDate)
+                                    </div>
+                                    <!-- col -->
+                                    <div class="col-md-9 col-sm-8 col-xs-12 id-col-depart-date">
+                                        <div class="form-group input-group">
+                                            <div class="input-group-addon">
+                                                <div class="icon icon-calendar"></div>
+                                            </div>
+                                            @Html.TextBoxFor(m => m.Hoofdboeker.BirthDate, new { @class = "form-control datepicker max-width-221" })
+                                            @Html.ValidationMessageFor(m => m.Hoofdboeker.BirthDate, "", new { @class = "fa fa-times-circle" })
+                                        </div>
+
+                                    </div>
+                                    <!-- col -->
+                                </div>
+                                <!-- row -->
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                        @Html.LabelFor(m => m.Email)
+                                    </div>
+                                    <!-- col -->
+                                    <div class="col-md-9 col-sm-8 col-xs-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "fa fa-times-circle" })
+                                        </div>
+                                    </div>
+                                    <!-- col -->
+                                </div>
+                                <!-- row -->
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                        @Html.LabelFor(m => m.Straat)
+                                    </div>
+                                    <!-- col -->
+                                    <div class="col-md-9 col-sm-8 col-xs-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(m => m.Straat, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Straat, "", new { @class = "fa fa-times-circle" })
+                                        </div>
+                                    </div>
+                                    <!-- col -->
+                                </div>
+                                <!-- row -->
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                        @Html.LabelFor(m => m.Huisnummer)
+                                    </div>
+                                    <!-- col -->
+                                    <div class="col-md-9 col-sm-8 col-xs-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(m => m.Huisnummer, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Huisnummer, "", new { @class = "fa fa-times-circle" })
+                                        </div>
+                                    </div>
+                                    <!-- col -->
+                                </div>
+                                <!-- row -->
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                        @Html.LabelFor(m => m.Postcode)
+                                    </div>
+                                    <!-- col -->
+                                    <div class="col-md-9 col-sm-8 col-xs-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(m => m.Postcode, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Postcode, "", new { @class = "fa fa-times-circle" })
+                                        </div>
+                                    </div>
+                                    <!-- col -->
+                                </div>
+                                <!-- row -->
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                        @Html.LabelFor(m => m.Stad)
+                                    </div>
+                                    <!-- col -->
+                                    <div class="col-md-9 col-sm-8 col-xs-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(m => m.Stad, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Stad, "", new { @class = "fa fa-times-circle" })
+                                        </div>
+                                    </div>
+                                    <!-- col -->
+                                </div>
+                                <!-- row -->
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                        @Html.LabelFor(m => m.Telefoon)
+                                    </div>
+                                    <!-- col -->
+                                    <div class="col-md-9 col-sm-8 col-xs-12">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(m => m.Telefoon, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Telefoon, "", new { @class = "fa fa-times-circle" })
+                                        </div>
+                                    </div>
+                                    <!-- col -->
+                                </div>
+                                <!-- row -->
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                    </div>
+
+                                    <div class="col-md-9 col-sm-8 col-xs-12">
+                                        <div class="form-label label-check-billing-address">
+                                            <input name="Afwijkend" id="Afwijkend" class="css-checkbox" data-parsley-multiple="Afwijkend" type="checkbox" data-toggle="collapse" data-target="#AfwijkendFactuurDiv">
+                                            <label for="Afwijkend" class="css-label">Afwijkende factuuradres </label>
+                                            <span data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">
+                                                <i class="fa fa-info-circle"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row -->
+                                <!--Invoice(Factuur)-->
+                                <div id="AfwijkendFactuurDiv" class="collapse">
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-4 col-xs-12">
+                                            @Html.LabelFor(m => m.FactuurBedrijfsnaam)
+                                        </div>
+                                        <div class="col-md-9 col-sm-8 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(m => m.FactuurBedrijfsnaam, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(m => m.FactuurBedrijfsnaam, "", new { @class = "fa fa-times-circle" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-4 col-xs-12">
+                                            @Html.LabelFor(m => m.FactuurTelefoon)
+                                        </div>
+                                        <div class="col-md-9 col-sm-8 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(m => m.FactuurTelefoon, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(m => m.FactuurTelefoon, "", new { @class = "fa fa-times-circle" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-4 col-xs-12">
+                                            @Html.LabelFor(m => m.FactuurEmail)
+                                        </div>
+                                        <div class="col-md-9 col-sm-8 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(m => m.FactuurEmail, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(m => m.FactuurEmail, "", new { @class = "fa fa-times-circle" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-4 col-xs-12">
+                                            @Html.LabelFor(m => m.FactuurStraat)
+                                        </div>
+                                        <div class="col-md-9 col-sm-8 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(m => m.FactuurStraat, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(m => m.FactuurStraat, "", new { @class = "fa fa-times-circle" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-4 col-xs-12">
+                                            @Html.LabelFor(m => m.FactuurHuisnummer)
+                                        </div>
+                                        <div class="col-md-9 col-sm-8 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(m => m.FactuurHuisnummer, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(m => m.FactuurHuisnummer, "", new { @class = "fa fa-times-circle" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-4 col-xs-12">
+                                            @Html.LabelFor(m => m.FactuurPostcode)
+                                        </div>
+                                        <div class="col-md-9 col-sm-8 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(m => m.FactuurPostcode, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(m => m.FactuurPostcode, "", new { @class = "fa fa-times-circle" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-4 col-xs-12">
+                                            @Html.LabelFor(m => m.FactuurStad)
+                                        </div>
+                                        <div class="col-md-9 col-sm-8 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(m => m.FactuurStad, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(m => m.FactuurStad, "", new { @class = "fa fa-times-circle" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 mb-30">
+                    <div class="gray-bar">
+                        <div class="form-label label-term">
+                            <input type="checkbox" name="checkCondition" id="checkCondition" class="css-checkbox" /><label for="checkCondition" class="css-label">Ik ga akkoord met de </label>
+                            <a class="link-modal-specify" id="btnShowTermCondition">algemene voorwaarden</a>
+                            <span class="field-validation-valid fa fa-times-circle" data-valmsg-for="checkCondition" data-valmsg-replace="true"><span for="checkCondition" class=""></span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- col -->
+
+                <div class="col-md-6">
+                </div>
+                <!-- col -->
+            </article>
+        }
+    </div>
+</section>
+<!-- page-container -->
+@Html.Action("_ReservationCart")
+@Html.Partial("_TermsConditions")
+
+@section Scripts{
+    <script src="~/Scripts/js/validate-customize.js"></script>
+    <script src="~/Scripts/js/Components/Checkout-3-datepicker-nl.js"></script>
+    <script src="~/Scripts/js/Components/Checkout-3.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            Checkout3().init({
+                btnSubmit: 'btnSubmitCheckout3',
+                urlprocess: '@Url.Action("Checkout3", "CheckOut")',
+                urlCheckout4: '@Url.Action("Checkout4", "CheckOut")',
+                dateValue: '@(Model.Hoofdboeker != null ? Model.Hoofdboeker.BirthDate : "")'
+            });
+        })
+    </script>
+}

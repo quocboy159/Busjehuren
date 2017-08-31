@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>BUSJEHUREN.NL</title>
+
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Favicon 32x32 and 180x180 -->
+    <link rel="icon" sizes="32x32" href="@Url.Content("~/Assets/images/fav32.png")" type="image/png"/>
+    <link rel="icon" sizes="180x180" href="@Url.Content("~/Assets/images/fav180.png")" type="image/png" />
+
+    <!-- CDN -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    @Styles.Render("~/Content/Site.css")
+    <!-- AUTO CONCAT -->
+    @Styles.Render("~/Content/css/sprites.css")
+
+    <!-- MANUAL UPDATE -->
+    @Styles.Render("~/Content/css/main.css")
+    @Styles.Render("~/Content/css/style-responsive.css")
+
+    <!-- CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/nl.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.7.0/parsley.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhktXAG6guKrLzHSMjAqPO9ki-SKP556Y" async defer></script>
+
+    @Scripts.Render("~/Scripts/jquery.validate.js")
+    @Scripts.Render("~/Scripts/jquery.validate.unobtrusive.js")
+    @Scripts.Render("~/Scripts/js/plugin.js")
+    @Scripts.Render("~/Scripts/js/main.js")
+    <script type='text/javascript'>
+        (function (d, t) {
+            var bh = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            bh.type = 'text/javascript';
+            bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=wysk0v9jveddau66fxncfq';
+            s.parentNode.insertBefore(bh, s);
+        })(document, 'script');
+    </script>
+</head>
+<body class="mystyle">
+
+@Html.Partial("_Toolbar")
+@Html.Partial("_Header")
+
+<main id="master" class="master">
+    <div class="master-inner">
+        @RenderBody()
+    </div>
+</main>
+
+@Html.Partial("_Footer")
+@RenderSection("Scripts", required: false)
+</body>
+</html>

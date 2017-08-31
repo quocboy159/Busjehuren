@@ -1,0 +1,12 @@
+﻿@model Tuple<PropertyDetailModel, string>
+
+@{
+    var selectedPropertyDetails = ViewData[GlobalStatic.SelectedPropertyDetails] as List<PropertyDetailModel>;
+    bool checkedPropertyDetail = selectedPropertyDetails.Select(x => x.Id).Contains(Model.Item1.Id);
+}
+
+<li>
+    @Html.RadioButton(Model.Item2, Model.Item1.Id, checkedPropertyDetail, new { @class = "css-checkbox", id = "radio" + Model.Item1.Id })
+    @Html.Label("radio" + Model.Item1.Id, Model.Item1.Value, new { @class = "css-label radGroup" + Model.Item1.PropertyId })
+</li>
+

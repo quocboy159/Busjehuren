@@ -1,0 +1,110 @@
+﻿<div class="modal fade modal-specify" id="popUpSpecify@(Model.CamperAanbiedingModel.Id)" tabindex="-1" role="dialog" style="display: block; padding-right: 16px;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <div class="row">
+                    <div class="col-md-9">
+                        <h3 class="pd-name">
+                            <a href="#">
+                                @Model.CamperAanbiedingModel.Camper.Naam
+                            </a>
+                            <span>of gelijkwaardig</span>
+                        </h3>
+                    </div>
+
+                    <div class="col-md-3 align-right">
+                        <div class="pd-price">
+                            <div class="price">
+                                <div class="new-price clearfix">
+                                    <div class="new-price-left">
+                                        name
+                                    </div>
+                                    <div class="incl">
+                                        incl. BTW
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- price -->
+                        </div>
+                        <!-- pd-price -->
+                    </div>
+                    <!-- col -->
+                </div>
+                <!-- row -->
+            </div>
+            <!-- modal-header -->
+
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="specify-image">
+                            <img src="http://placehold.it/375x200" alt="">
+                        </div>
+                        <div class="specify-desc">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="inclusief-title">
+                                        Inclusief
+                                    </div>
+                                    <ul class="inclusief-list">
+                                        <li>BTW 21%</li>
+                                        <li>Onbeperkte vrije km</li>
+                                        <li>All-risk verzekering</li>
+                                        <li>Buitenlanddekking</li>
+                                        <li>24/7 pechhulp</li>
+                                    </ul>
+                                </div>
+                                <!-- col -->
+                                <div class="col-md-6">
+                                    <div class="inclusief-title">
+                                        Exclusief
+                                    </div>
+                                    <ul class="exclusief-list">
+                                        <li>Brandstofkosten</li>
+                                    </ul>
+                                </div>
+                                <!-- col -->
+                            </div>
+                            <!-- row -->
+                        </div>
+                        <!-- desc -->
+                    </div>
+                    <!-- col -->
+                    <div class="col-md-6">
+                        <table class="style-normal specify-table">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        Laadruimte (m3)
+                                    </td>
+                                    <td>
+                                        1 m3
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.CamperAanbiedingModel.Camper.CamperEigenschappens)
+                                {
+                                    <tr>
+                                        <td>@item.EigenschapWaarde.Eigenschap.Naam</td>
+                                        <td>@item.EigenschapWaarde.Waarde</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- col -->
+                </div>
+                <!-- row -->
+            </div>
+            <!-- modal-body -->
+
+            <div class="modal-footer align-right">
+                <button type="button" class="btn btn-gray" data-dismiss="modal">sluit dit venster</button>
+            </div>
+            <!-- modal-footer -->
+        </div>
+    </div>
+</div>

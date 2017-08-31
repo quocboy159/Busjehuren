@@ -1,0 +1,61 @@
+﻿@model Tuple<string, string, string, string>
+
+<section class="section-search-header visible-xs-block">
+    <div class="ss-inner">
+        <table class="normal">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="r-card">
+                            <div class="r-title">
+                                @Model.Item1
+                            </div>
+                            <div class="r-desc">
+                               @Model.Item3
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="r-card">
+                            <div class="r-title">
+                                @Model.Item2
+                            </div>
+                            <div class="r-desc">
+                                @Model.Item4
+                            </div>
+                        </div>
+                    </td>
+                    <td class="">
+                        <div class="ss-action-holder">
+                            <div class="ss-action-open call-action-handler" data-action="open">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <span class="ss-action-title">
+                                    Wijzig
+                                </span>
+                            </div>
+                            <!-- ss-action-open -->
+                            <div class="ss-action-close call-action-handler" data-action="close">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                            <!-- ss-action-close -->
+                        </div>
+                        <!-- ss-action-holder -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- ss-inner -->
+</section>
+
+<section class="section-form">
+    <div class="container">
+        <div class="form-zone clearfix">
+            <div class="p-20">
+                @{
+                    Html.RenderAction("_FilterLocationForm","Location");
+                }
+            </div>
+        </div>
+    </div>
+</section>

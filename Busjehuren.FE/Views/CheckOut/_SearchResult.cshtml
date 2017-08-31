@@ -1,0 +1,165 @@
+﻿@model SearchResultVM
+
+<header class="search-title archive-page-title">
+    <span id="totalsearchresult">
+        @Model.TotalSearchResult
+    </span> resultaten voor busje huren in @Model.PickUpCityName
+</header>
+
+<div class="section-product-list">
+    <ul id="productContainer" class="products">
+        @for (int i = 0; i < Model.Products.Count; i++)
+        {
+            int vestigingId = Model.Products[i].CamperAanbiedingModel.Camper.Vestigingen.FirstOrDefault(f => f.Destination.Id == Model.BookingData.OfferCriteria.OphaalBestemmingId).Id;
+            int vestigingTerugbrengId = Model.Products[i].CamperAanbiedingModel.Camper.Vestigingen.FirstOrDefault(f => f.Destination.Id == Model.BookingData.OfferCriteria.TerugbrengBestemmingId).Id;
+
+            @Html.Partial("_ProductItem", new Tuple<ProductItem, int, int>(Model.Products[i], vestigingId, vestigingTerugbrengId))
+        }
+    </ul>
+    <!-- Modal -->
+    @*<div class="modal hide modal-condition" id="popUpModalCondition" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Leverancier: @Model.Naam</h4>
+                        <h4 class="modal-title" name="Name" id="myModalLabel">Leverancier: </h4>
+                    </div>
+
+                    <div class="modal-body overflow-auto-h-500" id="condition">
+                        <br />
+
+                    </div>
+                    <div class="modal-footer align-right">
+                        <button type="button" class="btn btn-gray" data-dismiss="modal">sluit dit venster</button>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+    <!-- Modal -->
+    <div class="modal modal-condition" id="popUpModalCondition" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="conditionTitle"></h4>
+                </div>
+                <div class="modal-body overflow-auto-h-500" id="condition">
+                </div>
+                <div class="modal-footer align-right">
+                    <button type="button" class="btn btn-gray" data-dismiss="modal">sluit dit venster</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-specify" id="popUpModalSpecification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <h3 class="pd-name">
+                            </h3>
+                        </div>
+
+                        <div class="col-md-3 align-right">
+                            <div class="pd-price">
+                                <div class="price">
+                                    <div class="new-price clearfix">
+                                        <div class="new-price-left" id="price-popup">
+                                            @*@( Model.Item1.PriceInfoModel.TotaalPakketPrijsPerPersoon.ToString("€#.###")),-*@
+                                        </div>
+                                        <div class="incl">
+                                            incl. BTW
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- price -->
+                            </div>
+                            <!-- pd-price -->
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="specify-image" id="specific-image">
+                            </div>
+                            <div class="specify-desc">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="inclusief-title">
+                                            Inclusief
+                                        </div>
+                                        <ul class="inclusief-list">
+                                            <li>BTW 21%</li>
+                                            <li>Onbeperkte vrije km</li>
+                                            <li>All-risk verzekering</li>
+                                            <li>Buitenlanddekking</li>
+                                            <li>24/7 pechhulp</li>
+                                        </ul>
+                                    </div>
+                                    <!-- col -->
+                                    <div class="col-md-6">
+                                        <div class="inclusief-title">
+                                            Exclusief
+                                        </div>
+                                        <ul class="exclusief-list">
+                                            <li>Brandstofkosten</li>
+                                        </ul>
+                                    </div>
+                                    <!-- col -->
+                                </div>
+                                <!-- row -->
+                            </div>
+                            <!-- desc -->
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-6">
+                            <table class="style-normal specify-table">
+                            </table>
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+
+                <div class="modal-footer align-right">
+                    <button type="button" class="btn btn-gray" data-dismiss="modal">sluit dit venster</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (Model.Products.Count > 0)
+    {
+        @*if (Model.TotalSearchResult > 5)
+            {
+                <div class="align-center mb-40">
+                    <button id="btnLoadMore" class="btn btn-gray btn-load-page">
+                        <i class="fa fa-spinner fa-spin fa-2x fa-fw hide" id="loadMoreIcon"></i>
+                        laad meer resultaten
+                    </button>
+                </div>
+            }*@
+    }
+    else
+    {
+        <div class="result-item">
+            <div class="title"><div class="fl"><span>Search result</span></div></div><div class="describe">
+                <p style="margin: 12px;">
+                    Helaas heeft uw zoekopdracht geen resultaat opgeleverd. Wellicht is de verhuurlocatie op een van de opgegeven tijdstippen gesloten of is de combinatie tussen de opgegeven ophaal- en retourlocatie niet mogelijk. Pas uw zoekopdracht aan en probeer het opnieuw. Indien dit bericht blijft verschijnen helpen wij u graag telefonisch verder. U kunt tijdens kantooruren contact opnemen met ons service team op telefoonnummer
+                    <tel>073-8901180</tel>
+                </p>
+            </div>
+        </div>
+    }

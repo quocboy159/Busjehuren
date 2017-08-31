@@ -1,0 +1,260 @@
+﻿@model BookingData
+@{
+    var priceTotal = Model.TotalCamperPrice + Model.VestigingModel.Pakkets
+                                                                    .Where(x => x.IsCheck)
+                                                                    .Sum(x => x.Number * (x.PakketType == (int)BusjeType.Personenbus ? Model.NumberOfTravelDays : 1) * x.Prijs);
+
+    CultureInfo ci = new CultureInfo("nl-NL");
+    string urlPhoto = Url.Content("~/" + Model.CamperAanbiedingModel.Camper.CamperBestanden.FirstOrDefault().LocationOnWeb + "original/"
+        + Model.CamperAanbiedingModel.Camper.CamperBestanden.FirstOrDefault().Name);
+
+    string from = Model.Destinations.FirstOrDefault(x => x.Id == Model.OfferCriteria.OphaalBestemmingId).DisplayName;
+    string to = Model.Destinations.FirstOrDefault(x => x.Id == Model.OfferCriteria.TerugbrengBestemmingId).DisplayName;
+    string ophalen = string.Format("{0} om {1} uur", Model.StartDate.ToString("dddd dd MMMM yyyy", ci), Model.StartDate.ToString("HH:mm"));
+    string terugbrengen = string.Format("{0} om {1} uur", Model.EndDate.ToString("dddd dd MMMM yyyy", ci), Model.EndDate.ToString("HH:mm"));
+    decimal localPackagePriceTotal = Model.VestigingModel.Pakkets
+                                                  .Where(x => x.IsLokaalTeBetalen && x.IsCheck)
+                                                  .Sum(x => x.Number * (x.PakketType == (int)BusjeType.Personenbus ? Model.NumberOfTravelDays : 1) * x.Prijs);
+    decimal nonlocalPackagePriceTotal = Model.VestigingModel.Pakkets
+                                                    .Where(x => !x.IsLokaalTeBetalen && x.IsCheck)
+                                                    .Sum(x => x.Number * (x.PakketType == (int)BusjeType.Personenbus ? Model.NumberOfTravelDays : 1) * x.Prijs);
+}
+
+<section class="section-cart-footer remove-fixed">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sp-bg-blue">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-12">
+                            <div class="heading-5">overzicht aanvraag</div>
+                        </div>
+                        <div class="col-md-9 col-xs-12 toggle-btn">
+                            <span class="btn-r-open" style="">Bekijk details</span>
+                            <span class="btn-r-close" style="display: none;">Sluit details</span>
+                        </div>
+                    </div>
+
+                    <div class="row-item-in-card" style="">
+                        <div class="r-card hidden-xs hidden-sm">
+                            <div class="clearfix">
+                                <div class="rc-image">
+                                    <img src="@urlPhoto" alt="@Model.CamperAanbiedingModel.Camper.Naam">
+                                </div>
+                                <div class="rc-name ">
+                                    1x @Model.CamperAanbiedingModel.Camper.Naam
+                                </div>
+                            </div>
+                        </div>
+                        <div class="r-card">
+                            <div class="r-title">
+                                @from
+                            </div>
+                            <div class="r-desc">
+                                @Model.StartDate.ToStringByCultureInfo("ddd dd-MM-’yy HH:mmu")
+                            </div>
+                        </div>
+                        <div class="r-card">
+                            <div class="r-title">
+                                @to
+                            </div>
+                            <div class="r-desc">
+                                @Model.EndDate.ToStringByCultureInfo("ddd dd-MM-’yy HH:mmu")
+                            </div>
+                        </div>
+                        <div class="r-card">
+                            <div class="align-right">
+                                <div class="r-tincl">
+                                    Totaal (incl BTW)
+                                </div>
+                                <div class="r-63">
+                                    <span id="totalCamperPrice" data-value="@Model.TotalCamperPrice">@priceTotal.FormatByCulture()</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row-item-in-card -->
+
+                    <div class="block-overview-application checkout-step-4" style="display: none;">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="sumary-car-container">
+                                    <div class="sumary-car-img"><img src="@urlPhoto"></div>
+                                    <div class="sumary-info">
+                                        <p class="title">Inclusief</p>
+                                        <ul class="include">
+                                            <li>BTW 21%</li>
+                                            <li>Onbeperkte vrije km</li>
+                                            <li>All-risk verzekering</li>
+                                            <li>Buitenlanddekking</li>
+                                            <li>24/7 pechhulp</li>
+                                        </ul>
+                                        <p class="title">EXclusief</p>
+                                        <ul class="exclude">
+                                            <li>Brandstofkosten</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- col -->
+
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <h4 class="heading-4">@Model.CamperAanbiedingModel.Camper.Naam</h4>
+                                <p>Of gelijkwaardig</p>
+                                <div class="mb-50">
+                                    <div class="">
+                                        <table class="normal checkout-table italic">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="no-italic">
+                                                        <strong>Laadruimte</strong>
+                                                    </td>
+                                                    <td class="no-italic">
+                                                        <strong>@(Model.CamperAanbiedingModel.Camper.LaadRuimte) m3</strong>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Aantal zitplaatsen</td>
+                                                    <td class="value">@(Model.CamperAanbiedingModel.Camper.MaxAantalPersonen)</td>
+                                                </tr>
+
+                                                @foreach (var item in Model.CamperAanbiedingModel.Camper.EigenschapWaarden.OrderBy(x => x.EigenschapNaam))
+                                                {
+                                                    <tr>
+                                                        <td>@item.EigenschapNaam</td>
+                                                        <td class="value">@item.Value</td>
+                                                    </tr>
+                                                }
+
+                                                <tr>
+                                                    <td>Laadruimte (l x b x h)</td>
+                                                    <td class="value">
+                                                        @(Model.CamperAanbiedingModel.Camper.LaadLengte)
+                                                        x @(Model.CamperAanbiedingModel.Camper.LaadBreedte)
+                                                        x @(Model.CamperAanbiedingModel.Camper.LaadHoogte) cm
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Laadvermogen</td>
+                                                    <td class="value">@(Model.CamperAanbiedingModel.Camper.LaadVermogen) kg</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- mb-50 -->
+                            </div>
+                            <!-- col -->
+
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="checkout-summary-container">
+                                    <div class="options">
+                                        <div class="option">
+                                            <span class="title">Ophalen</span>
+                                            <div class="item">
+                                                <span class="content">
+                                                    <strong>
+                                                        @Model.Destinations.FirstOrDefault(x => x.Id == Model.OfferCriteria.OphaalBestemmingId).DisplayName
+                                                    </strong>
+                                                    @ophalen
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="option">
+                                            <span class="title">Terugbrengen</span>
+                                            <div class="item">
+                                                <span class="content">
+                                                    <strong>
+                                                        @Model.Destinations.FirstOrDefault(x => x.Id == Model.OfferCriteria.TerugbrengBestemmingId).DisplayName
+                                                    </strong>
+                                                    @terugbrengen
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="option">
+                                            <span class="title">aantal dagen</span>
+                                            <div class="item">
+                                                <span class="content">@Model.NumberOfTravelDays dag</span>
+                                            </div>
+                                        </div>
+                                        <div class="option">
+                                            <span class="title">Kosten</span>
+                                            <div class="item">
+                                                <span class="content">1x @Model.CamperAanbiedingModel.Camper.Naam</span>
+                                                <span class="price">@Model.TotalCamperPrice.FormatByCulture()</span>
+                                            </div>
+                                        </div>
+                                        <div class="option conclude">
+                                            <div class="item">
+                                                <span class="title content">Vooraf te betalen extra's</span>
+                                                <span class="price" id="nonlocalPackagePriceTotal">@nonlocalPackagePriceTotal.FormatByCulture()</span>
+                                            </div>
+
+                                            @foreach (var package in Model.VestigingModel.Pakkets.Where(x => !x.IsLokaalTeBetalen))
+                                            {
+                                                decimal packagePrice = package.PakketType != (int)BusjeType.Personenbus
+                                                                      ? (package.Prijs * package.Number)
+                                                                      : (package.Prijs * package.Number * Model.NumberOfTravelDays);
+                                                
+                                                <div id="row@(package.Id)" class="item" style="display: @(!package.IsCheck ? "none" : "block")">
+                                                    <span class="content">
+                                                        <span id="number@(package.Id)">@package.Number</span>
+                                                        <span>x</span> @package.Naam
+                                                    </span>
+
+                                                    <span id="package@(package.Id)" class="price" data-belongto="nonlocalPackagePriceTotal" data-value="@packagePrice">
+                                                        @(packagePrice.FormatByCulture())
+                                                    </span>
+                                                </div>
+                                            }
+
+                                            <div class="item">
+                                                <span class="title content">lokaal te betalen opties</span>
+                                                <span class="price" id="localPackagePriceTotal">@localPackagePriceTotal.FormatByCulture()</span>
+                                            </div>
+
+                                            @foreach (var package in Model.VestigingModel.Pakkets.Where(x => x.IsLokaalTeBetalen))
+                                            {
+                                                decimal packagePrice = package.PakketType != (int)BusjeType.Personenbus
+                                                                      ? (package.Prijs * package.Number)
+                                                                      : (package.Prijs * package.Number * Model.NumberOfTravelDays);
+
+                                                <div id="row@(package.Id)" class="item" style="display: @(!package.IsCheck ? "none" : "block")">
+                                                    <span class="content">
+                                                        <span id="number@(package.Id)">@package.Number</span>
+                                                        <span>x</span> @package.Naam
+                                                    </span>
+
+                                                    <span id="package@(package.Id)" class="price" data-belongto="localPackagePriceTotal" data-value="@packagePrice">
+                                                        @(packagePrice.FormatByCulture())
+                                                    </span>
+                                                </div>
+                                            }
+
+                                        </div>
+                                        <div class="option end">
+                                            <div class="item">
+                                                <span class="content">totaal (incl btw)</span>
+                                                <span id="totalprice-overview" class="price">@priceTotal.FormatByCulture()</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- block-overview-application -->
+                </div>
+
+                <a class="btn btn-success btn-r-card" id="btnMoveNextStep">
+                    verder
+                </a>
+            </div>
+            <!-- col -->
+        </div>
+        <!-- row -->
+    </div>
+</section>

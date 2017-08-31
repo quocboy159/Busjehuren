@@ -1,0 +1,143 @@
+﻿<!-- FOOTER -->
+<div id="footer">
+    <footer class="footer">
+        <section class="footer-inner">
+            <div class="container">
+                <div class="row">
+                    @Html.Partial("_TrustPilotWidgets", true)
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="help-zone">
+                            <div class="help-title">
+                                Heeft u vragen?
+                            </div>
+                            <div class="help-desc">
+                                Wij staan u graag te woord.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- col -->
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="phone-zone">
+                            <div class="phone-title">
+                                <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:073 890 1180">073 890 1180</a>
+                            </div>
+                            <!-- title -->
+                            <div class="phone-desc">
+                                Of bekijk onze <a href="@Url.Action("Index","Contact")">contactpagina</a>.
+                            </div>
+                        </div>
+                        <!-- zone -->
+                    </div>
+                    <!-- col -->
+
+                </div>
+                <!-- row -->
+                <div class="copyright">
+                    <div class="inner">
+                        © 2017 Busjehuren.nl
+                        <br> Busjehuren is een geregistreerd handelsmerk van Crrntl B.V., geregistreerd bij de Kamer van Koophandel Brabant, Nederland, nummer 054652804
+                    </div>
+                </div>
+                <!-- copyright -->
+            </div>
+            <!-- container -->
+        </section>
+        <!-- / footer-inner -->
+    </footer>
+    <!-- / footer -->
+</div>
+<!-- / FOOTER -->
+
+
+<!-- messages validate modal-->
+
+<div id="messageValidateModal_1001" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">U koos binnen 24 uur</h4>
+            </div>
+            <div class="modal-body" id="termConditionBody">
+                <div class="row">
+                    U koos een tijdstip binnen 24 uur als ophaaltijdstip. Om er voor te zorgen dat de auto ook daadwerkelijk voor u klaarstaat, vragen wij u contact met ons op te nemen.<br /><br />
+                    Bel: 073 - 8901180
+                </div>
+            </div>
+            <div class="modal-footer align-right">
+                <button type="button" class="btn btn-gray" data-dismiss="modal">sluit dit venster</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="messageValidateModal_1002" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">U koos binnen 24 uur</h4>
+            </div>
+            <div class="modal-body" id="termConditionBody">
+                <div class="row">
+                    U koos a.s. maandag voor 12:00 als afhaaldag. Om er voor te zorgen dat de auto ook daadwerkelijk voor u klaarstaat, vragen wij u contact met ons op te nemen.<br /><br />
+                    Bel: 073 - 8901180
+                </div>
+            </div>
+            <div class="modal-footer align-right">
+                <button type="button" class="btn btn-gray" data-dismiss="modal">sluit dit venster</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="messageValidateModal_1003" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Tijdstip niet correct</h4>
+            </div>
+            <div class="modal-body" id="termConditionBody">
+                <div class="row">
+                    U heeft een ophaaltijdstip gekozen wat na het terugbreng tijdstip ligt.
+                </div>
+            </div>
+            <div class="modal-footer align-right">
+                <button type="button" class="btn btn-gray" data-dismiss="modal">sluit dit venster</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- messages validate modal-->
+
+<div id="messageValidateSearchForm" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">U HEEFT NOG GEEN GEGEVENS INGEVOERD</h4>
+            </div>
+            <div class="modal-body" id="termConditionBody">
+                <div class="row">
+                    Gelieve een keuze te maken voor een locatie, een datum en tijdstip waarop u de huurauto zou willen ophalen en een datum en tijdstip waarop u de huurauto zou willen terugbrengen.<br /><br />
+                </div>
+            </div>
+            <div class="modal-footer align-left">
+                <button type="button" class="btn btn-gray" data-dismiss="modal">sluit dit venster</button>
+            </div>
+        </div>
+    </div>
+</div>

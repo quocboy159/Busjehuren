@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>BUSJEHUREN.NL</title>
+
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Favicon 32x32 and 180x180 -->
+    <link rel="icon" sizes="32x32" href="images/fav32.png" type="image/png" />
+    <link rel="icon" sizes="180x180" href="images/fav180.png" type="image/png" />
+
+    <!-- CDN -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+
+
+    <!-- AUTO CONCAT -->
+    <link rel="stylesheet" type="text/css" href="css/sprites.css">
+
+    <!-- MANUAL UPDATE -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style-responsive.css">
+
+    <!-- CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.7.0/parsley.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhktXAG6guKrLzHSMjAqPO9ki-SKP556Y" async defer></script>
+
+
+    <script src="js/plugin.js"></script>
+    <script src="js/main.js"></script>
+    <script type='text/javascript'>
+        (function(d, t) {
+            var bh = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            bh.type = 'text/javascript';
+            bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=wysk0v9jveddau66fxncfq';
+            s.parentNode.insertBefore(bh, s);
+        })(document, 'script');
+    </script>
+</head>
+
+<body class="mystyle">
+    <!-- TOOLBAR -->
+    <div id="toolbar">
+        <nav class="toolbar">
+            <div class="toolbar-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-xs-5 col-sm-3">
+                            <a class="brand" href="index.html">
+                                <img src="images/logo.gif" alt="">
+                            </a>
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-5 col-xs-7 col-sm-6">
+                            <div class="phone-block">
+                                <table class="normal">
+                                    <tr>
+                                        <td class="big-phone-image">
+                                            <img src="demo-images/phone.png" alt="">
+                                        </td>
+                                        <td>
+                                            <div class="big-phone-desc">
+                                                Heeft u vragen? Judith staat u graag te woord.
+                                            </div>
+                                            <div class="big-phone">
+                                                <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:073 890 1180">073 890 1180</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-2 col-xs-hidden col-sm-3">
+                            <div class="lang-block">
+                                <a href="" class="change-lang-link">
+                                    <img src="demo-images/phap.gif" alt=""> Change language
+                                </a>
+                            </div>
+
+                            <div class="nav-container">
+                                <a href="" class="login-link">
+                                    <i class="fa fa-sign-in"></i> Beheer boeking
+                                </a>
+                            </div>
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+
+            </div>
+            <!-- toolbar-inner -->
+        </nav>
+        <!-- toolbar -->
+    </div>
+    <!-- / TOOLBAR -->
+	<!-- TOOLBAR -->
+    <div id="toolbar" class="fixed">
+        <nav class="toolbar">
+            <div class="toolbar-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-xs-5 col-sm-3">
+                            <a class="brand" href="index.html">
+                                <img src="images/logo.gif" alt="">
+                            </a>
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-5 col-xs-7 col-sm-6">
+                            <div class="phone-block">
+                                <table class="normal">
+                                    <tr>
+                                        <td class="big-phone-image">
+                                            <img src="demo-images/phone.png" alt="">
+                                        </td>
+                                        <td>
+                                            <div class="big-phone-desc">
+                                                Heeft u vragen? Judith staat u graag te woord.
+                                            </div>
+                                            <div class="big-phone">
+                                                <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:073 890 1180">073 890 1180</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-2 col-xs-hidden col-sm-3">
+                            <div class="lang-block">
+                                <a href="" class="change-lang-link">
+                                    <img src="demo-images/phap.gif" alt=""> Change language
+                                </a>
+                            </div>
+
+                            <div class="nav-container">
+                                <a href="" class="login-link">
+                                    <i class="fa fa-sign-in"></i> Beheer boeking
+                                </a>
+                            </div>
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+
+            </div>
+            <!-- toolbar-inner -->
+        </nav>
+        <!-- toolbar -->
+    </div>
+    <!-- / TOOLBAR -->
+    <!-- HEADER -->
+    <div id="header">
+        <header class="header">
+            <div class="header-inner">
+                <nav class="navbar navbar-default main-nav-wrap navbar-static-top">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				  </button>
+
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav primary-menu">
+                                <li class="home active"><a href="index.html">Home</a></li>
+                                <li><a href="offers.html">Aanbiedingen</a></li>
+                                <li><a href="">Hoe werkt het?</a></li>
+                                <li><a href="3-page-about-us.html">Over ons</a></li>
+                                <li><a href="4-page-location.html">locaties</a></li>
+                                <li><a href="">Veelgestelde vragen</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </div>
+            <!-- / header-inner -->
+        </header>
+        <!-- / header -->
+    </div>
+    <!-- / HEADER -->
+
+    <main id="master" class="master">
+        <div class="master-inner">
+
+            <section class="page-container">
+                <div class="container">
+                    <article class="single-post">
+                        <header class="single-post-heading">
+                            Over ons
+                        </header>
+                        <div class="post-content">
+                            <div class="row">
+                                <div class="col-md-7 col-sm-6 col-xs-12">
+                                    <h3 class="title-section-3">Wat wij doen</h3>
+                                    <div class="title-section-details">
+                                        Busjehuren.nl is met 100 autoverhuurlocaties de grootste autoverhuurder van Nederland. Wij hebben dus altijd een verhuurlocatie bij u in de buurt! Alle autoverhuurpartners met zorg geselecteerd. Wij vinden het namelijk belangrijk dat u met een goed gevoel
+                                        en een goede auto de weg op gaat en de servicemedewerkers op de verhuurlocaties zullen hun uiterste best doen om hiervoor zorg te dragen. Daarom zijn al onze partners aangesloten bij de Bovag en controleren wij
+                                        regelmatig op prijs, kwaliteit en service. Hieronder vindt u een overzicht van alle autoverhuurlocaties:
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <div class="col-md-5 col-sm-6 hidden-xs">
+                                    <div class="banner">
+                                        <div class="border-image">
+                                            <img src="http://placehold.it/470x343/d1d1d1/ffffff" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                            </div>
+                            <!-- row -->
+                        </div>
+                    </article>
+                    <!-- single-post-->
+                </div>
+            </section>
+            <!-- page-container -->
+
+            <div class="banner mb-50">
+                <img src="http://placehold.it/1900x520/d1d1d1/ffffff" alt="">
+            </div>
+
+            <!-- ACF: TEAM SECTION COLUMNS -->
+            <section class="section-team">
+                <div class="section-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <h3 class="title-section-3">Het busjehuren team</h3>
+                                <div class="title-section-details">
+                                    Busjehuren.nl is met 100 autoverhuurlocaties de grootste autoverhuurder van Nederland. Wij hebben dus altijd een verhuurlocatie bij u in de buurt! Alle autoverhuurpartners met zorg geselecteerd.
+                                </div>
+
+                            </div>
+                            <!-- col -->
+                        </div>
+                        <!-- row -->
+
+                        <div class="row">
+                            <div class="col-md-1 col-sm-1 hidden-xs">&nbsp;</div>
+                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                <div class="member-container">
+                                    <div class="border-image">
+
+                                        <img src="http://placehold.it/170x170" alt="">
+
+                                    </div>
+                                    <div class="member-name">
+                                        Jan Terweij
+                                    </div>
+                                    <div class="member-position">
+                                        Functie omschrijving
+                                    </div>
+                                </div>
+                                <!-- member -->
+
+                            </div>
+                            <!-- col -->
+                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                <div class="member-container">
+                                    <div class="border-image">
+
+                                        <img src="http://placehold.it/170x170" alt="">
+
+                                    </div>
+                                    <div class="member-name">
+                                        Melissa van den Heuvel
+                                    </div>
+                                    <div class="member-position">
+                                        Functie omschrijving
+                                    </div>
+                                </div>
+                                <!-- member -->
+
+                            </div>
+                            <!-- col -->
+                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                <div class="member-container">
+                                    <div class="border-image">
+
+                                        <img src="http://placehold.it/170x170" alt="">
+
+                                    </div>
+                                    <div class="member-name">
+                                        Jan Terweij
+                                    </div>
+                                    <div class="member-position">
+                                        Functie omschrijving
+                                    </div>
+                                </div>
+                                <!-- member -->
+
+                            </div>
+                            <!-- col -->
+                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                <div class="member-container">
+                                    <div class="border-image">
+
+                                        <img src="http://placehold.it/170x170" alt="">
+
+                                    </div>
+                                    <div class="member-name">
+                                        Melissa van den Heuvel
+                                    </div>
+                                    <div class="member-position">
+                                        Functie omschrijving
+                                    </div>
+                                </div>
+                                <!-- member -->
+
+                            </div>
+                            <!-- col -->
+                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                <div class="member-container">
+                                    <div class="border-image">
+                                        <img src="http://placehold.it/170x170" alt="">
+                                    </div>
+                                    <div class="member-name">
+                                        Melissa van den Heuvel
+                                    </div>
+                                    <div class="member-position">
+                                        Functie omschrijving
+                                    </div>
+                                </div>
+                                <!-- member -->
+
+                            </div>
+                            <!-- col -->
+                        </div>
+                        <!-- row -->
+
+                    </div>
+                    <!-- container -->
+                </div>
+            </section>
+            <!-- / ACF: TEAM SECTION COLUMNS  -->
+
+            <section class="gray-bg section-news-related hidden-xs">
+                <div class="container">
+                    <div class="row row-posts">
+                        <!-- ITEM POST -->
+                        <div class="col-md-4 col-sm-4 col-xs-6">
+                            <div class="news-container">
+                                <div class="border-image">
+                                    <a href="single-news.html" class="figure2">
+                                        <img src="http://placehold.it/371x174" alt="">
+                                    </a>
+                                </div>
+                                <div class="news-caption">
+                                    <a href="single-news.html">De titel van dit nieuwsbericht over twee regels</a>
+                                </div>
+                            </div>
+                            <!-- news-container -->
+                        </div>
+                        <!-- col -->
+                        <!-- / ITEM POST -->
+                        <!-- ITEM POST -->
+                        <div class="col-md-4 col-sm-4 col-xs-6">
+                            <div class="news-container">
+                                <div class="border-image">
+                                    <a href="single-news.html" class="figure2">
+                                        <img src="http://placehold.it/371x174" alt="">
+                                    </a>
+                                </div>
+                                <div class="news-caption">
+                                    <a href="single-news.html">De titel van dit nieuwsbericht over twee regels</a>
+                                </div>
+                            </div>
+                            <!-- news-container -->
+                        </div>
+                        <!-- col -->
+                        <!-- / ITEM POST -->
+                        <!-- ITEM POST -->
+                        <div class="col-md-4 col-sm-4 col-xs-6">
+                            <div class="news-container">
+                                <div class="border-image">
+                                    <a href="single-news.html" class="figure2">
+                                        <img src="http://placehold.it/371x174" alt="">
+                                    </a>
+                                </div>
+                                <div class="news-caption">
+                                    <a href="single-news.html">De titel van dit nieuwsbericht over twee regels</a>
+                                </div>
+                            </div>
+                            <!-- news-container -->
+                        </div>
+                        <!-- col -->
+                        <!-- / ITEM POST -->
+                    </div>
+                    <!-- row -->
+                    <div class="align-center">
+                        <a href="archive.html" class="btn btn-white">meer nieuwsberichten</a>
+                    </div>
+                </div>
+                <!-- container -->
+            </section>
+
+            <div class="wrapper-search-form">
+                <section class="section-form">
+                    <div class="container">
+                        <div class="form-zone clearfix">
+                            <div class="p-20">
+                                <form action="">
+                                    <div class="form-search-zone clearfix">
+                                        <div class="form-col col-car-type">
+                                            <div>
+                                                <label for="" class="form-label">voertuigtype</label>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <div class="custom-radio ">
+                                                        <input type="radio" name="typeOfCar" id="typePersonal">
+                                                        <label class="type-personal" for="typePersonal"> 
+                                            <div class="label-opacity match-height">
+                                                <div class="icon-car"></div> Personenbus
+                                            </div>
+                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <div class="custom-radio ">
+                                                        <input type="radio" name="typeOfCar" id="typeBus">
+                                                        <label class="type-bus" for="typeBus"> 
+                                            <div class="label-opacity match-height">
+                                                <div class="icon-car"></div>
+                                                Bestelbus / Verhuiswagen
+                                            </div>
+                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- form-group -->
+                                        </div>
+                                        <!-- form-col -->
+
+                                        <!-- PICKUP LOCATION -->
+                                        <div class="form-col col-pickup">
+                                            <div class="block-pickup">
+                                                <label for="" class="form-label hidden-xs">ophalen</label>
+                                                <label for="" class="form-label visible-xs-block">ophaallocatie</label>
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                        </div>
+                                                        <input type="text" value="Den Bosch" name="depart" id="" class="form-control">
+                                                    </div>
+                                                    <!-- input-group -->
+                                                </div>
+                                                <!-- form-group -->
+                                            </div>
+                                            <div class="visible-xs-block">
+                                                <div class="form-label">
+                                                    <input type="checkbox" name="" id="checkbox_same_location" checked class="css-checkbox" /><label for="checkbox_same_location" class="css-label"> VOERTUIG INLEVEREN OP DEZELFDE LOCATIE</label>
+                                                </div>
+                                            </div>
+                                            <div class="block-return">
+                                                <label for="" class="form-label">Terugbrengen</label>
+
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                        </div>
+                                                        <input type="text" value="Den Bosch" name="arrival" id="" class="form-control">
+                                                    </div>
+                                                    <!-- input-group -->
+                                                </div>
+                                                <!-- form-group -->
+                                            </div>
+
+                                            <div class="clear"></div>
+
+                                            <div class="group-date-time-pickup">
+
+                                                <div class="form-group">
+                                                    <label for="" class="form-label visible-xs-block">ophalen</label>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-6 col-xs-12 id-col-depart-date">
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon">
+                                                                    <div class="icon icon-calendar"></div>
+                                                                </div>
+                                                                <input type="text" name="depart_date" id="depart_date" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-sm-6 col-xs-12 id-col-depart-time">
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon">
+                                                                    <div class="icon icon-clock"></div>
+                                                                </div>
+                                                                <input type="text" name="depart_time" id="depart_time" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+                                                </div>
+                                                <!-- form-group -->
+                                            </div>
+                                            <!-- group-date-time -->
+
+                                            <div class="group-date-time-return">
+                                                <label for="" class="form-label visible-xs-block">Terugbrengen</label>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-6 col-xs-12 id-col-arrival-date">
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon">
+                                                                    <div class="icon icon-calendar"></div>
+                                                                </div>
+                                                                <input type="text" name="arrival_date" id="arrival_date" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <!-- col-md-6 -->
+                                                        <div class="col-md-6 col-sm-6 col-xs-12 id-col-arrival-time">
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon">
+                                                                    <div class="icon icon-clock"></div>
+                                                                </div>
+                                                                <input type="text" name="arrival_time" id="arrival_time" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <!-- col-md-6 -->
+                                                    </div>
+                                                    <!-- row -->
+                                                </div>
+                                                <!-- form-group -->
+                                            </div>
+                                            <!-- group-date-time -->
+
+                                        </div>
+                                        <!-- form-col -->
+                                        <!-- / PICKUP LOCATION -->
+
+                                        <div class="form-col col-submit">
+                                            <button type="button" onclick="javascript:window.location.href='list-location.html'" class="btn btn-block btn-success btn-search">
+                                    <span>zoeken</span>
+                                </button>
+
+                                        </div>
+                                        <!-- form-col -->
+                                    </div>
+                                    <!-- form-search-zone -->
+                                </form>
+                            </div>
+                        </div>
+                        <!-- zone -->
+                    </div>
+                </section>
+            </div>
+            <!-- =========== USER REVIEW =========== -->
+            <section class="section-white section-user-review">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <h2 class="title-section-left">ervaringen van <br class="hidden-xs">anderen</h2>
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-8 col-xs-12 col-sm-8">
+                            <article class="article-review">
+                                <div class="user-review">
+                                    <h3>Flexibel en duidelijk</h3>
+                                    <div class="rate-block">
+                                        <div class="star-wrapper">
+                                            <div class="mystyle-star-2">
+                                                <div class="star-ratings-css active-4">
+                                                    <div class="star-ratings-css-top">
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+                                                    <div class="star-ratings-css-bottom">
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+                                                </div>
+                                                <!-- star-ratings-css -->
+                                            </div>
+                                        </div>
+                                        <div>Score 10/10</div>
+                                    </div>
+                                </div>
+
+                                <div class="text-reviews">
+                                    <div class="review-content">
+                                        Busje opgehaald in Rotterdam en in Amersfoort teruggebracht. Nette en schone bus gekregen. We haalden het niet om de bus op tijd in te leveren, maar mochten kosteloos deze de ochtend erna inleveren. Vriendelijke mensen, goede service. Helemaal prima!
+                                        <br>
+                                        <div class="r-member">
+                                            door Dhr. Dekker op 2. nov 2016
+                                        </div>
+                                    </div>
+                                    <div class="review-footer">Bekijk alle reviews op Trustpilot.nl</div>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </section>
+            <!-- =========== /USER REVIEW =========== -->
+
+        </div>
+        <!-- master-inner -->
+    </main>
+    <!-- master -->
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <footer class="footer">
+            <section class="footer-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 id-trustpilot-zone">
+                            <div class="trustpilot-zone ">
+                                <div class="trust-star clearfix">
+                                    <div class="trust-star-container">
+                                        <img src="demo-images/trust-star.png" alt="">
+                                    </div>
+                                    <div class="mystyle-star">
+                                        <div class="star-ratings-css active-4">
+                                            <div class="star-ratings-css-top">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <div class="star-ratings-css-bottom">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <!-- star-ratings-css -->
+                                    </div>
+                                </div>
+                                <div class="point-star">
+                                    GEMIDDELDE KLANTWAARDERING <strong>8.7</strong>
+                                </div>
+                                <div class="footer-visa">
+                                    <img src="demo-images/footer-visa.png" alt="">
+                                </div>
+                            </div>
+                            <!-- trustpilot-zone -->
+                        </div>
+                        <!-- col -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="help-zone">
+                                <div class="help-title">
+                                    Heeft u vragen?
+                                </div>
+                                <div class="help-desc">
+                                    Wij staan u graag te woord.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- col -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="phone-zone">
+                                <div class="phone-title">
+                                    <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:073 890 1180">073 890 1180</a>
+                                </div>
+                                <!-- title -->
+                                <div class="phone-desc">
+                                    Of bekijk onze <a href="contact.html">contactpagina</a>.
+                                </div>
+                            </div>
+                            <!-- zone -->
+                        </div>
+                        <!-- col -->
+
+
+
+                    </div>
+                    <!-- row -->
+                    <div class="copyright">
+                        <div class="inner">
+                            © 2017 Busjehuren.nl
+                            <br> Busjehuren is een geregistreerd handelsmerk van Crrntl B.V., geregistreerd bij de Kamer van Koophandel Brabant, Nederland, nummer 054652804
+                        </div>
+                    </div>
+                    <!-- copyright -->
+                </div>
+                <!-- container -->
+            </section>
+            <!-- / footer-inner -->
+        </footer>
+        <!-- / footer -->
+    </div>
+    <!-- / FOOTER -->
+</body>
+
+</html>

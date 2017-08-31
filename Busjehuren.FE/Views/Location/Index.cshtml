@@ -1,0 +1,44 @@
+﻿@model LocationVM
+
+@{
+    Html.RenderPartial("_FilterLocationFormStatic");
+}
+
+<section class="section-rental-location">
+    <div class="container">
+        <div class="mb-50">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 id-container-map-right">
+                    <h2 class="title-section-left">@Html.Raw(Model.Content.DisplayName)</h2>
+
+                    <div class="title-section-details">
+                        @Html.Raw(Model.Content.Text)
+                    </div>
+
+                    <div id="map"></div>
+
+                    <div class="location-zone">
+                        @foreach (var location in Model.Locations)
+                        {
+                            @Html.Partial("_LocationItem", location)
+                        }
+                    </div>
+
+                    <div class="mt-50">
+                        @Html.Partial("_Locations", Model.Destinations)
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 id-container-map-left">
+                    <div id="marker" data-image="@Url.Content("~/Assets/images/marker.png")"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<link href="~/Content/owl.carousel.min.css" rel="stylesheet" />
+<link href="~/Content/owl.theme.default.min.css" rel="stylesheet" />
+<script src="~/Scripts/owl.carousel.js"></script>
+    
+@Scripts.Render("~/Scripts/js/Components/LocationMap.js")

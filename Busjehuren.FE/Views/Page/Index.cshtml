@@ -1,0 +1,16 @@
+﻿@{
+    var isfaq = Request.RawUrl.Equals("/faq") ? "true" : "false";
+}
+
+<div class="container">
+    @Html.Raw(@Model.Text)
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ('@isfaq' == 'true')
+                ShowActivedNavigate($("#nav-faq"));
+        })
+    </script>
+}

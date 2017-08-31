@@ -1,0 +1,56 @@
+﻿@model Tuple<string>
+
+<section class="page-container">
+    <div class="container">
+
+        @Html.Action("CheckOutSteps", new { currentStep = 5 })
+
+        <article class="single-post">
+            <div class="row">
+                <div class="col-md-8">
+                    <header class="single-post-heading">
+                        <span class="color-sp">
+                            <span>Stap 5</span><span class="visible-md-inline visible-sm-inline">.</span> <small class=" visible-xs-inline">(VAN 5)</small>
+                        </span>
+
+                        Uw reservering is aangevraagd
+                    </header>
+                    <div class="title-section-details">
+                        Uw reserveringsaanvraag is verzonden. Uw referentienummer vindt u hieronder. U ontvangt binnen enkele minuten een email met een overzicht van uw reserveringsaanvraag. Wij nemen zo spoedig mogelijk contact met u op om uw reserveringsaanvraag te bespreken.
+                    </div>
+                    <div class="post-content">
+                        <h3 class="title-section-3">Uw referentienummer: <strong>@Model</strong></h3>
+                    </div>
+                    <div class="post-column-style" style="background-image: url('demo-images/column-block.png')">
+                        <div class="pc-row-1">
+                            <h2>Heeft u vragen over uw aanvraag?</h2>
+                            <div class="mb-10">
+                                Wij staan u graag te woord.
+                            </div>
+                            <div>
+                                <i class="fa fa-phone" aria-hidden="true"></i> 073 890 1180
+                            </div>
+                        </div>
+                        <div class="pc-image">
+                            <img src="demo-images/column-block.png" alt="">
+                        </div>
+                    </div>
+                    <!-- post-style-1 -->
+                    <div>
+                        <p>Een fijne dag!</p>
+                        <p><strong class="color">Het Busjehuren.nl team</strong></p>
+                    </div>
+                </div>
+                <!-- col -->
+                <div class="col-md-4">
+
+                </div>
+                <!-- col -->
+            </div>
+            <!-- row -->
+
+        </article>
+        <!-- single-post-->
+    </div>
+</section>
+<!-- page-container -->

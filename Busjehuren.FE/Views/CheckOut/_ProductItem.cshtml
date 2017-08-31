@@ -1,0 +1,203 @@
+﻿@model Tuple<ProductItem, int, int>
+
+    @{
+    string propertyValues = string.Join(" <span class=\"f-size-7\">&#9899;</span> ", Model.Item1.CamperAanbiedingModel.Camper.EigenschapWaarden.OrderBy(x => x.EigenschapNaam).Select(x => x.EigenschapNaam + ": " + x.Value));
+    string folderPhoto, street, address, place, location, urlPhoto;
+    urlPhoto = location = place = address = street = folderPhoto = urlPhoto = "";
+
+    try
+    {
+    folderPhoto = Model.Item1.CamperAanbiedingModel.Camper.CamperBestanden.FirstOrDefault().LocationOnWeb + "original/";
+    urlPhoto = Url.Content("~/" + folderPhoto + Model.Item1.CamperAanbiedingModel.Camper.CamperBestanden.FirstOrDefault().Name);
+    street = Model.Item1.CamperAanbiedingModel.Camper.Vestigingen.FirstOrDefault(f => f.Id == Model.Item1.PriceInfoModel.VestigingId).Adres.Straat;
+    address = Model.Item1.CamperAanbiedingModel.Camper.Vestigingen.FirstOrDefault(f => f.Id == Model.Item1.PriceInfoModel.VestigingId).Adres.Huisnummer;
+    place = Model.Item1.CamperAanbiedingModel.Camper.Vestigingen.FirstOrDefault(f => f.Id == Model.Item1.PriceInfoModel.VestigingId).Adres.Plaats;
+    location = string.Format("{0} {1}, {2}", street, address, place);
+    }
+    catch
+    {
+    }
+    //var supplier = Model.Item1.CamperAanbiedingModel.Camper.Leverancier;
+    }
+
+    <li class="product-item">
+        <h3 class="pd-name">
+            <a class="car-title" data-toggle="modal" data-target="#popUpModalSpecification@( Model.Item1.CamperAanbiedingModel.Id)">
+                @Model.Item1.CamperAanbiedingModel.Camper.Naam
+            </a>
+            <span>of gelijkwaardig</span>
+        </h3>
+        @*<div class="pd-zone row">
+            <div class="col-md-9 col-xs-12 col-sm-12 mb-30">
+                @Html.Raw(propertyValues)
+            </div>
+        </div>*@
+        <div class="pd-zone row">
+            <div class="pd-img col-md-4 col-sm-3 col-xs-6">
+                <a href=""><img src="@urlPhoto" id="image@(Model.Item1.CamperAanbiedingModel.Id)" alt=""></a>
+            </div>
+            <!-- pd-img -->
+
+            <div class="pd-desc col-md-5 col-sm-5 col-xs-6">
+                <div class="row">
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        <strong>Laadruimte (m3)</strong>
+                    </div>
+                    <!-- col -->
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        <strong>@( Model.Item1.CamperAanbiedingModel.Camper.LaadRuimte)m3</strong>
+                    </div>
+                    <!-- col -->
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        Laadruimte (l x b x h)
+                    </div>
+                    <!-- col -->
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        @( Model.Item1.CamperAanbiedingModel.Camper.LaadLengte) x @( Model.Item1.CamperAanbiedingModel.Camper.LaadBreedte) x @( Model.Item1.CamperAanbiedingModel.Camper.LaadHoogte) cm
+                    </div>
+                    <!-- col -->
+                </div>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        Laadvermogen
+                    </div>
+                    <!-- col -->
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        @( Model.Item1.CamperAanbiedingModel.Camper.LaadVermogen) kg
+                    </div>
+                    <!-- col -->
+                </div>
+                <!-- row -->
+
+                <div class="mb-10">
+                    <a class="link-modal-specify font-weight-nomal specific" data-id="@Model.Item1.CamperAanbiedingModel.Id">Bekijk alle specificaties</a>
+                </div>
+
+                <div class="row hidden-xs">
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        Locatie
+                    </div>
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        @location
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- pd-desc -->
+
+            <div class="clear visible-xs-block"></div>
+
+            <div class="pd-action col-md-3 col-sm-4 col-xs-12">
+                <div class="row">
+                    <div class="col-xs-6 visible-xs-block row-lacation-label">
+                        <div class="row">
+                            @*<div class="col-xs-3 hidden-xs">
+                                Locatie
+                            </div>*@
+                            <div class="col-xs-12 text-center">
+                                @location
+                            </div>
+                        </div>
+                        <!-- row -->
+                    </div>
+                    <!-- col -->
+
+                    <div class="col-xs-6 col-sm-12 col-md-12">
+                        <div class="pd-price">
+                            <div class="price">
+                                <div class="new-price clearfix">
+                                    <div class="new-price-left" id="price@(Model.Item1.CamperAanbiedingModel.Id)">
+                                        @( Model.Item1.PriceInfoModel.TotaalPakketPrijsPerPersoon.ToString("€#.###")),-
+                                    </div>
+                                    <a data-id="@Model.Item1.CamperAanbiedingModel.Id" class="condition hidden-xs condition-link">
+                                        Voorwaarden
+                                    </a>
+                                    <div class="incl">
+                                        incl. BTW
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- price -->
+                        </div>
+                        <!-- pd-price -->
+                    </div>
+                    <!-- col -->
+                </div>
+                <!-- row -->
+
+                <div class="pd-footer clearfix">
+                    <div class="row visible-xs-block">
+
+                        <div class="col-md-12 col-sm-12 col-xs-6 col-offer">
+                            @using (Html.BeginForm("Checkout2", "CheckOut", FormMethod.Post, new { @class = "reserve" }))
+                            {
+                            @Html.Hidden("aanbiedingId", Model.Item1.CamperAanbiedingModel.Id)
+                            @Html.Hidden("vestigingId", Model.Item2)
+                            @Html.Hidden("vestigingTerugbrengId", Model.Item3)
+                            @Html.Hidden("typeId", 2)
+                            <a onclick="$(this).parent().submit();" class="btn btn-gray btn-block">
+                                vraag offerte aan
+                            </a>
+                            }
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-12 col-sm-12 col-xs-6 col-reserve">
+                            @using (Html.BeginForm("Checkout2", "CheckOut", FormMethod.Post, new { @class = "reserve" }))
+                            {
+
+                            @Html.Hidden("aanbiedingId", Model.Item1.CamperAanbiedingModel.Id)
+                            @Html.Hidden("vestigingId", Model.Item2)
+                            @Html.Hidden("vestigingTerugbrengId", Model.Item3)
+                            @Html.Hidden("typeId", 1)
+                            <a onclick="$(this).parent().submit();" class="btn btn-success btn-block">
+                                reserveer
+                            </a>
+                            }
+                        </div>
+                        <!-- col -->
+                    </div>
+
+                    <div class="row hidden-xs">
+                        <div class="col-md-12 col-sm-12 col-xs-6 col-reserve">
+                            @using (Html.BeginForm("Checkout2", "CheckOut", FormMethod.Post, new { @class = "reserve" }))
+                            {
+
+                            @Html.Hidden("aanbiedingId", Model.Item1.CamperAanbiedingModel.Id)
+                            @Html.Hidden("vestigingId", Model.Item2)
+                            @Html.Hidden("vestigingTerugbrengId", Model.Item3)
+                            @Html.Hidden("typeId", 1)
+                            <a onclick="$(this).parent().submit();" class="btn btn-success btn-block">
+                                reserveer
+                            </a>
+                            }
+                        </div>
+                        <!-- col -->
+
+                        <div class="col-md-12 col-sm-12 col-xs-6 col-offer">
+                            @using (Html.BeginForm("Checkout2", "CheckOut", FormMethod.Post, new { @class = "reserve" }))
+                            {
+                            @Html.Hidden("aanbiedingId", Model.Item1.CamperAanbiedingModel.Id)
+                            @Html.Hidden("vestigingId", Model.Item2)
+                            @Html.Hidden("vestigingTerugbrengId", Model.Item3)
+                            @Html.Hidden("typeId", 2)
+                            <a onclick="$(this).parent().submit();" class="btn btn-gray btn-block">
+                                vraag offerte aan
+                            </a>
+                            }
+                        </div>
+                        <!-- col -->
+                    </div>
+
+                    <!-- row -->
+                </div>
+
+                <!-- pd-price -->
+            </div>
+            <!-- pd-action -->
+            <!-- product-inner -->
+        </div>
+    </li>

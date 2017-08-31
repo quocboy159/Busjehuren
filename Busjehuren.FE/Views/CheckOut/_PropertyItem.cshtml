@@ -1,0 +1,25 @@
+﻿@model Tuple<PropertyModel, List<PropertyDetailModel>>
+@{
+    bool checkedPropertyDetail = Model.Item2.Select(x => x.Id).Contains(Model.Item1.Id);
+}
+
+<div class="col-xs-6 col-sm-12 col-md-12">
+    <!-- WP: MENU -->
+    <div class="widget widget-container widget-toggle">
+        <div class="widget-title">@Model.Item1.Name</div>
+        <div class="menu-main-menu-container">
+            <ul class="filter-list">
+                @foreach (var propertyDetail in Model.Item1.PropertyDetails)
+                {
+                    <li>
+                        @Html.RadioButton(Model.Item1.Name, propertyDetail.Id, checkedPropertyDetail, new { @class = "css-checkbox", id = "radio" + propertyDetail.Id })
+                        @Html.Label("radio" + propertyDetail.Id, propertyDetail.Value, new { @class = "css-label radGroup" + propertyDetail.PropertyId })
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <!-- widget -->
+    <!-- END WP: MENU -->
+</div>
+

@@ -1,0 +1,49 @@
+﻿<section class="section-white section-user-review">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <h2 class="title-section-left" id="author"></h2>
+            </div>
+            <!-- col -->
+            <div class="col-md-8 col-xs-12 col-sm-8">
+                <article class="article-review">
+                    <div class="user-review">
+                        <h3 id="titlereview">Flexibel en duidelijk</h3>
+                        <div class="rate-block">
+                            <div class="icon-star"></div>
+                            <div>Score <span id="spanstar"></span>/10</div>
+                        </div>
+                    </div>
+
+                    <div class="text-reviews">
+                        <div class="reviewcontent">
+                            <span id="review-content">
+                            </span>
+                            <br>
+                            <div class="r-member" id="reviewdate">
+                                door Dhr. Dekker op 2. nov 2016
+                            </div>
+                        </div>
+                        <div class="review-footer"><a href ="https://www.trustpilot.nl/review/busjehuren.nl" target="_blank"> Bekijk alle reviews op Trustpilot.nl</a></div>
+                    </div>
+                </article>
+            </div>
+            <!-- col -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</section>
+
+<script src="~/Scripts/js/Components/UserReview.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        UserReview().init({
+            author: 'author',
+            spanstar: 'spanstar',
+            reviewcontent: 'review-content',
+            titlereview: 'titlereview',
+            reviewdate: 'reviewdate'
+        });
+    })
+</script>

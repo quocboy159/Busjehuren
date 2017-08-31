@@ -1,0 +1,44 @@
+﻿@model Tuple<SearchResultVM, bool>
+
+<section class="mt-50 mb-50">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="same-height-with-map">
+                    @if (Model.Item2)
+                    {
+                        <header class="single-post-heading">@Model.Item1.Title</header>
+                        
+                        @Html.Raw(Model.Item1.HeadText)
+                        @Html.Raw(Model.Item1.Text)
+                    }
+                    else
+                    {
+                        @Html.Raw(Model.Item1.Text)
+
+                    }
+                </div>
+            </div>
+            <!-- col -->
+            <div class="col-md-6 hidden-xs hidden-sm">
+                <div class="map-container">
+                    <div id="marker" data-image="@Url.Content("~/Assets/images/marker.png")"></div>
+                    @foreach (var item in Model.Item1.Destination.Vestigings)
+                    {
+                        string address = string.Format("{0} {1} {2} {3}", item.Adre.Straat, item.Adre.Huisnummer, item.Adre.Postcode, item.Adre.Plaats);
+                        string openingHours = item.VestigingOpeningHours.Count == 0 ? "" : string.Format("{0}/{1} {2} - {3}", item.VestigingOpeningHours.First().WeekdayName.GetDayNameByCultureInfo(), item.VestigingOpeningHours.Last().WeekdayName.GetDayNameByCultureInfo(), item.VestigingOpeningHours.First().FromHour, item.VestigingOpeningHours.First().ToHour);
+
+                        <div class="location-link active" data-latitude="@item.Latitude" data-longtitude="@item.Longtitude" data-address="@address" data-open-time="@openingHours" data-title="@item.Naam"></div>
+                    }
+                    <div id="map"></div>
+                </div>
+            </div>
+            <!-- col -->
+        </div>
+        <!-- row -->
+    </div>
+</section>
+<!-- container -->
+
+<script src="~/Scripts/js/Components/LocationDetailMap.js"></script>

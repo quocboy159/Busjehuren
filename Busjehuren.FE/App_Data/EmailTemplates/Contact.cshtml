@@ -1,0 +1,74 @@
+﻿@using Busjehuren.FE.Models
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Busjehuren</title>
+
+    <meta name="format-detection" content="telephone=no">
+
+</head>
+
+<body style="margin: 0; background: #d5e0e9;">
+    <table style="padding: 15px 22px; margin: 0 auto; font-family: 'Arial', sans-serif; font-size: 14px; color: #555555; line-height: 24px; max-width: 600px;  border-top: 3px solid #063f7c; border-bottom: 3px dashed #d5e0e9; background: #fff;" cellspacing='0'>
+        <tr>
+            <td>
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="padding: 0;">
+                            <img src='@(GlobalStatic.BaseUrl + "assets/images/logo.gif")' alt='busjehuren' width="306" height="52" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="padding: 20px 0 4px; width: 100%; line-height: 22px;">
+                    <tr>
+                        <td colspan="2" ><p style="margin-bottom:25px;margin-top:0">Geachte heer Achternaam, </p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <p style="margin-bottom:25px;margin-top:0">Je hebt net een contactgegevens ontvangen</p></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0">Naam</td>
+                        <td style="padding: 0 0 0 15px">@Model.Name</td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 0">Email</td>
+                        <td style="padding: 0 0 0 15px">@Model.Email</td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 0">Telefoon</td>
+                        <td style="padding: 0 0 0 15px">@Model.Telephone</td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 0">Bericht</td>
+                        <td style="padding: 0 0 0 15px">@Model.Message</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="margin-top: 20px;">Heeft u nog vragen over uw reservering of wilt u een wijziging doorvoeren? Wij helpen u graag verder. U kunt ons bereiken op onderstaande gegevens.</p>
+                <p style="margin-top: 25px; margin-bottom: 0;">Email: <a href="mailto:service@busjehuren.nl" target="_blank" style="color: #063f7c;">service@busjehuren.nl</a></p>
+                <p style="margin-top: 0; margin-bottom: 0;">Telefoon: 073-8901180</p>
+                <p style="margin-top: 0; margin-bottom: 0;">maandag t/m vrijdag van 08:30-18:00 en zaterdag van 9:00-13:00</p>
+                <p style="margin-top: 25px; margin-bottom: 0;">Wij vertrouwen erop u hiermee naar wens te informeren.</p>
+                <p style="margin-top: 25px; margin-bottom: 0;">Met vriendelijke groet, </p>
+                <p style="margin-top: 0; margin-bottom: 0; font-size: 16px; color: #f7991f; font-style: italic; font-weight: bold;">Het team van Busjehuren.nl</p>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+﻿@model List<FaqModel>
+
+<div class="panel-group" id="accordion">
+
+    @for (int i = 0; i < @Model.Count; i++)
+    {
+        <article class="panel panel-style">
+            <header class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="@("#collapse" + i)" aria-expanded="false" class=""><span class="icon-plus"></span>@Model[i].Title</a>
+                </h4>
+            </header>
+            <div id="@("collapse" + i)" class="panel-collapse collapse in" aria-expanded="false">
+                <section class="panel-body">
+                    @Html.Raw(Model[i].Content)
+                </section>
+            </div>
+        </article>
+    }
+
+</div>

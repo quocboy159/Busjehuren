@@ -1,0 +1,21 @@
+﻿@model List<ContentModel>
+
+@foreach (var news in Model)
+{
+  <!-- ITEM POST -->
+    <div class="col-md-4 col-sm-4 col-xs-6">
+        <div class="news-container">
+            <div class="border-image">
+                <a href="@Url.Action("Index", "ContentDetail", new { idNews = news.Id, title = news.DisplayName.Replace(" ", "-").ToLower()  })" class="figure2">
+                    <img src="@GlobalStatic.GetImageFromNews(news.Text)" alt="">
+                </a>
+            </div>
+            <div class="news-caption">
+                <a href="@Url.Action("Index", "ContentDetail", new { idNews = news.Id, title = news.DisplayName.Replace(" ", "-").ToLower() })">@news.DisplayName</a>
+            </div>
+        </div>
+        <!-- news-container -->
+    </div>
+                <!-- col -->
+                <!-- / ITEM POST -->
+}

@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>BUSJEHUREN.NL</title>
+
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Favicon 32x32 and 180x180 -->
+    <link rel="icon" sizes="32x32" href="images/fav32.png" type="image/png" />
+    <link rel="icon" sizes="180x180" href="images/fav180.png" type="image/png" />
+
+    <!-- CDN -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+
+
+    <!-- AUTO CONCAT -->
+    <link rel="stylesheet" type="text/css" href="css/sprites.css">
+
+    <!-- MANUAL UPDATE -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style-responsive.css">
+
+    <!-- CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.7.0/parsley.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhktXAG6guKrLzHSMjAqPO9ki-SKP556Y" async defer></script>
+
+
+    <script src="js/plugin.js"></script>
+    <script src="js/main.js"></script>
+    <script type='text/javascript'>
+        (function(d, t) {
+            var bh = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            bh.type = 'text/javascript';
+            bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=wysk0v9jveddau66fxncfq';
+            s.parentNode.insertBefore(bh, s);
+        })(document, 'script');
+    </script>
+</head>
+
+<body class="mystyle">
+    <!-- TOOLBAR -->
+    <div id="toolbar">
+        <nav class="toolbar">
+            <div class="toolbar-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-xs-5 col-sm-3">
+                            <a class="brand" href="index.html">
+                                <img src="images/logo.gif" alt="">
+                            </a>
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-5 col-xs-7 col-sm-6">
+                            <div class="phone-block">
+                                <table class="normal">
+                                    <tr>
+                                        <td class="big-phone-image">
+                                            <img src="demo-images/phone.png" alt="">
+                                        </td>
+                                        <td>
+                                            <div class="big-phone-desc">
+                                                Heeft u vragen? Judith staat u graag te woord.
+                                            </div>
+                                            <div class="big-phone">
+                                                <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:073 890 1180">073 890 1180</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-2 col-xs-hidden col-sm-3">
+                            <div class="lang-block">
+                                <a href="" class="change-lang-link">
+                                    <img src="demo-images/phap.gif" alt=""> Change language
+                                </a>
+                            </div>
+
+                            <div class="nav-container">
+                                <a href="" class="login-link">
+                                    <i class="fa fa-sign-in"></i> Beheer boeking
+                                </a>
+                            </div>
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+
+            </div>
+            <!-- toolbar-inner -->
+        </nav>
+        <!-- toolbar -->
+    </div>
+    <!-- / TOOLBAR -->
+	<!-- TOOLBAR -->
+    <div id="toolbar" class="fixed">
+        <nav class="toolbar">
+            <div class="toolbar-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-xs-5 col-sm-3">
+                            <a class="brand" href="index.html">
+                                <img src="images/logo.gif" alt="">
+                            </a>
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-5 col-xs-7 col-sm-6">
+                            <div class="phone-block">
+                                <table class="normal">
+                                    <tr>
+                                        <td class="big-phone-image">
+                                            <img src="demo-images/phone.png" alt="">
+                                        </td>
+                                        <td>
+                                            <div class="big-phone-desc">
+                                                Heeft u vragen? Judith staat u graag te woord.
+                                            </div>
+                                            <div class="big-phone">
+                                                <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:073 890 1180">073 890 1180</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-2 col-xs-hidden col-sm-3">
+                            <div class="lang-block">
+                                <a href="" class="change-lang-link">
+                                    <img src="demo-images/phap.gif" alt=""> Change language
+                                </a>
+                            </div>
+
+                            <div class="nav-container">
+                                <a href="" class="login-link">
+                                    <i class="fa fa-sign-in"></i> Beheer boeking
+                                </a>
+                            </div>
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+
+            </div>
+            <!-- toolbar-inner -->
+        </nav>
+        <!-- toolbar -->
+    </div>
+    <!-- / TOOLBAR -->
+    <!-- HEADER -->
+    <div id="header">
+        <header class="header">
+            <div class="header-inner">
+                <nav class="navbar navbar-default main-nav-wrap navbar-static-top">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				  </button>
+
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav primary-menu">
+                                <li class="home active"><a href="index.html">Home</a></li>
+                                <li><a href="offers.html">Aanbiedingen</a></li>
+                                <li><a href="">Hoe werkt het?</a></li>
+                                <li><a href="3-page-about-us.html">Over ons</a></li>
+                                <li><a href="4-page-location.html">locaties</a></li>
+                                <li><a href="">Veelgestelde vragen</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </div>
+            <!-- / header-inner -->
+        </header>
+        <!-- / header -->
+    </div>
+    <!-- / HEADER -->
+
+    <main id="master" class="master">
+        <div class="master-inner">
+
+            <div class="search-header-zone">
+                <section class="section-search-header visible-xs-block">
+                    <div class="ss-inner">
+                        <table class="normal">
+                            <tr>
+                                <td>
+                                    <div class="r-card">
+                                        <div class="r-title">
+                                            Den Bosch
+                                        </div>
+                                        <div class="r-desc">
+                                            Ma 17-2-’17 10:00u
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="r-card">
+                                        <div class="r-title">
+                                            Almere
+                                        </div>
+                                        <div class="r-desc">
+                                            Di 18-2-’17 11:00u
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="ss-action-holder">
+                                        <div class="ss-action-open call-action-handler" data-action="open">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                            <span class="ss-action-title">
+									Wijzig
+								</span>
+                                        </div>
+                                        <!-- ss-action-open -->
+                                        <div class="ss-action-close call-action-handler" data-action="close">
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </div>
+                                        <!-- ss-action-close -->
+                                    </div>
+                                    <!-- ss-action-holder -->
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- ss-inner -->
+                </section>
+                <section class="section-form">
+                    <div class="container">
+                        <div class="form-zone clearfix">
+                            <div class="p-20">
+                                <form action="">
+                                    <div class="form-search-zone clearfix">
+                                        <div class="form-col col-car-type">
+                                            <div>
+                                                <label for="" class="form-label">voertuigtype</label>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <div class="custom-radio ">
+                                                        <input type="radio" name="typeOfCar" id="typePersonal">
+                                                        <label class="type-personal" for="typePersonal"> 
+                                            <div class="label-opacity match-height">
+                                                <div class="icon-car"></div> Personenbus
+                                            </div>
+                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                                    <div class="custom-radio ">
+                                                        <input type="radio" name="typeOfCar" id="typeBus">
+                                                        <label class="type-bus" for="typeBus"> 
+                                            <div class="label-opacity match-height">
+                                                <div class="icon-car"></div>
+                                                Bestelbus / Verhuiswagen
+                                            </div>
+                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- form-group -->
+                                        </div>
+                                        <!-- form-col -->
+
+                                        <!-- PICKUP LOCATION -->
+                                        <div class="form-col col-pickup">
+                                            <div class="block-pickup">
+                                                <label for="" class="form-label hidden-xs">ophalen</label>
+                                                <label for="" class="form-label visible-xs-block">ophaallocatie</label>
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <!--div class="input-group-addon">
+                                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                        </div-->
+                                                        <input type="text" value="Den Bosch" name="depart" id="" class="form-control">
+                                                    </div>
+                                                    <!-- input-group -->
+                                                </div>
+                                                <!-- form-group -->
+                                            </div>
+                                            <div class="visible-xs-block">
+                                                <div class="form-label">
+                                                    <input type="checkbox" name="" id="checkbox_same_location" checked class="css-checkbox" /><label for="checkbox_same_location" class="css-label"> VOERTUIG INLEVEREN OP DEZELFDE LOCATIE</label>
+                                                </div>
+                                            </div>
+                                            <div class="block-return">
+                                                <label for="" class="form-label">Terugbrengen</label>
+
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <!--div class="input-group-addon">
+                                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                        </div-->
+                                                        <input type="text" value="Den Bosch" name="arrival" id="" class="form-control">
+                                                    </div>
+                                                    <!-- input-group -->
+                                                </div>
+                                                <!-- form-group -->
+                                            </div>
+
+                                            <div class="clear"></div>
+
+                                            <div class="group-date-time-pickup">
+
+                                                <div class="form-group">
+                                                    <label for="" class="form-label visible-xs-block">ophalen</label>
+                                                    <div class="row">
+                                                        <div class="col-md-8 col-sm-8 col-xs-12 id-col-depart-date">
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon">
+                                                                    <div class="icon icon-calendar"></div>
+                                                                </div>
+                                                                <input type="text" name="depart_date" id="depart_date" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-4 col-sm-4 col-xs-12 id-col-depart-time">
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon">
+                                                                    <div class="icon icon-clock"></div>
+                                                                </div>
+                                                                <input type="text" name="depart_time" id="depart_time" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+                                                </div>
+                                                <!-- form-group -->
+                                            </div>
+                                            <!-- group-date-time -->
+
+                                            <div class="group-date-time-return">
+                                                <label for="" class="form-label visible-xs-block">Terugbrengen</label>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-8 col-sm-8 col-xs-12 id-col-arrival-date">
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon">
+                                                                    <div class="icon icon-calendar"></div>
+                                                                </div>
+                                                                <input type="text" name="arrival_date" id="arrival_date" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <!-- col-md-6 -->
+                                                        <div class="col-md-4 col-sm-4 col-xs-12 id-col-arrival-time">
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon">
+                                                                    <div class="icon icon-clock"></div>
+                                                                </div>
+                                                                <input type="text" name="arrival_time" id="arrival_time" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <!-- col-md-6 -->
+                                                    </div>
+                                                    <!-- row -->
+                                                </div>
+                                                <!-- form-group -->
+                                            </div>
+                                            <!-- group-date-time -->
+
+                                        </div>
+                                        <!-- form-col -->
+                                        <!-- / PICKUP LOCATION -->
+
+                                        <div class="form-col col-submit">
+                                            <button type="button" onclick="javascript:window.location.href='list-location.html'" class="btn btn-block btn-success btn-search">
+                                    <span>zoeken</span>
+                                </button>
+
+                                        </div>
+                                        <!-- form-col -->
+                                    </div>
+                                    <!-- form-search-zone -->
+                                </form>
+                            </div>
+                        </div>
+                        <!-- zone -->
+                    </div>
+                </section>
+            </div>
+            <!-- search-header-zone -->
+
+            <section>
+                <div class="container">
+
+                    <div class="mb-50">
+                        <div class="row">
+                            <!-- ============ SIDEBAR ============ -->
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="primary-sidebar">
+                                    <div class="sp-title-block">
+                                        <div class="sidebar-title">
+                                            filteropties
+                                            <span class="visible-xs-inline call-filter-handler">
+	                            	<i class="fa fa-chevron-down" aria-hidden="true"></i>
+	                            </span>
+
+                                        </div>
+                                        <div class="clear-filter">
+                                            filters herstellen
+                                        </div>
+                                        <div class="filter-active hidden-lg hidden-md hidden-sm">
+                                            2 filters actief
+                                        </div>
+                                    </div>
+                                    <!-- sp-title-block -->
+
+                                    <div class="all-filter">
+
+                                        <div class="row row-filter-group">
+                                            <div class="col-xs-6 col-sm-12 col-md-12">
+                                                <!-- WP: MENU -->
+                                                <div class="widget widget-container widget-toggle">
+                                                    <div class="widget-title">Borg</div>
+                                                    <div class="menu-main-menu-container">
+                                                        <ul class="filter-list">
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite" id="radio1" class="css-checkbox" />
+                                                                <label for="radio1" class="css-label radGroup1">Met credit card</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite" id="radio2" class="css-checkbox" checked="checked" />
+                                                                <label for="radio2" class="css-label radGroup1">Met pinpas</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite" id="radio3" class="css-checkbox" />
+                                                                <label for="radio3" class="css-label radGroup1">Contant</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <!-- widget -->
+                                                <!-- END WP: MENU -->
+                                            </div>
+                                            <!-- col -->
+
+                                            <div class="col-xs-6 col-sm-12 col-md-12">
+                                                <!-- WP: MENU -->
+                                                <div class="widget widget-container widget-toggle">
+                                                    <div class="widget-title">Airco</div>
+                                                    <div class="menu-main-menu-container">
+                                                        <ul class="filter-list">
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite2" id="radio4" class="css-checkbox" />
+                                                                <label for="radio4" class="css-label radGroup2">Ja</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite2" id="radio5" class="css-checkbox" />
+                                                                <label for="radio5" class="css-label radGroup2">Met pinpas</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite2" id="radio6" class="css-checkbox" />
+                                                                <label for="radio6" class="css-label radGroup2">Contant</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <!-- widget -->
+                                                <!-- END WP: MENU -->
+                                            </div>
+                                            <!-- col -->
+
+                                            <div class="col-xs-6 col-sm-12 col-md-12">
+                                                <!-- WP: MENU -->
+                                                <div class="widget widget-container widget-toggle">
+                                                    <div class="widget-title">brandstof</div>
+                                                    <div class="menu-main-menu-container">
+                                                        <ul class="filter-list">
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite3" id="radio7" class="css-checkbox" />
+                                                                <label for="radio7" class="css-label radGroup3">Benzine</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite3" id="radio8" class="css-checkbox" />
+                                                                <label for="radio8" class="css-label radGroup3">Diesel</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <!-- widget -->
+                                                <!-- END WP: MENU -->
+
+                                            </div>
+                                            <!-- col -->
+
+                                            <div class="col-xs-6 col-sm-12 col-md-12">
+                                                <!-- WP: MENU -->
+                                                <div class="widget widget-container widget-toggle">
+                                                    <div class="widget-title">transmissie</div>
+                                                    <div class="menu-main-menu-container">
+                                                        <ul class="filter-list">
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite4" id="radio9" class="css-checkbox" />
+                                                                <label for="radio9" class="css-label radGroup4">Handgeschakeld</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite4" id="radio10" class="css-checkbox" />
+                                                                <label for="radio10" class="css-label radGroup4">Automaat</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <!-- widget -->
+                                                <!-- END WP: MENU -->
+                                            </div>
+                                            <!-- col -->
+
+                                            <div class="col-xs-6 col-sm-12 col-md-12">
+                                                <!-- WP: MENU -->
+                                                <div class="widget widget-container widget-toggle">
+                                                    <div class="widget-title">laadklep</div>
+                                                    <div class="menu-main-menu-container">
+                                                        <ul class="filter-list">
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite5" id="radio11" class="css-checkbox" />
+                                                                <label for="radio11" class="css-label radGroup5">Ja</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite5" id="radio12" class="css-checkbox" />
+                                                                <label for="radio12" class="css-label radGroup5">Nee</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <!-- widget -->
+                                                <!-- END WP: MENU -->
+                                            </div>
+                                            <!-- col -->
+
+                                            <div class="col-xs-6 col-sm-12 col-md-12">
+                                                <!-- WP: MENU -->
+                                                <div class="widget widget-container widget-toggle">
+                                                    <div class="widget-title">reclame</div>
+                                                    <div class="menu-main-menu-container">
+                                                        <ul class="filter-list">
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite6" id="radio13" class="css-checkbox" />
+                                                                <label for="radio13" class="css-label radGroup6">Met reclame</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite6" id="radio14" class="css-checkbox" />
+                                                                <label for="radio14" class="css-label radGroup6">Zonder reclame</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <!-- widget -->
+                                                <!-- END WP: MENU -->
+
+                                            </div>
+                                            <!-- col -->
+
+                                            <div class="col-xs-6 col-sm-12 col-md-12">
+                                                <!-- WP: MENU -->
+                                                <div class="widget widget-container widget-toggle">
+                                                    <div class="widget-title">Prijs/kwaliteit</div>
+                                                    <div class="menu-main-menu-container">
+                                                        <ul class="filter-list">
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite7" id="radio15" class="css-checkbox" />
+                                                                <label for="radio15" class="css-label radGroup7">Budget keuze</label>
+                                                            </li>
+                                                            <li>
+                                                                <input type="radio" name="radiog_lite7" id="radio16" class="css-checkbox" />
+                                                                <label for="radio16" class="css-label radGroup7">Premium</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <!-- widget -->
+                                                <!-- END WP: MENU -->
+                                            </div>
+                                            <!-- col -->
+
+                                        </div>
+                                        <!-- row -->
+                                        <div class="visible-xs">
+                                            <div class="btn-filter-sp">
+                                                PAS FILTERING TOE
+                                            </div>
+                                            <!-- btn-filter-sp -->
+                                        </div>
+                                        <!-- visible-xs -->
+                                    </div>
+                                    <!-- all-filter -->
+                                </div>
+                                <!-- primary-sidebar -->
+                            </div>
+                            <!-- col -->
+                            <!-- /============ SIDEBAR ============ -->
+
+                            <!-- ============ MAIN CONTENT ============ -->
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <header class="search-title archive-page-title">
+                                    <span>
+			            14
+			          </span> resultaten in Almere
+                                </header>
+                                <div class="section-product-list">
+                                    <ul class="products">
+                                        <li class="product-item">
+                                            <h3 class="pd-name">
+                                                <a href="">
+        Type CMPV - Renault Scenic (5 zitplaatsen)
+        </a>
+                                                <span>of gelijkwaardig</span>
+                                            </h3>
+                                            <div class="pd-zone row">
+                                                <div class="pd-img col-md-4 col-sm-3 col-xs-6">
+                                                    <a href=""><img src="http://placehold.it/355x220" alt=""></a>
+                                                </div>
+                                                <!-- pd-img -->
+                                                <div class="pd-desc col-md-5 col-sm-5 col-xs-6">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            <strong>Laadruimte (m3)</strong>
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            <strong>1m3</strong>
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Laadruimte (l x b x h)
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            90 x 110 x 85 cm
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Laadvermogen
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            600 kg
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+
+                                                    <div class="mb-10">
+                                                        <a data-toggle="modal" data-target="#popUpSpecify" class="link-modal-specify">Bekijk alle specificaties</a>
+                                                    </div>
+
+                                                    <div class="row hidden-xs">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Locatie
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            W.M. Dukoweg 12 Heerhugowaard
+                                                        </div>
+                                                    </div>
+                                                    <!-- row -->
+                                                </div>
+                                                <!-- pd-desc -->
+                                                <div class="clear visible-xs-block"></div>
+                                                <div class="pd-action col-md-3 col-sm-4 col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-6 visible-xs-block row-lacation-label">
+                                                            <div class="row">
+                                                                <div class="col-xs-3">
+                                                                    Locatie
+                                                                </div>
+                                                                <div class="col-xs-9">
+                                                                    W.M. Dukoweg 12 Heerhugowaard
+                                                                </div>
+                                                            </div>
+                                                            <!-- row -->
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-xs-6 col-sm-12 col-md-12">
+                                                            <div class="pd-price">
+                                                                <div class="price">
+                                                                    <div class="new-price clearfix">
+                                                                        <div class="new-price-left">
+                                                                            €195,-
+                                                                        </div>
+                                                                        <div class="condition hidden-xs">
+                                                                            <a class="condition-link" data-toggle="modal" data-target="#popUpCondition">Voorwaarden</a>
+                                                                        </div>
+                                                                        <div class="incl">
+                                                                            incl. BTW
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- price -->
+                                                            </div>
+                                                            <!-- pd-price -->
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+
+                                                    <div class="pd-footer clearfix">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-6 col-reserve">
+                                                                <a class="btn btn-success btn-block" data-toggle="modal" data-target="#popUpModal">
+                            reserveer
+                        </a>
+                                                            </div>
+                                                            <!-- col -->
+                                                            <div class="col-md-12 col-sm-12 col-xs-6 col-offer">
+                                                                <a href="" class="btn btn-gray btn-block">
+                            vraag offerte aan
+                        </a>
+                                                            </div>
+                                                            <!-- col -->
+                                                        </div>
+                                                        <!-- row -->
+                                                    </div>
+                                                    <!-- pd-price -->
+                                                </div>
+                                                <!-- pd-action -->
+                                                <!-- product-inner -->
+                                            </div>
+                                        </li>
+                                        <li class="product-item">
+                                            <h3 class="pd-name">
+                                                <a href="">
+        Type CMPV - Renault Scenic (5 zitplaatsen)
+        </a>
+                                                <span>of gelijkwaardig</span>
+                                            </h3>
+                                            <div class="pd-zone row">
+                                                <div class="pd-img col-md-4 col-sm-3 col-xs-6">
+                                                    <a href=""><img src="http://placehold.it/355x220" alt=""></a>
+                                                </div>
+                                                <!-- pd-img -->
+                                                <div class="pd-desc col-md-5 col-sm-5 col-xs-6">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            <strong>Laadruimte (m3)</strong>
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            <strong>1m3</strong>
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Laadruimte (l x b x h)
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            90 x 110 x 85 cm
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Laadvermogen
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            600 kg
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+
+                                                    <div class="mb-10">
+                                                        <a data-toggle="modal" data-target="#popUpSpecify" class="link-modal-specify">Bekijk alle specificaties</a>
+                                                    </div>
+
+                                                    <div class="row hidden-xs">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Locatie
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            W.M. Dukoweg 12 Heerhugowaard
+                                                        </div>
+                                                    </div>
+                                                    <!-- row -->
+                                                </div>
+                                                <!-- pd-desc -->
+                                                <div class="clear visible-xs-block"></div>
+                                                <div class="pd-action col-md-3 col-sm-4 col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-6 visible-xs-block row-lacation-label">
+                                                            <div class="row">
+                                                                <div class="col-xs-3">
+                                                                    Locatie
+                                                                </div>
+                                                                <div class="col-xs-9">
+                                                                    W.M. Dukoweg 12 Heerhugowaard
+                                                                </div>
+                                                            </div>
+                                                            <!-- row -->
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-xs-6 col-sm-12 col-md-12">
+                                                            <div class="pd-price">
+                                                                <div class="price">
+                                                                    <div class="new-price clearfix">
+                                                                        <div class="new-price-left">
+                                                                            €195,-
+                                                                        </div>
+                                                                        <div class="condition hidden-xs">
+                                                                            <a class="condition-link" data-toggle="modal" data-target="#popUpCondition">Voorwaarden</a>
+                                                                        </div>
+                                                                        <div class="incl">
+                                                                            incl. BTW
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- price -->
+                                                            </div>
+                                                            <!-- pd-price -->
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+
+                                                    <div class="pd-footer clearfix">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-6 col-reserve">
+                                                                <a class="btn btn-success btn-block" data-toggle="modal" data-target="#popUpModal">
+                            reserveer
+                        </a>
+                                                            </div>
+                                                            <!-- col -->
+                                                            <div class="col-md-12 col-sm-12 col-xs-6 col-offer">
+                                                                <a href="" class="btn btn-gray btn-block">
+                            vraag offerte aan
+                        </a>
+                                                            </div>
+                                                            <!-- col -->
+                                                        </div>
+                                                        <!-- row -->
+                                                    </div>
+                                                    <!-- pd-price -->
+                                                </div>
+                                                <!-- pd-action -->
+                                                <!-- product-inner -->
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="checked-zone mb-30 hidden-xs hidden-sm">
+                                        <div class="checked-item">
+                                            <div class="icon-check"></div>
+                                            <div class="checked-name">
+                                                Volledig kilometervrij
+
+                                            </div>
+                                            <!-- checked-name -->
+                                        </div>
+                                        <!-- checked-item -->
+                                        <div class="checked-item">
+                                            <div class="icon-check"></div>
+                                            <div class="checked-name">
+                                                Altijd all-risk verzekerd
+                                            </div>
+                                            <!-- checked-name -->
+                                        </div>
+                                        <!-- checked-item -->
+                                        <div class="checked-item">
+                                            <div class="icon-check"></div>
+                                            <div class="checked-name">
+                                                Kosteloos annuleren
+                                            </div>
+                                            <!-- checked-name -->
+                                        </div>
+                                        <!-- checked-item -->
+                                    </div>
+                                    <!-- checked-zone -->
+                                    <ul class="products">
+                                        <li class="product-item">
+                                            <h3 class="pd-name">
+                                                <a href="">
+        Type CMPV - Renault Scenic (5 zitplaatsen)
+        </a>
+                                                <span>of gelijkwaardig</span>
+                                            </h3>
+                                            <div class="pd-zone row">
+                                                <div class="pd-img col-md-4 col-sm-3 col-xs-6">
+                                                    <a href=""><img src="http://placehold.it/355x220" alt=""></a>
+                                                </div>
+                                                <!-- pd-img -->
+                                                <div class="pd-desc col-md-5 col-sm-5 col-xs-6">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            <strong>Laadruimte (m3)</strong>
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            <strong>1m3</strong>
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Laadruimte (l x b x h)
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            90 x 110 x 85 cm
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Laadvermogen
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            600 kg
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+
+                                                    <div class="mb-10">
+                                                        <a data-toggle="modal" data-target="#popUpSpecify" class="link-modal-specify">Bekijk alle specificaties</a>
+                                                    </div>
+
+                                                    <div class="row hidden-xs">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Locatie
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            W.M. Dukoweg 12 Heerhugowaard
+                                                        </div>
+                                                    </div>
+                                                    <!-- row -->
+                                                </div>
+                                                <!-- pd-desc -->
+                                                <div class="clear visible-xs-block"></div>
+                                                <div class="pd-action col-md-3 col-sm-4 col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-6 visible-xs-block row-lacation-label">
+                                                            <div class="row">
+                                                                <div class="col-xs-3">
+                                                                    Locatie
+                                                                </div>
+                                                                <div class="col-xs-9">
+                                                                    W.M. Dukoweg 12 Heerhugowaard
+                                                                </div>
+                                                            </div>
+                                                            <!-- row -->
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-xs-6 col-sm-12 col-md-12">
+                                                            <div class="pd-price">
+                                                                <div class="price">
+                                                                    <div class="new-price clearfix">
+                                                                        <div class="new-price-left">
+                                                                            €195,-
+                                                                        </div>
+                                                                        <div class="condition hidden-xs">
+                                                                            <a class="condition-link" data-toggle="modal" data-target="#popUpCondition">Voorwaarden</a>
+                                                                        </div>
+                                                                        <div class="incl">
+                                                                            incl. BTW
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- price -->
+                                                            </div>
+                                                            <!-- pd-price -->
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+
+                                                    <div class="pd-footer clearfix">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-6 col-reserve">
+                                                                <a class="btn btn-success btn-block" data-toggle="modal" data-target="#popUpModal">
+                            reserveer
+                        </a>
+                                                            </div>
+                                                            <!-- col -->
+                                                            <div class="col-md-12 col-sm-12 col-xs-6 col-offer">
+                                                                <a href="" class="btn btn-gray btn-block">
+                            vraag offerte aan
+                        </a>
+                                                            </div>
+                                                            <!-- col -->
+                                                        </div>
+                                                        <!-- row -->
+                                                    </div>
+                                                    <!-- pd-price -->
+                                                </div>
+                                                <!-- pd-action -->
+                                                <!-- product-inner -->
+                                            </div>
+                                        </li>
+                                        <li class="product-item">
+                                            <h3 class="pd-name">
+                                                <a href="">
+        Type CMPV - Renault Scenic (5 zitplaatsen)
+        </a>
+                                                <span>of gelijkwaardig</span>
+                                            </h3>
+                                            <div class="pd-zone row">
+                                                <div class="pd-img col-md-4 col-sm-3 col-xs-6">
+                                                    <a href=""><img src="http://placehold.it/355x220" alt=""></a>
+                                                </div>
+                                                <!-- pd-img -->
+                                                <div class="pd-desc col-md-5 col-sm-5 col-xs-6">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            <strong>Laadruimte (m3)</strong>
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            <strong>1m3</strong>
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Laadruimte (l x b x h)
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            90 x 110 x 85 cm
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Laadvermogen
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            600 kg
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+
+                                                    <div class="mb-10">
+                                                        <a data-toggle="modal" data-target="#popUpSpecify" class="link-modal-specify">Bekijk alle specificaties</a>
+                                                    </div>
+
+                                                    <div class="row hidden-xs">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Locatie
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            W.M. Dukoweg 12 Heerhugowaard
+                                                        </div>
+                                                    </div>
+                                                    <!-- row -->
+                                                </div>
+                                                <!-- pd-desc -->
+                                                <div class="clear visible-xs-block"></div>
+                                                <div class="pd-action col-md-3 col-sm-4 col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-6 visible-xs-block row-lacation-label">
+                                                            <div class="row">
+                                                                <div class="col-xs-3">
+                                                                    Locatie
+                                                                </div>
+                                                                <div class="col-xs-9">
+                                                                    W.M. Dukoweg 12 Heerhugowaard
+                                                                </div>
+                                                            </div>
+                                                            <!-- row -->
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-xs-6 col-sm-12 col-md-12">
+                                                            <div class="pd-price">
+                                                                <div class="price">
+                                                                    <div class="new-price clearfix">
+                                                                        <div class="new-price-left">
+                                                                            €195,-
+                                                                        </div>
+                                                                        <div class="condition hidden-xs">
+                                                                            <a class="condition-link" data-toggle="modal" data-target="#popUpCondition">Voorwaarden</a>
+                                                                        </div>
+                                                                        <div class="incl">
+                                                                            incl. BTW
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- price -->
+                                                            </div>
+                                                            <!-- pd-price -->
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+
+                                                    <div class="pd-footer clearfix">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-6 col-reserve">
+                                                                <a class="btn btn-success btn-block" data-toggle="modal" data-target="#popUpModal">
+                            reserveer
+                        </a>
+                                                            </div>
+                                                            <!-- col -->
+                                                            <div class="col-md-12 col-sm-12 col-xs-6 col-offer">
+                                                                <a href="" class="btn btn-gray btn-block">
+                            vraag offerte aan
+                        </a>
+                                                            </div>
+                                                            <!-- col -->
+                                                        </div>
+                                                        <!-- row -->
+                                                    </div>
+                                                    <!-- pd-price -->
+                                                </div>
+                                                <!-- pd-action -->
+                                                <!-- product-inner -->
+                                            </div>
+                                        </li>
+                                        <li class="product-item">
+                                            <h3 class="pd-name">
+                                                <a href="">
+        Type CMPV - Renault Scenic (5 zitplaatsen)
+        </a>
+                                                <span>of gelijkwaardig</span>
+                                            </h3>
+                                            <div class="pd-zone row">
+                                                <div class="pd-img col-md-4 col-sm-3 col-xs-6">
+                                                    <a href=""><img src="http://placehold.it/355x220" alt=""></a>
+                                                </div>
+                                                <!-- pd-img -->
+                                                <div class="pd-desc col-md-5 col-sm-5 col-xs-6">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            <strong>Laadruimte (m3)</strong>
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            <strong>1m3</strong>
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Laadruimte (l x b x h)
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            90 x 110 x 85 cm
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Laadvermogen
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            600 kg
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+
+                                                    <div class="mb-10">
+                                                        <a data-toggle="modal" data-target="#popUpSpecify" class="link-modal-specify">Bekijk alle specificaties</a>
+                                                    </div>
+
+                                                    <div class="row hidden-xs">
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            Locatie
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-6 col-sm-6">
+                                                            W.M. Dukoweg 12 Heerhugowaard
+                                                        </div>
+                                                    </div>
+                                                    <!-- row -->
+                                                </div>
+                                                <!-- pd-desc -->
+                                                <div class="clear visible-xs-block"></div>
+                                                <div class="pd-action col-md-3 col-sm-4 col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-6 visible-xs-block row-lacation-label">
+                                                            <div class="row">
+                                                                <div class="col-xs-3">
+                                                                    Locatie
+                                                                </div>
+                                                                <div class="col-xs-9">
+                                                                    W.M. Dukoweg 12 Heerhugowaard
+                                                                </div>
+                                                            </div>
+                                                            <!-- row -->
+                                                        </div>
+                                                        <!-- col -->
+                                                        <div class="col-xs-6 col-sm-12 col-md-12">
+                                                            <div class="pd-price">
+                                                                <div class="price">
+                                                                    <div class="new-price clearfix">
+                                                                        <div class="new-price-left">
+                                                                            €195,-
+                                                                        </div>
+                                                                        <div class="condition hidden-xs">
+                                                                            <a class="condition-link" data-toggle="modal" data-target="#popUpCondition">Voorwaarden</a>
+                                                                        </div>
+                                                                        <div class="incl">
+                                                                            incl. BTW
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- price -->
+                                                            </div>
+                                                            <!-- pd-price -->
+                                                        </div>
+                                                        <!-- col -->
+                                                    </div>
+                                                    <!-- row -->
+
+                                                    <div class="pd-footer clearfix">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12 col-xs-6 col-reserve">
+                                                                <a class="btn btn-success btn-block" data-toggle="modal" data-target="#popUpModal">
+                            reserveer
+                        </a>
+                                                            </div>
+                                                            <!-- col -->
+                                                            <div class="col-md-12 col-sm-12 col-xs-6 col-offer">
+                                                                <a href="" class="btn btn-gray btn-block">
+                            vraag offerte aan
+                        </a>
+                                                            </div>
+                                                            <!-- col -->
+                                                        </div>
+                                                        <!-- row -->
+                                                    </div>
+                                                    <!-- pd-price -->
+                                                </div>
+                                                <!-- pd-action -->
+                                                <!-- product-inner -->
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- section-product-list -->
+                                <div class="align-center mb-40">
+                                    <a href="" class="btn btn-gray btn-load-page">laad meer resultaten</a>
+                                </div>
+                                <div class="yellow-box">
+                                    <div class="y-name">
+                                        Autoverhuur in Almere
+                                    </div>
+                                    <div class="y-desc">
+                                        Liever een auto huren in Almere? <a href="">Huureenauto.nl</a> biedt u het grootste aanbod huurauto's en bovendien huurt u altijd 100% kilometervrij!
+                                    </div>
+                                </div>
+                                <!-- yellow-box -->
+                            </div>
+                            <!-- col -->
+                            <!-- ============ /MAIN CONTENT ============ -->
+
+                        </div>
+                        <!-- row -->
+                    </div>
+                </div>
+                <!-- container -->
+            </section>
+
+
+            <section class="mb-50 ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="same-height-with-map">
+                                <header class="single-post-heading">
+                                    BUSJE HUREN IN ALMERE
+                                </header>
+                                <h6>Goedkoop en kilometervrij een busje huren in Almere bij Busjehuren.nl</h6>
+                                <div class="mb-30">
+                                    <p>
+                                        Van een personenbusje tot een verhuiswagen, dankzij ons uitgebreide aanbod bieden wij u voor elke gelegenheid de juiste bus in Almere. Daarnaast werkt Busjehuren.nl alleen samen met BOVAG erkende verhuurbedrijven, waardoor u de garantie heeft van een
+                                        goede kwaliteit en service!
+                                    </p>
+                                </div>
+                                <h6>
+                                    Welk type auto of busje hebben wij te huur in Almere:
+                                </h6>
+                                <div class="mb-30">
+                                    <p>- een bestelbus met 3m3, 5m3, 7m3 en 11m3 laadruimte</p>
+                                    <p>- een verhuiswagen met 19m3 laadruimte (met en zonder laadklep)</p>
+                                    <p>- een busje met dubbele cabine, 6 zitplaatsen en 3m3 laadruimte</p>
+                                </div>
+                                <h6>
+                                    Goedkoop en kilometervrij een busje huren in Almere bij Busjehuren.nl
+                                </h6>
+                                <div class="mb-30">
+                                    <p>Van een personenbusje tot een verhuiswagen, dankzij ons uitgebreide aanbod bieden wij u voor elke gelegenheid de juiste bus in Almere. Daarnaast werkt Busjehuren.nl alleen samen met BOVAG erkende verhuurbedrijven, waardoor
+                                        u de garantie heeft van een goede kwaliteit en service!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-6 hidden-xs hidden-sm">
+                            <div class="map-container">
+                                <div id="marker" data-image="images/big-marker.png"></div>
+                                <div class="location-link" data-latitude="10.241958" data-longitude="105.155135" data-address="Lorem ipsum dolor sit amet, mollit anim id est laborum." data-open-time="Open time, close time" data-title="STERNRENT"></div>
+                                <div id="map"></div>
+                            </div>
+
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </section>
+
+            <!-- Modal -->
+            <div class="modal fade" id="popUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">U heeft nog geen gegevens ingevoerd</h4>
+                        </div>
+                        <div class="modal-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum turpis tellus, quis viverra metus ornare sed.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-gray" data-dismiss="modal">sluit dit venster</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- POPUP: SPECIFY -->
+            <div class="modal fade modal-specify" id="popUpSpecify" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h3 class="pd-name">
+                                        <a href="#">
+					        Type CMPV - Renault Scenic (5 zitplaatsen)				       
+					        </a>
+                                        <span>of gelijkwaardig</span>
+                                    </h3>
+                                </div>
+
+                                <div class="col-md-3 align-right">
+                                    <div class="pd-price">
+                                        <div class="price">
+                                            <div class="new-price clearfix">
+                                                <div class="new-price-left">
+                                                    €195,-
+                                                </div>
+                                                <div class="incl">
+                                                    incl. BTW
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- price -->
+                                    </div>
+                                    <!-- pd-price -->
+                                </div>
+                                <!-- col -->
+                            </div>
+                            <!-- row -->
+                        </div>
+                        <!-- modal-header -->
+
+
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="specify-image">
+                                        <img src="http://placehold.it/375x200" alt="">
+                                    </div>
+                                    <div class="specify-desc">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="inclusief-title">
+                                                    Inclusief
+                                                </div>
+                                                <ul class="inclusief-list">
+                                                    <li>BTW 21%</li>
+                                                    <li>Onbeperkte vrije km</li>
+                                                    <li>All-risk verzekering</li>
+                                                    <li>Buitenlanddekking</li>
+                                                    <li>24/7 pechhulp</li>
+                                                </ul>
+                                            </div>
+                                            <!-- col -->
+                                            <div class="col-md-6">
+                                                <div class="inclusief-title">
+                                                    Exclusief
+                                                </div>
+                                                <ul class="exclusief-list">
+                                                    <li>Brandstofkosten</li>
+                                                </ul>
+                                            </div>
+                                            <!-- col -->
+                                        </div>
+                                        <!-- row -->
+                                    </div>
+                                    <!-- desc -->
+                                </div>
+                                <!-- col -->
+                                <div class="col-md-6">
+                                    <table class="style-normal specify-table">
+                                        <thead>
+                                            <tr>
+                                                <td>
+                                                    Laadruimte (m3)
+                                                </td>
+                                                <td>
+                                                    1 m3
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Aantal zitplaatsen</td>
+                                                <td>5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Airco</td>
+                                                <td>Ja</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Borg</td>
+                                                <td>€600,- alléén met creditcard</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Brandstof</td>
+                                                <td>Benzine</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Budget keuze</td>
+                                                <td>Nee</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Extra laadruimte</td>
+                                                <td>Nee</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Laadklep</td>
+                                                <td>Nee</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Leeftijd</td>
+                                                <td>gem. 1 jaar oud</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Navigatie</td>
+                                                <td>Ja, voor West-Europa</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Premium</td>
+                                                <td>Ja</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Radio/CD speler</td>
+                                                <td>Ja</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Reclame op de auto</td>
+                                                <td>Nee</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Transmissie</td>
+                                                <td>Handgeschakeld</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Laadruimte (l x b x h)</td>
+                                                <td>98 x 103 x 75 cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Laadvermogen</td>
+                                                <td>300 kg</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- col -->
+                            </div>
+                            <!-- row -->
+                        </div>
+                        <!-- modal-body -->
+
+                        <div class="modal-footer align-right">
+                            <button type="button" class="btn btn-gray" data-dismiss="modal">sluit dit venster</button>
+                        </div>
+                        <!-- modal-footer -->
+                    </div>
+                </div>
+                <!-- modal-dialog -->
+            </div>
+            <!-- modal -->
+
+            <!-- POPUP: CONDITION -->
+            <div class="modal fade modal-condition" id="popUpCondition" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                        </div>
+                        <!-- modal-header -->
+
+
+                        <div class="modal-body">
+                            <div class="mb-20">
+                                <h5>Rijbewijs</h5>
+                                <p>
+                                    Alle bestuurders dienen minimaal 1 jaar in het bezit te zijn van een geldig rijbewijs.
+                                </p>
+                            </div>
+
+                            <div class="mb-20">
+                                <h5>Internationaal rijbewijs</h5>
+                                <p>
+                                    Een internationaal rijbewijs is verplicht voor rijbewijzen welke niet in romeins schrift zijn opgesteld. Naast het internationaal rijbewijs dient het originele rijbewijs aanwezig te zijn.
+                                </p>
+                            </div>
+
+                            <div class="mb-20">
+                                <h5>Minimum / Maximum leeftijd</h5>
+                                <p>
+                                    De minimum leeftijd is 21 jaar. Er is geen maximum leeftijd van toepassing
+                                </p>
+                            </div>
+
+                            <div class="mb-20">
+                                <h5>Internationaal rijbewijs</h5>
+                                <p>
+                                    Een internationaal rijbewijs is verplicht voor rijbewijzen welke niet in romeins schrift zijn opgesteld. Naast het internationaal rijbewijs dient het originele rijbewijs aanwezig te zijn.
+                                </p>
+                            </div>
+
+                            <h5>
+                                Openingstijden
+                            </h5>
+                            <table class="table-striped table">
+                                <thead>
+                                    <tr>
+                                        <th>Locatie</th>
+                                        <th>Maandag t/m vrijdag</th>
+                                        <th>Zaterdag</th>
+                                        <th>Zondag</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Zoetermeer</td>
+                                        <td>08:30 uur - 17:00 uur</td>
+                                        <td>Gesloten</td>
+                                        <td>Gesloten</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zoetermeer</td>
+                                        <td>08:30 uur - 17:00 uur</td>
+                                        <td>Gesloten</td>
+                                        <td>Gesloten</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- modal-body -->
+
+                        <div class="modal-footer align-right">
+                            <button type="button" class="btn btn-gray" data-dismiss="modal">sluit dit venster</button>
+                        </div>
+                        <!-- modal-footer -->
+                    </div>
+                </div>
+                <!-- modal-dialog -->
+            </div>
+            <!-- modal -->
+
+        </div>
+        <!-- master-inner -->
+    </main>
+    <!-- master -->
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <footer class="footer">
+            <section class="footer-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 id-trustpilot-zone">
+                            <div class="trustpilot-zone ">
+                                <div class="trust-star clearfix">
+                                    <div class="trust-star-container">
+                                        <img src="demo-images/trust-star.png" alt="">
+                                    </div>
+                                    <div class="mystyle-star">
+                                        <div class="star-ratings-css active-4">
+                                            <div class="star-ratings-css-top">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <div class="star-ratings-css-bottom">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <!-- star-ratings-css -->
+                                    </div>
+                                </div>
+                                <div class="point-star">
+                                    GEMIDDELDE KLANTWAARDERING <strong>8.7</strong>
+                                </div>
+                                <div class="footer-visa">
+                                    <img src="demo-images/footer-visa.png" alt="">
+                                </div>
+                            </div>
+                            <!-- trustpilot-zone -->
+                        </div>
+                        <!-- col -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="help-zone">
+                                <div class="help-title">
+                                    Heeft u vragen?
+                                </div>
+                                <div class="help-desc">
+                                    Wij staan u graag te woord.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- col -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="phone-zone">
+                                <div class="phone-title">
+                                    <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:073 890 1180">073 890 1180</a>
+                                </div>
+                                <!-- title -->
+                                <div class="phone-desc">
+                                    Of bekijk onze <a href="contact.html">contactpagina</a>.
+                                </div>
+                            </div>
+                            <!-- zone -->
+                        </div>
+                        <!-- col -->
+
+
+
+                    </div>
+                    <!-- row -->
+                    <div class="copyright">
+                        <div class="inner">
+                            © 2017 Busjehuren.nl
+                            <br> Busjehuren is een geregistreerd handelsmerk van Crrntl B.V., geregistreerd bij de Kamer van Koophandel Brabant, Nederland, nummer 054652804
+                        </div>
+                    </div>
+                    <!-- copyright -->
+                </div>
+                <!-- container -->
+            </section>
+            <!-- / footer-inner -->
+        </footer>
+        <!-- / footer -->
+    </div>
+    <!-- / FOOTER -->
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-calendar {
+  background-image: url(images/spritesheet.png);
+  background-position: -326px -44px;
+  width: 14px;
+  height: 14px;
+}
+.icon-car {
+  background-image: url(images/spritesheet.png);
+  background-position: 0px -130px;
+  width: 60px;
+  height: 30px;
+}
+.icon-check {
+  background-image: url(images/spritesheet.png);
+  background-position: -301px -44px;
+  width: 25px;
+  height: 19px;
+}
+.icon-clock {
+  background-image: url(images/spritesheet.png);
+  background-position: -296px -103px;
+  width: 14px;
+  height: 14px;
+}
+.icon-home-active {
+  background-image: url(images/spritesheet.png);
+  background-position: -301px -63px;
+  width: 18px;
+  height: 18px;
+}
+.icon-home-inactive {
+  background-image: url(images/spritesheet.png);
+  background-position: -319px -63px;
+  width: 18px;
+  height: 18px;
+}
+.icon-ideal {
+  background-image: url(images/spritesheet.png);
+  background-position: 0px 0px;
+  width: 535px;
+  height: 44px;
+}
+.icon-map {
+  background-image: url(images/spritesheet.png);
+  background-position: -328px -87px;
+  width: 8px;
+  height: 12px;
+}
+.icon-minus {
+  background-image: url(images/spritesheet.png);
+  background-position: -296px -87px;
+  width: 16px;
+  height: 16px;
+}
+.icon-plus {
+  background-image: url(images/spritesheet.png);
+  background-position: -312px -87px;
+  width: 16px;
+  height: 16px;
+}
+.icon-star {
+  background-image: url(images/spritesheet.png);
+  background-position: -60px -130px;
+  width: 85px;
+  height: 16px;
+}
+.icon-trustpilot-icon {
+  background-image: url(images/spritesheet.png);
+  background-position: 0px -87px;
+  width: 296px;
+  height: 43px;
+}
+.icon-trustpilot {
+  background-image: url(images/spritesheet.png);
+  background-position: 0px -44px;
+  width: 301px;
+  height: 43px;
+}

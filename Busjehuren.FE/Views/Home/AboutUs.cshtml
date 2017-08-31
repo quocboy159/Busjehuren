@@ -1,0 +1,21 @@
+﻿@model ContentModel
+
+@Html.Raw(Model.Text)
+
+@Html.Action("_NewsRelated", "Archive")
+
+<div class="wrapper-search-form">
+    @Html.Partial("_FilterLocationFormStatic")
+</div>
+
+<!-- =========== USER REVIEW =========== -->
+@Html.Partial("_UserReview")
+<!-- =========== /USER REVIEW =========== -->
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            ShowActivedNavigate($("#nav-about-us"));
+        })
+    </script>
+}

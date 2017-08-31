@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC7FA6C6-42DC-4098-8A18-CECE78AA2F73}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Busjehuren.Core</RootNamespace>
+    <AssemblyName>Busjehuren.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CodeFirstStoreFunctions, Version=0.1.0.0, Culture=neutral, PublicKeyToken=46c4868af4307d2c, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.CodeFirstStoreFunctions.1.0.0\lib\net45\CodeFirstStoreFunctions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.0.0\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentEmail, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\fluent-email.1.5\lib\net40\FluentEmail.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.6.1.0.0\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GemBox.Spreadsheet, Version=41.3.30.1038, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <HintPath>..\packages\GemBox.Spreadsheet.41.3.30.1038\lib\net30\GemBox.Spreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HttpMultipartParser, Version=2.1.4.0, Culture=neutral, PublicKeyToken=6d293681fa6c7a03, processorArchitecture=MSIL">
+      <HintPath>..\packages\HttpMultipartParser.2.1.4\lib\net40\HttpMultipartParser.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.3.1, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.1.1.3.1\lib\net45\LinqKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebHelpers.3.2.3\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.3.9.3\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.3\lib\net45\WebMatrix.WebData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dto\ContentDto.cs" />
+    <Compile Include="Dto\DestinationDto.cs" />
+    <Compile Include="Dto\AdreDto.cs" />
+    <Compile Include="Dto\FaqDto.cs" />
+    <Compile Include="EF\Adre.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Bestand.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\busjehuren.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>busjehuren.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\busjehuren.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\busjehuren.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>busjehuren.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Camper.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CamperAanbieding.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CamperAanbiedingMetPrijzen.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CamperAanbiedingPrijzen_backup_Result.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CamperAanbiedingPrijzen_Result.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CamperBed.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CamperBestanden.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CamperEigenschappen.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Content.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ContentType.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Destination.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DestinationType.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\dtproperty.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\dualvalue_list_Result.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Eigenschap.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\EigenschapWaarde.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetEigenschappenVoorZoekresultaat_bk_Result.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetEigenschappenVoorZoekresultaat_Result.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetPeriodsWithoutGaps_Result.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetPrijsInformatieBestGeboekt_Result.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetPrijsInformatie_bk_Result.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GetPrijsInformatie_Result.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Language.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Leverancier.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Longhire.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Pakket.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Partner.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Person.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PreImportCamperPrice.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Reservation.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ReservationMailArchive.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ReservationPackage.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SupplierContent.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\sysdiagram.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_BlockedIPs.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Cache.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Categories.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_CategoriesXmlTypes.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Categoryancestors.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Categorylanguagevalues.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Categoryparents.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_DomainSettings.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Dropdownlanguagevalues.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Dropdowns.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_DropdownsXmlTypes.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Dropdownvalues.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Eventlog.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_EventTypes.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_FailedLogins.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Groups.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_GroupsTypes.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_GroupsXML.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_ImportJobs.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_ImportLog.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Importxml.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_ImportXmlLanguages.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Languages.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Modules.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_ModulesDefinitions.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_ModulesPermissions.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Pages.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Permissions.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_PermissionsRoles.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Roles.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_SecurityLevels.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Sessions.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_SystemSettings.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Users.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_UsersXML.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Xmlfields.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Xmlfieldsancestors.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_xmlfreetextfieldsedit.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Xmllanguagefieldsedit.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Xmlsearchfieldsedit.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbls_Xmltypes.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbl_CamperOffers.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbl_Destinations.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbl_IpToCountry.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\tbl_log4net.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\value_list_Result.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Valuta.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\vboekingen.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Vestiging.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\VestigingOpeningHour.cs">
+      <DependentUpon>busjehuren.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CamperBestanden.cs" />
+    <Compile Include="Entity\tbls_Dropdowns.cs" />
+    <Compile Include="Entity\Person.cs" />
+    <Compile Include="Entity\ContentType.cs" />
+    <Compile Include="Entity\Eigenschap.cs" />
+    <Compile Include="Entity\Pakket.cs" />
+    <Compile Include="Entity\ReservationPackage.cs" />
+    <Compile Include="Entity\Reservation.cs" />
+    <Compile Include="Entity\Bestand.cs" />
+    <Compile Include="Entity\Vestiging.cs" />
+    <Compile Include="Entity\EigenschapWaarde.cs" />
+    <Compile Include="Entity\Camper.cs" />
+    <Compile Include="Entity\CamperAanbieding.cs" />
+    <Compile Include="Entity\Language.cs" />
+    <Compile Include="Entity\Destination.cs" />
+    <Compile Include="Entity\Adre.cs" />
+    <Compile Include="Entity\Content.cs" />
+    <Compile Include="Entity\IEntity.cs" />
+    <Compile Include="Entity\VestigingOpeningHours.cs" />
+    <Compile Include="Enums\DestinationType.cs" />
+    <Compile Include="Hepler\CamperCalculation.cs" />
+    <Compile Include="Hepler\QueryableHelper.cs" />
+    <Compile Include="Mappers\ProductMappingProfile.cs" />
+    <Compile Include="Mappers\ContentMappingProfile.cs" />
+    <Compile Include="Mappers\LocationMappingProfile.cs" />
+    <Compile Include="Models\AdreModel.cs" />
+    <Compile Include="Models\BestemmingModel.cs" />
+    <Compile Include="Models\BookingData.cs" />
+    <Compile Include="Models\CamperAanbiedingMetPrijzen.cs" />
+    <Compile Include="Models\CamperAanbiedingModel.cs" />
+    <Compile Include="Models\CamperBedModel.cs" />
+    <Compile Include="Models\CamperBestandModel.cs" />
+    <Compile Include="Models\CamperLocation.cs" />
+    <Compile Include="Models\CamperModel.cs" />
+    <Compile Include="Models\ContactModel.cs" />
+    <Compile Include="Models\FileModel.cs" />
+    <Compile Include="Models\EmailModel.cs" />
+    <Compile Include="Models\LeverancierModel.cs" />
+    <Compile Include="Models\LonghireModel.cs" />
+    <Compile Include="Models\PakketModel.cs" />
+    <Compile Include="Models\ProductItemQueryable.cs" />
+    <Compile Include="Models\PropertyDetailModel.cs" />
+    <Compile Include="Models\PropertyModel.cs" />
+    <Compile Include="Models\ContentModel.cs" />
+    <Compile Include="Models\DestinationModel.cs" />
+    <Compile Include="Models\SearchCamperModel.cs" />
+    <Compile Include="Models\FaqModel.cs" />
+    <Compile Include="Models\OfferCriteria.cs" />
+    <Compile Include="Models\PriceInfoModel.cs" />
+    <Compile Include="Models\ProductItem.cs" />
+    <Compile Include="Models\ValutaModel.cs" />
+    <Compile Include="Models\VestigingModel.cs" />
+    <Compile Include="Models\VestigingOpeningHourModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IPersonRepository.cs" />
+    <Compile Include="Repositories\IReservationPackageRepository.cs" />
+    <Compile Include="Repositories\IReservationRepository.cs" />
+    <Compile Include="Repositories\ICamperRepository.cs" />
+    <Compile Include="Repositories\IEigenschapRepository.cs" />
+    <Compile Include="Repositories\IEigenschapWaardeRepository.cs" />
+    <Compile Include="Repositories\IVestigingRepository.cs" />
+    <Compile Include="Repositories\ICamperAanbiedingRepository.cs" />
+    <Compile Include="Repositories\IDestinationRepository.cs" />
+    <Compile Include="Repositories\IContentRepository.cs" />
+    <Compile Include="Repositories\IAdreRepository.cs" />
+    <Compile Include="Repositories\IBaseRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Services\Contract\IGenericService.cs" />
+    <Compile Include="Services\Contract\IEmailService.cs" />
+    <Compile Include="Services\Contract\IContactService.cs" />
+    <Compile Include="Services\Contract\IPropertyService.cs" />
+    <Compile Include="Services\Contract\IProductService.cs" />
+    <Compile Include="Services\Contract\IContentService.cs" />
+    <Compile Include="Services\Contract\ICheckOutService.cs" />
+    <Compile Include="Services\Contract\ILocationService.cs" />
+    <Compile Include="Services\Impl\GenericService.cs" />
+    <Compile Include="Services\Impl\EmailService.cs" />
+    <Compile Include="Services\Impl\ContactService.cs" />
+    <Compile Include="Services\Impl\ProductService.cs" />
+    <Compile Include="Services\Impl\ContentService.cs" />
+    <Compile Include="Services\Impl\CheckOutService.cs" />
+    <Compile Include="Services\Impl\LocationService.cs" />
+    <Compile Include="Services\Impl\AdreService.cs" />
+    <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\Contract\IAdreService.cs" />
+    <Compile Include="Services\Impl\PropertyService.cs" />
+    <Compile Include="Services\IUnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="EF\busjehuren.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>busjehuren.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\busjehuren.edmx.diagram">
+      <DependentUpon>busjehuren.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Busjehuren.Common\Busjehuren.Common.csproj">
+      <Project>{56f44c7f-32d9-4f78-8469-701a24460e42}</Project>
+      <Name>Busjehuren.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EF\busjehuren.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>busjehuren.edmx</DependentUpon>
+      <LastGenOutput>busjehuren.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\busjehuren.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>busjehuren.edmx</DependentUpon>
+      <LastGenOutput>busjehuren.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sessions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

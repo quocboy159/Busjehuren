@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>BUSJEHUREN.NL</title>
+
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Favicon 32x32 and 180x180 -->
+    <link rel="icon" sizes="32x32" href="images/fav32.png" type="image/png" />
+    <link rel="icon" sizes="180x180" href="images/fav180.png" type="image/png" />
+
+    <!-- CDN -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+
+
+    <!-- AUTO CONCAT -->
+    <link rel="stylesheet" type="text/css" href="css/sprites.css">
+
+    <!-- MANUAL UPDATE -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style-responsive.css">
+
+    <!-- CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.7.0/parsley.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhktXAG6guKrLzHSMjAqPO9ki-SKP556Y" async defer></script>
+
+
+    <script src="js/plugin.js"></script>
+    <script src="js/main.js"></script>
+    <script type='text/javascript'>
+        (function (d, t) {
+            var bh = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            bh.type = 'text/javascript';
+            bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=wysk0v9jveddau66fxncfq';
+            s.parentNode.insertBefore(bh, s);
+        })(document, 'script');
+    </script>
+</head>
+
+<body class="mystyle">
+    <!-- TOOLBAR -->
+    <div id="toolbar">
+        <nav class="toolbar">
+            <div class="toolbar-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-xs-5 col-sm-3">
+                            <a class="brand" href="index.html">
+                                <img src="images/logo.gif" alt="">
+                            </a>
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-5 col-xs-7 col-sm-6">
+                            <div class="phone-block">
+                                <table class="normal">
+                                    <tr>
+                                        <td class="big-phone-image">
+                                            <img src="demo-images/phone.png" alt="">
+                                        </td>
+                                        <td>
+                                            <div class="big-phone-desc">
+                                                Heeft u vragen? Judith staat u graag te woord.
+                                            </div>
+                                            <div class="big-phone">
+                                                <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:073 890 1180">073 890 1180</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-2 col-xs-hidden col-sm-3">
+                            <div class="lang-block">
+                                <a href="" class="change-lang-link">
+                                    <img src="demo-images/phap.gif" alt=""> Change language
+                                </a>
+                            </div>
+
+                            <div class="nav-container">
+                                <a href="" class="login-link">
+                                    <i class="fa fa-sign-in"></i> Beheer boeking
+                                </a>
+                            </div>
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+
+            </div>
+            <!-- toolbar-inner -->
+        </nav>
+        <!-- toolbar -->
+    </div>
+    <!-- / TOOLBAR -->
+    <!-- TOOLBAR -->
+    <div id="toolbar" class="fixed">
+        <nav class="toolbar">
+            <div class="toolbar-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-xs-5 col-sm-3">
+                            <a class="brand" href="index.html">
+                                <img src="images/logo.gif" alt="">
+                            </a>
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-5 col-xs-7 col-sm-6">
+                            <div class="phone-block">
+                                <table class="normal">
+                                    <tr>
+                                        <td class="big-phone-image">
+                                            <img src="demo-images/phone.png" alt="">
+                                        </td>
+                                        <td>
+                                            <div class="big-phone-desc">
+                                                Heeft u vragen? Judith staat u graag te woord.
+                                            </div>
+                                            <div class="big-phone">
+                                                <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:073 890 1180">073 890 1180</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <!-- col -->
+                        <div class="col-md-2 col-xs-hidden col-sm-3">
+                            <div class="lang-block">
+                                <a href="" class="change-lang-link">
+                                    <img src="demo-images/phap.gif" alt=""> Change language
+                                </a>
+                            </div>
+
+                            <div class="nav-container">
+                                <a href="" class="login-link">
+                                    <i class="fa fa-sign-in"></i> Beheer boeking
+                                </a>
+                            </div>
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+
+            </div>
+            <!-- toolbar-inner -->
+        </nav>
+        <!-- toolbar -->
+    </div>
+    <!-- / TOOLBAR -->
+    <!-- HEADER -->
+    <div id="header">
+        <header class="header">
+            <div class="header-inner">
+                <nav class="navbar navbar-default main-nav-wrap navbar-static-top">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                                aria-expanded="false">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				  </button>
+
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav primary-menu">
+                                <li class="home active"><a href="index.html">Home</a></li>
+                                <li><a href="offers.html">Aanbiedingen</a></li>
+                                <li><a href="">Hoe werkt het?</a></li>
+                                <li><a href="3-page-about-us.html">Over ons</a></li>
+                                <li><a href="4-page-location.html">locaties</a></li>
+                                <li><a href="">Veelgestelde vragen</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </div>
+            <!-- / header-inner -->
+        </header>
+        <!-- / header -->
+    </div>
+    <!-- / HEADER -->
+
+    <main id="master" class="master">
+        <div class="master-inner">
+
+            <section class="section-cart-header visible-xs-block visible-sm-block">
+                <div class="container">
+                    <div class="row-item-in-card">
+                        <table class="normal">
+                            <tr>
+                                <td>
+                                    <div class="r-card">
+                                        <div class="r-title">
+                                            Den Bosch
+                                        </div>
+                                        <div class="r-desc">
+                                            Ma 17-2-’17 10:00u
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="r-card">
+                                        <div class="r-title">
+                                            Almere
+                                        </div>
+                                        <div class="r-desc">
+                                            Di 18-2-’17 11:00u
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="">
+                                    <div class="r-card">
+                                        <div class="align-right">
+                                            <div class="r-tincl">
+                                                Totaal (incl BTW)
+                                            </div>
+                                            <div class="r-63">
+                                                € 63,00
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="btn-overview-open">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="block-overview-application">
+                        <div class="boa-inner">
+                            <div class="btn-overview-close">
+                                <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                            </div>
+                            <div class="oa-title">
+                                overzicht aanvraag
+                            </div>
+                            <div class="oa-name">
+                                Personenbus
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="oa-row">
+                                        <div class="oa-label">
+                                            Ophalen
+                                        </div>
+                                        <div class="oa-content">
+                                            Almere dinsdag 19 januari 2017 om 09.00 uur
+                                        </div>
+                                    </div>
+                                    <!-- oa-row -->
+
+                                    <div class="oa-row">
+                                        <div class="oa-label">
+                                            Terugbrengen
+                                        </div>
+                                        <div class="oa-content">
+                                            Almere donderdag 21 januari 2017 om 09.00 uur
+                                        </div>
+                                    </div>
+                                    <!-- oa-row -->
+
+                                    <div class="oa-row">
+                                        <div class="oa-label">
+                                            aantal dagen
+                                        </div>
+                                        <div class="oa-content">
+                                            1 dag
+                                        </div>
+                                    </div>
+                                    <!-- oa-row -->
+
+                                </div>
+                                <!-- col -->
+                                <div class="col-md-6">
+
+                                    <div class="oa-row">
+                                        <div class="oa-label">
+                                            Kosten
+                                        </div>
+                                        <div class="oa-content">
+                                            <div class="row">
+                                                <div class="col-md-8 col-sm-8 col-xs-9">
+                                                    <div class="rc-group clearfix">
+                                                        <div class="rc-image">
+                                                            <img src="http://placehold.it/70x50" alt="">
+                                                        </div>
+                                                        <div class="rc-name">
+                                                            1x Type CMPV - Renault Scenic
+                                                            <br> (5 zitplaatsen)
+                                                        </div>
+                                                    </div>
+                                                    <!-- row -->
+
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-4 col-sm-4 col-xs-3 align-right">
+                                                    € 63,00
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+                                        </div>
+                                        <!-- content -->
+                                    </div>
+                                    <!-- oa-row -->
+
+                                    <div class="oa-row">
+                                        <div class="oa-content">
+                                            <div class="row">
+                                                <div class="col-md-8 col-sm-8 col-xs-9">
+                                                    <div class="oa-label">
+                                                        Vooraf te betalen opties
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-4 col-sm-4 col-xs-3 align-right">
+                                                    -
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+                                        </div>
+                                        <!-- content -->
+                                    </div>
+                                    <!-- oa-row -->
+
+                                    <div class="oa-row">
+                                        <div class="oa-content">
+                                            <div class="row">
+                                                <div class="col-md-8 col-sm-8 col-xs-9">
+                                                    <div class="oa-label">
+                                                        lokaal te betalen opties
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-4 col-sm-4 col-xs-3 align-right">
+                                                    -
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+                                        </div>
+                                        <!-- content -->
+                                    </div>
+                                    <!-- oa-row -->
+
+                                    <div class="oa-row row-total">
+                                        <div class="oa-content">
+                                            <div class="row">
+                                                <div class="col-md-8 col-sm-8 col-xs-8">
+                                                    <div class="oa-total">
+                                                        totaal (incl btw)
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-4 col-sm-4 col-xs-4 align-right">
+                                                    <div class="oa-price">
+                                                        € 63,00
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+                                        </div>
+                                        <!-- content -->
+                                    </div>
+                                    <!-- oa-row -->
+
+                                </div>
+                                <!-- col -->
+                            </div>
+                            <!-- row -->
+                        </div>
+                    </div>
+                    <!-- block-overview-application -->
+                </div>
+                <!-- container -->
+            </section>
+            <!-- section-cart-header -->
+
+            <section class="page-container">
+                <div class="container">
+                    <!-- STEPS -->
+                    <nav class="step-zone">
+                        <ol class="steps">
+                            <li class="active">
+                                <div class="step-count">
+                                    1.
+                                </div>
+                                <div class="step-name">
+                                    <a href="list-location.html">Maak een keuze</a>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <div class="step-count">
+                                    2.
+                                </div>
+                                <div class="step-name">
+                                    <a href="checkout-step-2.html">Extra’s kiezen</a>
+                                </div>
+                            </li>
+                            <li class="current">
+                                <div class="step-count">
+                                    3.
+                                </div>
+                                <div class="step-name">
+                                    <a href="checkout-step-3.html">Uw gegevens</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="step-count">
+                                    4.
+                                </div>
+                                <div class="step-name">
+                                    <a href="checkout-step-4.html">Controleren</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="step-count">
+                                    5.
+                                </div>
+                                <div class="step-name">
+                                    <a href="checkout-step-5.html">Reservering aanvragen</a>
+                                </div>
+                            </li>
+                        </ol>
+                    </nav>
+                    <!-- /STEPS -->
+                    <article class="single-post">
+                        <div class="row">
+                            <form action="" id="form" class="form">
+                                <div class="col-md-8 col-sm-8 col-xs-12">
+                                    <header class="single-post-heading">
+                                        <span class="color-sp">	
+							<span>Stap 3</span><span class="visible-md-inline visible-sm-inline">.</span>                                        <small class=" visible-xs-inline">(VAN 5)</small>
+                                        </span>
+                                        Uw gegevens
+                                    </header>
+                                    <div class="title-section-details">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit euismod leo vitae dapibus. Pellentesque habitant
+                                        morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                    </div>
+
+                                    <div class="mb-50 sp-reset-margin">
+                                        <fieldset class="mb-50 ">
+                                            <legend>
+                                                <h4 class="heading-4">Gegevens bestuurder</h4>
+                                            </legend>
+
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-4 col-xs-12">
+                                                    <label for="id1">Aanhef</label>
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                                    <div class="form-group">
+                                                        <select id="id1" class="selectpicker">
+											  <option value="">Maak een keuze</option>
+											  <option value="">Ketchup</option>
+											  <option value="">Relish</option>
+											</select>
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-4 col-xs-12">
+                                                    <label for="id2">Voorletters</label>
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                                    <div class="form-group">
+                                                        <input required type="text" name="" id="id2" class="form-control" data-parsley-error-message="<i class='fa fa-times-circle'></i> Mag enkel letters bevatten">
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-4 col-xs-12">
+                                                    <label for="id3">Achternaam</label>
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                                    <div class="form-group">
+                                                        <input required type="text" name="" id="id3" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-4 col-xs-12">
+                                                    <label for="id4">Geboortedatum</label>
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                                    <div class="form-group">
+                                                        <input required type="text" name="" id="id4" class="form-control" data-parsley-error-message="<i class='fa fa-times-circle'></i> ERROR">
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-4 col-xs-12">
+                                                    <label for="id5">E-mailadres</label>
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                                    <div class="form-group">
+                                                        <input required type="email" name="" id="id5" class="form-control" data-parsley-error-message="<i class='fa fa-times-circle'></i> ERROR">
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-4 col-xs-12">
+                                                    <label for="id6">Straat</label>
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                                    <div class="form-group">
+                                                        <input required type="text" name="" id="id6" class="form-control" data-parsley-error-message="<i class='fa fa-times-circle'></i> ERROR">
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-4 col-xs-12">
+                                                    <label for="id7">Huisnummer</label>
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="" id="id7" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-4 col-xs-12">
+                                                    <label for="id8">Postcode</label>
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="" id="id8" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-4 col-xs-12">
+                                                    <label for="id9">Plaats</label>
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="" id="id9" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-4 col-xs-12">
+                                                    <label for="id10">Telefoonnummer</label>
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                                    <div class="form-group">
+                                                        <input type="tel" name="" id="id10" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-4 col-xs-12">
+
+                                                </div>
+                                                <!-- col -->
+                                                <div class="col-md-9 col-sm-8 col-xs-12">
+                                                    <div class="form-label label-check-billing-address">
+                                                        <input type="checkbox" name="" id="checkbox1" class="css-checkbox" />
+                                                        <label
+                                                            for="checkbox1" class="css-label">Afwijkende factuuradres </label> <span data-container="body" data-toggle="popover"
+                                                                data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><i class="fa fa-info-circle"></i></span>
+                                                    </div>
+
+                                                </div>
+                                                <!-- col -->
+                                            </div>
+                                            <!-- row -->
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="mb-30">
+                                    <div class="col-md-12">
+                                        <div class="gray-bar">
+                                            <div class="form-label label-term">
+                                                <input type="checkbox" name="" id="checkbox2" class="css-checkbox" />
+                                                <label
+                                                    for="checkbox2" class="css-label">Ik ga akkoord met de </label>
+                                                    <a href=""><strong>algemene voorwaarden</strong></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- col -->
+                                </div>
+                                <!-- row -->
+                            </form>
+                            <!-- col -->
+                            <!--div class="col-md-2 col-sm-2 col-xs-12 id-step2-button-previous pull-right">
+                                <a href="checkout-step-2.html" class="btn btn-gray btn-block">
+                                    <span class="visible-xs-inline">
+							<i class="fa fa-chevron-left" aria-hidden="true"></i>
+						</span>
+                                    <span class="hidden-xs">
+							vorige stap
+						</span>
+                                </a>
+                            </div-->
+                            <!-- col -->
+                        </div>
+                        <!-- row -->
+
+                    </article>
+                    <!-- single-post-->
+                </div>
+            </section>
+            <!-- page-container -->
+
+            <section class="section-cart-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="sp-bg-blue">
+                                <div class="row">
+                                    <div class="col-md-3 col-xs-12">
+                                        <div class="heading-5">overzicht aanvraag</div>
+                                    </div>
+                                    <div class="col-md-9 col-xs-12 toggle-btn">
+                                        <span class="btn-r-open">Bekijk details</span>
+                                        <span class="btn-r-close">Sluit details</span>
+                                    </div>
+                                </div>
+
+                                <div class="row-item-in-card">
+                                    <div class="r-card hidden-xs hidden-sm">
+                                        <div class="clearfix">
+                                            <div class="rc-image">
+                                                <img src="http://placehold.it/70x50" alt="">
+                                            </div>
+                                            <div class="rc-name ">
+                                                1x Type CMPV - Renault Scenic (5zitplaatsen)
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="r-card">
+                                        <div class="r-title">
+                                            Den Bosch
+                                        </div>
+                                        <div class="r-desc">
+                                            Ma 17-2-’17 10:00u
+                                        </div>
+                                    </div>
+                                    <div class="r-card">
+                                        <div class="r-title">
+                                            Almere
+                                        </div>
+                                        <div class="r-desc">
+                                            Di 18-2-’17 11:00u
+                                        </div>
+                                    </div>
+                                    <div class="r-card">
+                                        <div class="align-right">
+                                            <div class="r-tincl">
+                                                Totaal (incl BTW)
+                                            </div>
+                                            <div class="r-63">
+                                                € 63,00
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- row-item-in-card -->
+
+                                <div class="block-overview-application checkout-step-4">
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <div class="sumary-car-container">
+                                                <div class="sumary-car-img"><img src="images/img-step-4.jpg" /></div>
+                                                <div class="sumary-info">
+                                                    <p class="title">Inclusief</p>
+                                                    <ul class="include">
+                                                        <li>BTW 21%</li>
+                                                        <li>Onbeperkte vrije km</li>
+                                                        <li>All-risk verzekering</li>
+                                                        <li>Buitenlanddekking</li>
+                                                        <li>24/7 pechhulp</li>
+                                                    </ul>
+                                                    <p class="title">EXclusief</p>
+                                                    <ul class="exclude">
+                                                        <li>Brandstofkosten</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-md-5 col-sm-5 col-xs-12">
+                                            <h4 class="heading-4">TYPE DMPV Renault Grand Scenic (5 + 2 zitplaatsen)</h4>
+                                            <p>Of gelijkwaardig</p>
+                                            <div class="mb-50">
+                                                <div class="">
+                                                    <table class="normal checkout-table italic">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="no-italic">
+                                                                    <strong>Laadruimte</strong>
+                                                                </td>
+                                                                <td class="no-italic">
+                                                                    <strong>1 m3</strong>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Aantal zitplaatsen</td>
+                                                                <td class="value">7</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Airco</td>
+                                                                <td class="value">Ja</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Audio</td>
+                                                                <td class="value">Radio/Aux/BT</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Borg</td>
+                                                                <td class="value">&euro;600,- met pinpas of creditcard</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Brandstof</td>
+                                                                <td class="value">Benzine</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Laadklep</td>
+                                                                <td class="value">Nee</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Leeftijd</td>
+                                                                <td class="value">gem. 2 jaar oud</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Navigatie</td>
+                                                                <td class="value">Ja, voor West-Europa</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Reclame</td>
+                                                                <td class="value">Nee</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Uitrusting</td>
+                                                                <td class="value">Luxe</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Verhuurder</td>
+                                                                <td class="value">Standaard</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Transmissie</td>
+                                                                <td class="value">Handgeschakeld</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Laadruimte (l x b x h)</td>
+                                                                <td class="value">42 x 110 x 85 cm</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Laadruimte (m3)</td>
+                                                                <td class="value">1 m3</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Laadvermogen</td>
+                                                                <td class="value">600 kg</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <!-- mb-50 -->
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="checkout-summary-container">
+                                                <div class="options">
+                                                    <div class="option">
+                                                        <span class="title">Ophalen</span>
+                                                        <div class="item">
+                                                            <span class="content"><strong>Almere</strong> dinsdag 19 januari 2017 om 09.00 uur</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="option">
+                                                        <span class="title">Terugbrengen</span>
+                                                        <div class="item">
+                                                            <span class="content"><strong>Almere</strong> donderdag 21 januari 2017 om 09.00 uur</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="option">
+                                                        <span class="title">aantal dagen</span>
+                                                        <div class="item">
+                                                            <span class="content">1 dag</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="option">
+                                                        <span class="title">Kosten</span>
+                                                        <div class="item">
+                                                            <span class="content">1x Type CMPV - Renault Scenic (5 zitplaatsen)</span>
+                                                            <span class="price">&euro;63,00</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="option conclude">
+                                                        <div class="item">
+                                                            <span class="title content">Vooraf te betalen extra's</span>
+                                                            <span class="price">-</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <span class="title content">lokaal te betalen opties</span>
+                                                            <span class="price">-</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="option end">
+                                                        <div class="item">
+                                                            <span class="content">totaal (incl btw)</span>
+                                                            <span class="price">&euro;128,00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- block-overview-application -->
+                            </div>
+                            <a href="checkout-step-3.html" class="btn btn-success btn-r-card">
+				verder
+			</a>
+                        </div>
+                        <!-- col -->
+                    </div>
+                    <!-- row -->
+                </div>
+            </section>
+
+        </div>
+        <!-- master-inner -->
+    </main>
+    <!-- master -->
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <footer class="footer">
+            <section class="footer-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 id-trustpilot-zone">
+                            <div class="trustpilot-zone ">
+                                <div class="trust-star clearfix">
+                                    <div class="trust-star-container">
+                                        <img src="demo-images/trust-star.png" alt="">
+                                    </div>
+                                    <div class="mystyle-star">
+                                        <div class="star-ratings-css active-4">
+                                            <div class="star-ratings-css-top">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <div class="star-ratings-css-bottom">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <!-- star-ratings-css -->
+                                    </div>
+                                </div>
+                                <div class="point-star">
+                                    GEMIDDELDE KLANTWAARDERING <strong>8.7</strong>
+                                </div>
+                                <div class="footer-visa">
+                                    <img src="demo-images/footer-visa.png" alt="">
+                                </div>
+                            </div>
+                            <!-- trustpilot-zone -->
+                        </div>
+                        <!-- col -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="help-zone">
+                                <div class="help-title">
+                                    Heeft u vragen?
+                                </div>
+                                <div class="help-desc">
+                                    Wij staan u graag te woord.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- col -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="phone-zone">
+                                <div class="phone-title">
+                                    <i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:073 890 1180">073 890 1180</a>
+                                </div>
+                                <!-- title -->
+                                <div class="phone-desc">
+                                    Of bekijk onze <a href="contact.html">contactpagina</a>.
+                                </div>
+                            </div>
+                            <!-- zone -->
+                        </div>
+                        <!-- col -->
+
+
+
+                    </div>
+                    <!-- row -->
+                    <div class="copyright">
+                        <div class="inner">
+                            © 2017 Busjehuren.nl
+                            <br> Busjehuren is een geregistreerd handelsmerk van Crrntl B.V., geregistreerd bij de Kamer
+                            van Koophandel Brabant, Nederland, nummer 054652804
+                        </div>
+                    </div>
+                    <!-- copyright -->
+                </div>
+                <!-- container -->
+            </section>
+            <!-- / footer-inner -->
+        </footer>
+        <!-- / footer -->
+    </div>
+    <!-- / FOOTER -->
+</body>
+
+</html>

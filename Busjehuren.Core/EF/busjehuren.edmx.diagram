@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7f302cde4b974d65a0716bcf34e4e0e1" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="busjehurenModel.Adre" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.Bestand" Width="1.5" PointX="0.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.Camper" Width="1.5" PointX="5.25" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.CamperAanbieding" Width="1.5" PointX="7.5" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.CamperBed" Width="1.5" PointX="7.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.CamperBestanden" Width="1.5" PointX="10.5" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.CamperEigenschappen" Width="1.5" PointX="10.5" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.ContentType" Width="1.5" PointX="8" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.Destination" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.DestinationType" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.dtproperty" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.Eigenschap" Width="1.5" PointX="8.25" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.EigenschapWaarde" Width="1.5" PointX="8.25" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.Language" Width="1.5" PointX="8" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.Leverancier" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.Longhire" Width="1.5" PointX="5.25" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.Pakket" Width="1.5" PointX="15" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.Partner" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.Person" Width="1.5" PointX="7.5" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.PreImportCamperPrice" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.Reservation" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.ReservationMailArchive" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.ReservationPackage" Width="1.5" PointX="7.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.SupplierContent" Width="1.5" PointX="8.25" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.sysdiagram" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbl_CamperOffers" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbl_IpToCountry" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_BlockedIPs" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Categories" Width="1.5" PointX="22.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_CategoriesXmlTypes" Width="1.5" PointX="20" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Categoryancestors" Width="1.5" PointX="25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Categorylanguagevalues" Width="1.5" PointX="25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Categoryparents" Width="1.5" PointX="25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_DomainSettings" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Dropdownlanguagevalues" Width="1.5" PointX="25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Dropdowns" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_DropdownsXmlTypes" Width="1.5" PointX="20" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Dropdownvalues" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Eventlog" Width="1.5" PointX="15" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_EventTypes" Width="1.5" PointX="12.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_FailedLogins" Width="1.5" PointX="23.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Groups" Width="1.5" PointX="17.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_GroupsTypes" Width="1.5" PointX="15.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_GroupsXML" Width="1.5" PointX="19.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_ImportJobs" Width="1.5" PointX="22.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_ImportLog" Width="1.5" PointX="27.25" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Importxml" Width="1.5" PointX="25" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_ImportXmlLanguages" Width="1.5" PointX="25" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Languages" Width="1.5" PointX="19.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Modules" Width="1.5" PointX="13" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_ModulesDefinitions" Width="1.5" PointX="10.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_ModulesPermissions" Width="1.5" PointX="15.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Pages" Width="1.5" PointX="10.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Permissions" Width="1.5" PointX="13" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Roles" Width="1.5" PointX="19.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_SecurityLevels" Width="1.5" PointX="13" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_SystemSettings" Width="1.5" PointX="21.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Users" Width="1.5" PointX="22" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_UsersXML" Width="1.5" PointX="24.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Xmlfields" Width="1.5" PointX="20" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_xmlfreetextfieldsedit" Width="1.5" PointX="24.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Xmllanguagefieldsedit" Width="1.5" PointX="25.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Xmlsearchfieldsedit" Width="1.5" PointX="17.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Xmltypes" Width="1.5" PointX="17.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.Valuta" Width="1.5" PointX="10.5" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.Vestiging" Width="1.5" PointX="12.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.VestigingOpeningHour" Width="1.5" PointX="15" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbl_Destinations" Width="1.5" PointX="19.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbl_log4net" Width="1.5" PointX="0.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Cache" Width="1.5" PointX="26.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_PermissionsRoles" Width="1.5" PointX="22" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Sessions" Width="1.5" PointX="26.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.tbls_Xmlfieldsancestors" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.CamperAanbiedingMetPrijzen" Width="1.5" PointX="21.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="busjehurenModel.vboekingen" Width="1.5" PointX="27.75" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="busjehurenModel.FK_Adres_Destination" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_Person_Adres" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_Vestiging_Adres" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_CamperBestanden_Bestand" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_Leverancier_Bestand" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_Camper_Leverancier" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_CamperAanbieding_Camper" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_CamperBed_Camper" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_CamperBestanden_Camper" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_CamperEigenschappen_Camper1" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_CamperEigenschappen_Eigenschap" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_CamperEigenschappen_EigenschapWaarden" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_Destination_Destination" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_Destination_DestinationType" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_Vestiging_Destination" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_EigenschapWaarden_Eigenschappen" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK__SupplierC__Suppl__2B203F5D" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_Longhire_Leverancier" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_Vestiging_Leverancier" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_Pakket_Valuta" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_Pakket_Vestiging" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_Person_Reservation" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_ReservationPackage_Reservation" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Categoryancestors_tbls_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Categorylanguagevalues_tbls_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Categoryparents_tbls_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_CategoriesXmlTypes_tbls_Xmltypes" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Dropdownlanguagevalues_tbls_Dropdownvalues" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Dropdownlanguagevalues_tbls_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbldropdownvalues_tbldropdowns" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_DropDownsXmlTypes_tbls_Xmltypes" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Eventlog_tbls_EventTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Groups_tbls_GroupsTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_GroupsXML_tbls_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Roles_tbls_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Users_tbls_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_GroupsTypes_tbls_SecurityLevels" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Roles_tbls_GroupsTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tblimportxml_tblimportjobs" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_ImportXmlLanguages_tbls_Importjobs" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Importlog_tbls_Importxml" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Users_tbls_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Modules_tbls_ModulesDefinitions" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_Modules_tbls_Pages" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_ModulesPermissions_tbls_Modules" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_PermissionsRoles_tbls_Modules" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_ModulesPermissions_tbls_Permissions" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_SecurityLevels_tbls_Pages" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_PermissionsRoles_tbls_Permissions" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_PermissionsRoles_tbls_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tbls_UsersXML_tbls_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_tblxmlfields_tblxmltypes" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_Vestiging_Valuta" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.FK_VestigingOpeningHours_VestigingOpeningHours" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.CamperAanbiedingVestiging" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.DestinationsBestanden" ManuallyRouted="false" />
+        <AssociationConnector Association="busjehurenModel.tbls_RolesUsers" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="busjehurenModel.Content" Width="1.5" PointX="10.25" PointY="11.25" />
+        <AssociationConnector Association="busjehurenModel.FK__SupplierC__Conte__2A2C1B24" />
+        <AssociationConnector Association="busjehurenModel.FK_Content_ContentType" />
+        <AssociationConnector Association="busjehurenModel.FK_Content_Destination" />
+        <AssociationConnector Association="busjehurenModel.FK_Content_Language" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

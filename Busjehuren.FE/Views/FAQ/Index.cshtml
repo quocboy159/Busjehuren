@@ -1,0 +1,13 @@
+﻿@Html.Raw(Model.Text)
+
+@Html.Partial("_FilterLocationFormStatic", "Location")
+
+@Html.Partial("_UserReview")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.question-container').click(function () {
+            $(this).toggleClass('open');
+        });
+    })
+</script>

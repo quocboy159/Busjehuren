@@ -1,0 +1,22 @@
+﻿@model Tuple<int, int, int, bool>
+@{
+    string classDisplay = !Model.Item4 ? "hide" : string.Empty;
+}
+
+<div class="quantity-container @classDisplay" id="quantity-container@(Model.Item1)">
+
+    @if (Model.Item2 > 1)
+    {
+        <input type="text" readonly class="quantity-input" value="@Model.Item3" id="select@(Model.Item1)" data-max="@Model.Item2" data-packageid="@Model.Item1" />
+        <span class="bs-caret">
+            <span class="caret-up" data-refer="select@(Model.Item1)"></span>
+            <span class="caret-down" data-refer="select@(Model.Item1)"></span>
+        </span>
+    }
+    else
+    {
+        <input type="text" readonly class="quantity-input hide" value="@Model.Item3" id="select@(Model.Item1)" data-max="@Model.Item2" data-packageid="@Model.Item1" />
+        <label class="quantity-text">1</label>
+    }
+
+</div>

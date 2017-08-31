@@ -1,0 +1,300 @@
+﻿@model BookingData
+@{
+    string monthName = System.Globalization.CultureInfo.CreateSpecificCulture("nl-NL").DateTimeFormat.GetAbbreviatedMonthName(Model.Gegevens.Hoofdboeker.Geboortemaand);
+    CultureInfo ci = new CultureInfo("nl-NL");
+
+    string urlPhoto = Url.Content("~/" + Model.CamperAanbiedingModel.Camper.CamperBestanden.FirstOrDefault().LocationOnWeb + "original/"
+        + Model.CamperAanbiedingModel.Camper.CamperBestanden.FirstOrDefault().Name);
+    string ophalen = string.Format("{0} om {1} uur", Model.StartDate.ToString("dddd dd MMMM yyyy", ci), Model.StartDate.ToString("HH:mm"));
+    string terugbrengen = string.Format("{0} om {1} uur", Model.EndDate.ToString("dddd dd MMMM yyyy", ci), Model.EndDate.ToString("HH:mm"));
+    decimal localCostTotal = Model.VestigingModel.Pakkets
+                                                   .Where(x => x.IsLokaalTeBetalen && x.IsCheck)
+                                                   .Sum(x => x.Number * (x.PakketType == (int)BusjeType.Personenbus ? Model.NumberOfTravelDays : 1) * x.Prijs);
+    decimal nonLocalCostTotal = Model.VestigingModel.Pakkets
+                                                    .Where(x => !x.IsLokaalTeBetalen && x.IsCheck)
+                                                    .Sum(x => x.Number * (x.PakketType == (int)BusjeType.Personenbus ? Model.NumberOfTravelDays : 1) * x.Prijs);
+
+    decimal priceTotal = Model.TotaalPrijs;
+}
+
+<section class="page-container">
+    <div class="container">
+        @using (Html.BeginForm("Checkout4End", "CheckOut", FormMethod.Post, new { id = "formCheckout4", @class = "form" }))
+        {
+            @Html.Action("CheckOutSteps", new { currentStep = 4 })
+
+            <article class="single-post checkout-step-4">
+                <div class="row">
+                    <header class="single-post-heading col-md-12 col-sm-12 col-xs-12">
+                        <span class="color-sp">
+                            <span>Stap 4.</span><span class="visible-md-inline visible-sm-inline">.</span>
+                            <small class=" visible-xs-inline">(VAN 5)</small>
+                        </span>
+                        controleer uw aanvraag
+                    </header>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="sumary-car-container">
+                            <div class="sumary-car-img"><img src="@urlPhoto"></div>
+                            <div class="sumary-info">
+                                <p class="title">Inclusief</p>
+                                <ul class="include">
+                                    <li>BTW 21%</li>
+                                    <li>Onbeperkte vrije km</li>
+                                    <li>All-risk verzekering</li>
+                                    <li>Buitenlanddekking</li>
+                                    <li>24/7 pechhulp</li>
+                                </ul>
+                                <p class="title">EXclusief</p>
+                                <ul class="exclude">
+                                    <li>Brandstofkosten</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <h4 class="heading-4">@Model.CamperAanbiedingModel.Camper.Naam</h4>
+                        <p>Of gelijkwaardig</p>
+                        <div class="mb-50">
+                            <div class="">
+                                <table class="normal checkout-table italic">
+                                    <tbody>
+                                        <tr>
+                                            <td class="no-italic">
+                                                <strong>Laadruimte</strong>
+                                            </td>
+                                            <td class="no-italic">
+                                                <strong>@(Model.CamperAanbiedingModel.Camper.LaadRuimte) m3</strong>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Aantal zitplaatsen</td>
+                                            <td class="value">@(Model.CamperAanbiedingModel.Camper.MaxAantalPersonen)</td>
+                                        </tr>
+
+                                        @foreach (var item in Model.CamperAanbiedingModel.Camper.EigenschapWaarden.OrderBy(x => x.EigenschapNaam))
+                                        {
+                                            <tr>
+                                                <td>@item.EigenschapNaam</td>
+                                                <td class="value">@item.Value</td>
+                                            </tr>
+                                        }
+
+                                        <tr>
+                                            <td>Laadruimte (l x b x h)</td>
+                                            <td class="value">
+                                                @(Model.CamperAanbiedingModel.Camper.LaadLengte)
+                                                x @(Model.CamperAanbiedingModel.Camper.LaadBreedte)
+                                                x @(Model.CamperAanbiedingModel.Camper.LaadHoogte) cm
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Laadvermogen</td>
+                                            <td class="value">@(Model.CamperAanbiedingModel.Camper.LaadVermogen) kg</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- mb-50 -->
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="checkout-summary-container">
+                            <div class="options">
+                                <div class="option">
+                                    <span class="title">Ophalen</span>
+                                    <div class="item">
+                                        <span class="content">
+                                            <strong>
+                                                @Model.Destinations.FirstOrDefault(x => x.Id == Model.OfferCriteria.OphaalBestemmingId).DisplayName
+                                            </strong>
+                                            @ophalen
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="option">
+                                    <span class="title">Terugbrengen</span>
+                                    <div class="item">
+                                        <span class="content">
+                                            <strong>
+                                                @Model.Destinations.FirstOrDefault(x => x.Id == Model.OfferCriteria.TerugbrengBestemmingId).DisplayName
+                                            </strong>
+                                            @terugbrengen
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="option">
+                                    <span class="title">aantal dagen</span>
+                                    <div class="item">
+                                        <span class="content">@Model.NumberOfTravelDays dag</span>
+                                    </div>
+                                </div>
+                                <div class="option">
+                                    <span class="title">Kosten</span>
+                                    <div class="item">
+                                        <span class="content">1x @Model.CamperAanbiedingModel.Camper.Naam</span>
+                                        <span class="price">@Model.TotalCamperPrice.FormatByCulture()</span>
+                                    </div>
+                                </div>
+                                <div class="option conclude">
+                                    <div class="item">
+                                        <span class="title content">Vooraf te betalen extra's</span>
+                                        <span class="price">@nonLocalCostTotal.FormatByCulture()</span>
+                                    </div>
+
+                                    @foreach (var package in Model.VestigingModel.Pakkets.Where(x => x.IsCheck && !x.IsLokaalTeBetalen))
+                                    {
+                                        <div class="item">
+                                            <span class="content">@package.Number <span>x</span> @package.Naam</span>
+                                            <span class="price">
+                                                @(package.PakketType != (int)BusjeType.Personenbus
+                                                                      ? (package.Prijs * package.Number).FormatByCulture()
+                                                                       : (package.Prijs * package.Number * Model.NumberOfTravelDays).FormatByCulture())
+                                            </span>
+                                        </div>
+                                    }
+
+                                    <div class="item">
+                                        <span class="title content">lokaal te betalen opties</span>
+                                        <span class="price">@localCostTotal.FormatByCulture()</span>
+                                    </div>
+
+                                    @foreach (var package in Model.VestigingModel.Pakkets.Where(x => x.IsCheck && x.IsLokaalTeBetalen))
+                                    {
+                                        <div class="item">
+                                            <span class="content">@package.Number <span>x</span> @package.Naam</span>
+                                            <span class="price">
+                                                @(package.PakketType != (int)BusjeType.Personenbus
+                                                                      ? (package.Prijs * package.Number).FormatByCulture()
+                                                                       : (package.Prijs * package.Number * Model.NumberOfTravelDays).FormatByCulture())
+                                            </span>
+                                        </div>
+                                    }
+
+                                </div>
+                                <div class="option end">
+                                    <div class="item">
+                                        <span class="content">totaal (incl btw)</span>
+                                        <span class="price">@priceTotal.FormatByCulture()</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 col-md-offset-3 col-sm-5 col-sm-offset-3 col-xs-12">
+                        <h4 class="heading-4">Gegevens bestuurder</h4>
+                        <table class="normal checkout-table">
+                            <tbody>
+                                <tr>
+                                    <td>Naam</td>
+                                    <td>
+                                        @Model.Gegevens.Hoofdboeker.Voornaam @Model.Gegevens.Hoofdboeker.Familienaam
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Geboortedatum</td>
+                                    <td class="value">@Model.Gegevens.Hoofdboeker.Geboortemaand @monthName @Model.Gegevens.Hoofdboeker.Geboortejaar</td>
+                                </tr>
+                                <tr>
+                                    <td>Adres</td>
+                                    <td class="value">@Model.Gegevens.Adres</td>
+                                </tr>
+                                <tr>
+                                    <td>Postcode</td>
+                                    <td class="value">@Model.Gegevens.Postcode</td>
+                                </tr>
+                                <tr>
+                                    <td>Plaats</td>
+                                    <td class="value">@Model.Gegevens.Stad</td>
+                                </tr>
+                                <tr>
+                                    <td>Telefoon</td>
+                                    <td class="value">@Model.Gegevens.Telefoon</td>
+                                </tr>
+                                <tr>
+                                    <td>E-mailadres</td>
+                                    <td class="value">@Model.Gegevens.Email</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    @if (Model.Gegevens.AfwijkendFactuuradres)
+                    {
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <h4 class="heading-4">Afwijkend factuuradres</h4>
+                            <table class="normal checkout-table">
+                                <tbody>
+                                    <tr>
+                                        <td>Bedrijfsnaam</td>
+                                        <td class="value">
+                                            @Model.Gegevens.FactuurBedrijfsnaam
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Straat</td>
+                                        <td class="value">@Model.Gegevens.FactuurStraat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Huisnummer</td>
+                                        <td class="value">@Model.Gegevens.FactuurHuisnummer</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Postcode</td>
+                                        <td class="value">@Model.Gegevens.FactuurPostcode</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plaats</td>
+                                        <td class="value">@Model.Gegevens.FactuurStad</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Telefoon</td>
+                                        <td class="value">@Model.Gegevens.FactuurTelefoon</td>
+                                    </tr>
+                                    <tr>
+                                        <td>E-mailadres</td>
+                                        <td class="value">@Model.Gegevens.FactuurEmail</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                </div>
+            </article>
+        }
+    </div>
+</section>
+
+<!-- cart-footer-->
+<section class="section-cart-footer step4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sp-bg-blue">
+                    <a class="btn btn-success btn-r-card" id="btnMoveNextStep">
+                        reservering aanvragen
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script src="~/Scripts/js/Components/Checkout-4.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            Checkout4().init({
+                urlprocess: '@Url.Action("Checkout4End", "CheckOut")',
+                urlCheckout5: '@Url.Action("Checkout5", "CheckOut")',
+            });
+        })
+    </script>
+}

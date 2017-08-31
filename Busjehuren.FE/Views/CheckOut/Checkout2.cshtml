@@ -1,0 +1,146 @@
+﻿@model Checkout2VM
+@{
+    int index = 0;
+    var pakkets = ((BookingData)ViewBag.BookingData).VestigingModel.Pakkets;
+    int numberOfTravelDays = ((BookingData)ViewBag.BookingData).NumberOfTravelDays;
+}
+<section class="page-container">
+    <div class="container">
+
+        @Html.Action("CheckOutSteps", new { currentStep = 2 })
+
+        <article class="single-post">
+            <div class="row">
+                <div class="col-md-10 col-sm-10 col-xs-12">
+                    <header class="single-post-heading">
+                        <span class="color-sp">
+                            <span>Stap 2</span><span class="visible-md-inline visible-sm-inline">.</span> <small class=" visible-xs-inline">(VAN 5)</small>
+                        </span>
+                        Extra’s kiezen
+                    </header>
+
+                    <div class="mb-30">
+                        <div class="table-step-2">
+                            <table class="table" id="table-options">
+                                <thead>
+                                    <tr>
+                                        <td class="col-1">Toevoegen</td>
+                                        <td class="col-2"></td>
+                                        <td class="col-3">Beschikbare opties</td>
+                                        <td class="col-4">Aantal</td>
+                                        <td class="col-5">Prijs</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in pakkets)
+                                    {
+                                        index++;
+                                        var checkboxName = "cb_" + index;
+                                        decimal pricePackage = item.PakketType != (int)BusjeType.Personenbus
+                                                               ? item.Prijs * item.Number
+                                                               : item.Prijs * item.Number * numberOfTravelDays;
+
+                                        <tr class="sp-tr">
+                                            <td colspan="5">
+                                                <div class="cip-name">
+                                                    @item.Naam
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="pc-tr">
+                                            <td>
+                                                <div class="form-label">
+                                                    <input data-packageid="@item.Id" type="checkbox" name="@checkboxName" id="@checkboxName" class="css-checkbox" value="@item.Id" @(item.IsCheck ? "checked" : string.Empty) /><label for="@checkboxName" class="css-label">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cip-image-holder">
+                                                    <div class="image-holder">
+                                                        <img src="@item.Image" alt="">
+                                                        <span class="tip">
+                                                            <i class="fa fa-info-circle" data-container="body" data-toggle="popover" data-placement="right" data-content="@item.UitgebreideOmschrijving"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="hidden-xs">
+                                                <div class="checkout-item-product">
+                                                    <div class="cip-name">
+                                                        @item.Naam
+                                                    </div>
+
+                                                    <div class="cip-desc block-with-text">
+                                                        @item.UitgebreideOmschrijving
+                                                    </div>
+
+                                                    <div class="cip-link">
+                                                        <a data-toggle="popover" data-placement="right" data-content="@item.UitgebreideOmschrijving">Meer informatie</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="removePaddingtd">
+                                                @Html.Partial("_SelectOption", new Tuple<int, int, int, bool>(item.Id, item.MaxAantal.HasValue && item.MaxAantal.Value != 0 ? item.MaxAantal.Value : 1, item.Number, item.IsCheck))
+                                            </td>
+
+                                            <td>
+                                                <div class="price-col">
+                                                    <div class="price">
+                                                        <span id="price@(item.Id)" data-value="@pricePackage" data-original="@pricePackage">@(pricePackage.FormatByCulture())</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gray-bar">
+                <h4>
+                    Bestemming
+                </h4>
+                <div class="row">
+                    @using (Html.BeginForm("Checkout2End", "CheckOut", FormMethod.Post, new { id = "formCheckout2", @class = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(m => m.SelectedPackages)
+
+                        <div class="col-md-9">
+                            <div class="form-group">
+                                @Html.DropDownListFor(m => m.LandBestemming, DropDownList.LandBestemmings(), GlobalStatic.optionLabelGender, new { @class = "selectpicker" })
+                                @Html.ValidationMessageFor(m => m.LandBestemming, "", new { @class = "fa fa-times-circle" })
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </article>
+
+    </div>
+</section>
+
+@Html.Action("_ReservationCart")
+
+@section Scripts{
+    <script src="~/Scripts/js/Components/Checkout-2.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            Checkout2().init({
+                tableId: "table-options",
+                urlprocess: '@Url.Action("Checkout2End", "CheckOut")',
+                urlCheckout3: '@Url.Action("Checkout3", "CheckOut")',
+                objTooltip: $('[data-toggle=popover]')
+            });
+        })
+    </script>
+}
+

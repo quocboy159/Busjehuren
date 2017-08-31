@@ -1,0 +1,54 @@
+﻿@model Tuple<BookingData, int>
+
+<!-- STEPS -->
+<nav class="step-zone">
+    <ol class="steps">
+
+        <li class="@(Model.Item2 == 1 ? "current" : (Model.Item1.Step1 ? "active" : ""))">
+            <div class="step-count">
+                1.
+            </div>
+            <div class="step-name">
+                <a href="@(Model.Item1.Step1 ? Model.Item1.CurrentUrl : "")">Maak een keuze</a>
+            </div>
+        </li>
+
+        <li class="@(Model.Item2 == 2 ? "current" : (Model.Item1.Step2 ? "active" : ""))">
+            <div class="step-count">
+                2.
+            </div>
+            <div class="step-name">
+                <a id="step2" href="@(Model.Item1.Step2 ? Url.Action("Checkout2") : "")">Extra’s kiezen</a>
+            </div>
+        </li>
+
+        <li class="@(Model.Item2 == 3 ? "current" : (Model.Item1.Step3 ? "active" : ""))">
+            <div class="step-count">
+                3.
+            </div>
+            <div class="step-name">
+                <a href="@(Model.Item1.Step3 ? Url.Action("Checkout3") : "")">Uw gegevens</a>
+            </div>
+        </li>
+
+        <li class="@(Model.Item2 == 4 ? "current" : (Model.Item1.Step4 ? "active" : ""))">
+            <div class="step-count">
+                4.
+            </div>
+            <div class="step-name">
+                <a href="@(Model.Item1.Step4 ? Url.Action("Checkout4") : "")">Controleren</a>
+            </div>
+        </li>
+
+        <li class="@(Model.Item2 == 5 ? "current" : (Model.Item1.Step5 ? "active" : ""))">
+            <div class="step-count">
+                5.
+            </div>
+            <div class="step-name">
+                <a href="@(Model.Item1.Step5 ? Url.Action("Checkout5") : "")">Reservering aanvragen</a>
+            </div>
+        </li>
+
+    </ol>
+</nav>
+<!-- /STEPS -->

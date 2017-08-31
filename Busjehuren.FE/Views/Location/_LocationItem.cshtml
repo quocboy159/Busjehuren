@@ -1,0 +1,15 @@
+﻿@model VestigingModel
+
+@{
+    string urlLocation = Url.Action("Checkout1", "CheckOut", new { urlNameParent = Model.UrlNameParent, urlName = Model.UrlName });
+    string address = string.Format("{0} {1} {2} {3}", Model.Adres.Straat, Model.Adres.Huisnummer, Model.Adres.Postcode, Model.Adres.Plaats);
+    string openingHours = Model.VestigingOpeningHours.Count == 0
+                          ? "Dagelijks van 8.00 tot 17.30 uur"
+                          : string.Format("{0}/{1} {2} - {3}"
+                                           , Model.VestigingOpeningHours[0].WeekdayName.GetDayNameByCultureInfo()
+                                           , Model.VestigingOpeningHours[Model.VestigingOpeningHours.Count - 1].WeekdayName.GetDayNameByCultureInfo()
+                                           , Model.VestigingOpeningHours[0].FromHour
+                                           , Model.VestigingOpeningHours[0].ToHour);
+}
+
+<input type="hidden" class="location-link" data-locationId="@Model.Destination.Id" data-latitude="@Model.Latitude" data-longtitude="@Model.Longtitude" data-id="@Model.Id" data-address="@address" data-open-time="@openingHours." data-title="@Model.Naam" data-url="@urlLocation" />
